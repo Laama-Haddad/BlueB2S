@@ -1,4 +1,5 @@
 import {StyleProp} from 'react-native';
+import React from 'react';
 
 export interface HeaderProps {
   noPaddingTop?: boolean;
@@ -17,4 +18,5 @@ export interface HeaderProps {
   onMenuIconPress?: () => void;
   showLogo?: boolean;
   headerStyle?: StyleProp<any> | StyleProp<any>[];
+  ref?: React.Ref<any>;
 }
