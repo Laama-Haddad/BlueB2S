@@ -10,15 +10,19 @@
 import React from 'react';
 import MainLayout from './screens/MainLayout';
 
+import lightTheme from './resources/theme/lightTheme';
+import {NavigationContainer} from '@react-navigation/native';
+
 const App = () => {
   return (
-    <MainLayout
-      tabHeader
-      showLogo
-      title={'Profile'}
-      backgroundColor={'blue'}
-      onBackIconPress={() => console.log('fdsj')}
-    />
+    <NavigationContainer theme={lightTheme}>
+      <MainLayout
+        backHeader
+        showLogo
+        title={'Profile'}
+        onBackIconPress={() => console.log('fdsj')}
+      />
+    </NavigationContainer>
   );
 };
 

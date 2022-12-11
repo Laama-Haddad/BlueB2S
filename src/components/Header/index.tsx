@@ -1,10 +1,10 @@
 import React from 'react';
-import {I18nManager, Platform, StatusBar, Text, View} from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
-import Ripple from 'react-native-material-ripple';
+import {Platform, StatusBar, Text, View} from 'react-native';
 import {HeaderProps} from '../../resources/interfaces/components/header';
 import styles from './styles';
 import LogoSVG from '../../resources/assets/svg/logo.svg';
+import Icon from '../Icon';
+import {useTheme} from '@react-navigation/native';
 
 function Header({
   noPaddingTop = false,
@@ -24,6 +24,7 @@ function Header({
   showLogo,
   headerStyle,
 }: HeaderProps) {
+  const theme = useTheme();
   const onMenuPressed = () => {
     if (onMenuIconPress) {
       onMenuIconPress();
@@ -43,7 +44,11 @@ function Header({
       <View
         style={[
           styles.container,
-          headerBackground && {backgroundColor: headerBackground},
+          {
+            backgroundColor: !!headerBackground
+              ? headerBackground
+              : theme.header.background,
+          },
           !noPaddingTop && {
             paddingTop:
               Platform.OS === 'android'
@@ -56,33 +61,36 @@ function Header({
         ]}>
         <View style={styles.leftContainer}>
           {showBackIcon && (
-            <Ripple
+            <Icon
+              name={'chevron-back'}
+              type={'Ionicons'}
+              color={backIconColor ? backIconColor : theme.icon.icon}
+              size={iconSize ? iconSize : theme.text.s6}
+              role={'button'}
               onPress={onBackPressed}
-              style={[styles.rippleIcon, iconStyle]}>
-              <Feather
-                name={I18nManager.isRTL ? 'chevron-right' : 'chevron-left'}
-                color={backIconColor ? backIconColor : '#C500FF'}
-                size={iconSize ? iconSize : 30}
-              />
-            </Ripple>
+              style={iconStyle}
+            />
           )}
           {showMenuIcon && (
-            <Ripple
+            <Icon
+              name={'menu'}
+              type={'Ionicons'}
+              color={menuIconColor ? menuIconColor : theme.icon.icon}
+              size={iconSize ? iconSize : theme.text.s8}
+              role={'button'}
               onPress={onMenuPressed}
-              style={[styles.rippleIcon, iconStyle]}>
-              <Feather
-                name="menu"
-                color={menuIconColor ? menuIconColor : '#C500FF'}
-                size={iconSize ? iconSize : 15}
-              />
-            </Ripple>
+              style={iconStyle}
+            />
           )}
         </View>
         <View style={styles.centerContainer}>
           <Text
             style={[
               styles.title,
-              !!titleColor && {color: titleColor},
+              {
+                fontSize: theme.text.s7,
+                color: !!titleColor ? titleColor : theme.header.title,
+              },
               titleStyle,
             ]}>
             {title}

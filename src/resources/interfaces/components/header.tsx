@@ -11,7 +11,7 @@ export interface HeaderProps {
   backIconColor?: string;
   showMenuIcon?: boolean;
   menuIconColor?: string;
-  iconSize?: string | number;
+  iconSize?: number;
   iconStyle?: StyleProp<any> | StyleProp<any>[];
   onBackIconPress?: () => void;
   onMenuIconPress?: () => void;

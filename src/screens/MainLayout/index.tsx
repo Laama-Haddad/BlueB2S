@@ -1,9 +1,11 @@
 import React from 'react';
 import {MainLayoutProps} from '../../resources/interfaces/screens/mainLayout';
 import styles from './styles';
-import {KeyboardAvoidingView, Platform, Animated, View} from 'react-native';
+import {Animated, KeyboardAvoidingView, Platform, View} from 'react-native';
 import Header from '../../components/Header';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {useTheme} from '@react-navigation/native';
+
 const MainLayout = ({
   tabHeader = false,
   backHeader = false,
@@ -24,11 +26,16 @@ const MainLayout = ({
   const PageView = enableScroll
     ? () => <View style={styles.mainView} />
     : () => <Animated.ScrollView style={styles.mainScrollView} />;
+  const theme = useTheme();
   return (
     <View
       style={[
         styles.container,
-        {backgroundColor: backgroundColor},
+        {
+          backgroundColor: !!backgroundColor
+            ? backgroundColor
+            : theme.homeBackground,
+        },
         containerStyle,
       ]}>
       {backHeader && <Header showBackIcon ref={headerRef} {...props} />}

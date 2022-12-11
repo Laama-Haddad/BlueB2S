@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#C500FF',
     height: hdp(13),
     width: '100%',
     borderBottomRightRadius: 25,
@@ -16,18 +15,9 @@ const styles = StyleSheet.create({
   leftContainer: {
     width: wdp(10),
   },
-  rippleIcon: {
-    width: wdp(8),
-    height: wdp(8),
-    borderRadius: wdp(4),
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   centerContainer: {width: wdp(74)},
   rightContainer: {width: wdp(10)},
   title: {
-    fontSize: 22,
     paddingHorizontal: '2%',
   },
 });
