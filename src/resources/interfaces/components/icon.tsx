@@ -3,7 +3,7 @@ import {StyleProp} from 'react-native';
 export interface IconProps {
   type: string;
   label?: string;
-  onPress: () => void;
+  onPress?: () => void;
   style?: StyleProp<any> | StyleProp<any>[];
   role?: string;
   name: string;

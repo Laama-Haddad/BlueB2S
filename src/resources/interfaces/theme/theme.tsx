@@ -42,4 +42,11 @@ export interface Theme {
     background: string;
     title: string;
   };
+  searchBar: {
+    border: string;
+    icon: string;
+    background: string;
+    placeHolder: string;
+    value: string;
+  };
 }

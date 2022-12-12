@@ -56,6 +56,13 @@ const lightTheme: Theme = {
     background: '#C500FF',
     title: '#000000',
   },
+  searchBar: {
+    border: '#979797',
+    icon: '#979797',
+    background: '#FFFFFF',
+    placeHolder: '#B2AEAE',
+    value: '#000000',
+  },
 };
 
 export default lightTheme;
