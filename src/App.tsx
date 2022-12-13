@@ -8,21 +8,18 @@
  * @format
  */
 import React from 'react';
-import MainLayout from './screens/MainLayout';
-
 import lightTheme from './resources/theme/lightTheme';
-import {NavigationContainer} from '@react-navigation/native';
-
+import AppNavigator from './router';
+import {store} from './redux/store';
+import {Provider} from 'react-redux';
+import {ThemeProvider} from '@react-navigation/native';
 const App = () => {
   return (
-    <NavigationContainer theme={lightTheme}>
-      <MainLayout
-        backHeader
-        showLogo
-        title={'Profile'}
-        onBackIconPress={() => console.log('fdsj')}
-      />
-    </NavigationContainer>
+    <Provider store={store}>
+      <ThemeProvider theme={lightTheme}>
+        <AppNavigator />
+      </ThemeProvider>
+    </Provider>
   );
 };
 

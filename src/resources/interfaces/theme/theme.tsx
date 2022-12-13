@@ -49,4 +49,19 @@ export interface Theme {
     placeHolder: string;
     value: string;
   };
+  tabs: {
+    activeItem: string;
+    inActiveItem: string;
+    background: string;
+  };
+  modal: {
+    containerBackground: string;
+    titleBackground: string;
+    title: string;
+    messageBackground: string;
+    message: string;
+    okBackground: string;
+    okTitle: string;
+    borderColor: string;
+  };
 }

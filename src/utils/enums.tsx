@@ -7,3 +7,7 @@ export const fontTypes = {
   regular:
     Platform.OS === 'android' ? 'Myriad Pro Regular' : 'MyriadPro-Regular',
 };
+export const modalTypes = {
+  info: 'info',
+  question: 'question',
+};

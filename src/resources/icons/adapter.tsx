@@ -1,8 +1,8 @@
 import React from 'react';
-// import Menu from './icMenu'
+import Cart from './icCart';
 
 const icons = {
-  // menu: <Menu/>,
+  cart: <Cart />,
 };
 
 export default icons;

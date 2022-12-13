@@ -2,7 +2,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {colors} from './colors';
 
 import {Theme} from '../interfaces/theme/theme';
-import {fontTypes} from '../../utils/enum';
+import {fontTypes} from '../../utils/enums';
 
 const SCREEN_HEIGHT_REFERENCE = 742;
 
@@ -62,6 +62,21 @@ const lightTheme: Theme = {
     background: '#FFFFFF',
     placeHolder: '#B2AEAE',
     value: '#000000',
+  },
+  tabs: {
+    activeItem: 'red',
+    inActiveItem: '#000000',
+    background: '#F2F2F2',
+  },
+  modal: {
+    containerBackground: '#1C2340ab',
+    titleBackground: colors.primary,
+    title: '#FFFFFF',
+    messageBackground: '#FFFFFF',
+    message: '#000000',
+    okTitle: '#FFFFFF',
+    okBackground: colors.primary,
+    borderColor: '#E4E4F1'
   },
 };
 

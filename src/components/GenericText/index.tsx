@@ -12,7 +12,7 @@ const GenericText = ({style, children, ...props}: GenericTextProps) => {
           fontFamily:
             style.fontWeight === 'bold'
               ? theme.fonts.bold
-              : style.fontWeight === 'semi-bold'
+              : style.fontWeight === '600'
               ? theme.fonts.semi_bold
               : theme.fonts.regular,
         }}>

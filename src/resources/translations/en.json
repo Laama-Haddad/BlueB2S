@@ -1,0 +1,16 @@
+{
+  "app": {
+    "appName": "BlueB2S",
+    "loading": "Loading"
+  },
+  "modal": {
+    "ok": "OK"
+  },
+  "tabs": {
+    "home": "Home",
+    "orders": "My Orders",
+    "favorite": "Favorite",
+    "cart": "My cart",
+    "profile": "Profile"
+  }
+}
