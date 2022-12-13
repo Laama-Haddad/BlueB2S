@@ -76,7 +76,7 @@ const lightTheme: Theme = {
     message: '#000000',
     okTitle: '#FFFFFF',
     okBackground: colors.primary,
-    borderColor: '#E4E4F1'
+    borderColor: '#E4E4F1',
   },
 };
 
