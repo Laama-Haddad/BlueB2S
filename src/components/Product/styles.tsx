@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   productNameText: {
-    fontWeight: 'bold',
+    fontWeight: '700',
+    textTransform: 'uppercase',
   },
   productSizeText: {
     fontWeight: '600',

@@ -90,6 +90,13 @@ const lightTheme: CustomTheme = {
     shadowEnd: '#eeeeeedd',
     ripple: '#44444440',
   },
+  category: {
+    background: 'transparent',
+    name: '#000000',
+    shadowStart: '#44444440',
+    shadowEnd: '#eeeeeedd',
+    ripple: '#44444440',
+  },
 };
 
 export default lightTheme;

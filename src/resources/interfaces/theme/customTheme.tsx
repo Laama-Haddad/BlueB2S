@@ -77,4 +77,11 @@ export interface CustomTheme extends Theme {
     shadowEnd: string;
     ripple: string;
   };
+  category: {
+    background: string;
+    name: string;
+    shadowStart: string;
+    shadowEnd: string;
+    ripple: string;
+  };
 }
