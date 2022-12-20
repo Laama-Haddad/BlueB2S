@@ -12,13 +12,15 @@ import lightTheme from './resources/theme/lightTheme';
 import AppNavigator from './router';
 import {store} from './redux/store';
 import {Provider} from 'react-redux';
-import {ThemeProvider} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
+import {navigationRef} from './navigation';
+
 const App = () => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={lightTheme}>
+      <NavigationContainer ref={navigationRef} theme={lightTheme}>
         <AppNavigator />
-      </ThemeProvider>
+      </NavigationContainer>
     </Provider>
   );
 };

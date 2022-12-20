@@ -1,7 +1,8 @@
 {
   "app": {
     "appName": "BlueB2S",
-    "loading": "Loading"
+    "loading": "Loading",
+    "currency": "SEK"
   },
   "modal": {
     "ok": "OK"

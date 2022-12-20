@@ -1,7 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {NavigationContainer, useTheme} from '@react-navigation/native';
 import {TabItem} from '../resources/interfaces/items/tabItem';
-import {navigationRef} from '../navigation';
 import Icon from '../components/Icon';
 import Home from '../screens/Content/Home';
 import {getByScreenSize} from '../utils/responsive';
@@ -130,10 +128,6 @@ const AppNavigator = () => {
     );
   }, [router]);
 
-  return (
-    <NavigationContainer ref={navigationRef}>
-      {selectRouter()}
-    </NavigationContainer>
-  );
+  return selectRouter();
 };
 export default AppNavigator;

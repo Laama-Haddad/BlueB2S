@@ -1,8 +1,8 @@
 import {RFValue} from 'react-native-responsive-fontsize';
 import {colors} from './colors';
-
-import {Theme} from '../interfaces/theme/theme';
 import {fontTypes} from '../../utils/enums';
+import {CustomTheme} from '../interfaces/theme/customTheme';
+import {DefaultTheme} from '@react-navigation/native';
 
 const SCREEN_HEIGHT_REFERENCE = 742;
 
@@ -12,7 +12,8 @@ const SCREEN_HEIGHT_REFERENCE = 742;
  * React context and controlled via a setting flag.
  */
 
-const lightTheme: Theme = {
+const lightTheme: CustomTheme = {
+  ...DefaultTheme,
   primary: colors.primary,
   secondary: colors.secondary,
   info: colors.info,
@@ -77,6 +78,17 @@ const lightTheme: Theme = {
     okTitle: '#FFFFFF',
     okBackground: colors.primary,
     borderColor: '#E4E4F1',
+  },
+  product: {
+    background: '#F5F5F5',
+    name: '#000000',
+    size: '#00000',
+    price: '#979797',
+    offerPrice: colors.primary,
+    rating: '#B80FEA',
+    shadowStart: '#44444440',
+    shadowEnd: '#eeeeeedd',
+    ripple: '#44444440',
   },
 };
 

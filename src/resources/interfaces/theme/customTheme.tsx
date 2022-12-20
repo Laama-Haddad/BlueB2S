@@ -1,4 +1,6 @@
-export interface Theme {
+import {Theme} from '@react-navigation/native';
+
+export interface CustomTheme extends Theme {
   primary: string;
   secondary: string;
   info: string;
@@ -63,5 +65,16 @@ export interface Theme {
     okBackground: string;
     okTitle: string;
     borderColor: string;
+  };
+  product: {
+    background: string;
+    name: string;
+    size: string;
+    price: string;
+    offerPrice: string;
+    rating: string;
+    shadowStart: string;
+    shadowEnd: string;
+    ripple: string;
   };
 }
