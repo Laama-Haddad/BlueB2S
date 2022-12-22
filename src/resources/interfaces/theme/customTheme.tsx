@@ -84,4 +84,7 @@ export interface CustomTheme extends Theme {
     shadowEnd: string;
     ripple: string;
   };
+  rating: {
+    star: string;
+  };
 }

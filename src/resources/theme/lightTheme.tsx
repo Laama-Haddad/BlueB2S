@@ -82,7 +82,7 @@ const lightTheme: CustomTheme = {
   product: {
     background: '#F5F5F5',
     name: '#000000',
-    size: '#00000',
+    size: '#000000',
     price: '#979797',
     offerPrice: colors.primary,
     rating: '#B80FEA',
@@ -96,6 +96,9 @@ const lightTheme: CustomTheme = {
     shadowStart: '#44444440',
     shadowEnd: '#eeeeeedd',
     ripple: '#44444440',
+  },
+  rating: {
+    star: colors.primary,
   },
 };
 

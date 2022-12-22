@@ -18,13 +18,21 @@ const styles = StyleSheet.create({
   rightContainer: {
     width: '60%',
     height: '100%',
-    paddingLeft: '10%',
+    marginLeft: '2%',
     justifyContent: 'space-between',
     paddingVertical: '2%',
+    alignItems: 'center',
   },
   image: {
     width: '100%',
     height: '100%',
+  },
+  topRightContainer: {
+    height: '30%',
+  },
+  bottomRightContainer: {
+    height: '45%',
+    justifyContent: 'center',
   },
   productNameText: {
     fontWeight: '700',
@@ -37,9 +45,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textDecorationLine: 'line-through',
     marginVertical: '2%',
+    marginLeft: '10%',
   },
   productOfferPriceText: {
     fontWeight: '600',
+    marginLeft: '10%',
   },
 });
 export default styles;

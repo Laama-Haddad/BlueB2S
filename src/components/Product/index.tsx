@@ -7,6 +7,7 @@ import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
 import {tr} from '../../resources/translations';
 import {Shadow} from 'react-native-shadow-2';
+import Rating from '../Rating';
 
 const Product = ({details, containerStyle}: ProductProps) => {
   const theme = useTheme();
@@ -32,37 +33,38 @@ const Product = ({details, containerStyle}: ProductProps) => {
           />
         </View>
         <View style={styles.rightContainer}>
-          <View style={{height: '30%'}}>
+          <View style={styles.topRightContainer}>
             <GenericText
               style={[
                 styles.productNameText,
-                {fontSize: theme.text.s9, color: theme.product.name},
+                {fontSize: theme.text.s10, color: theme.product.name},
               ]}>
               {details.name}
             </GenericText>
             <GenericText
               style={[
                 styles.productSizeText,
-                {fontSize: theme.text.s9, color: theme.product.size},
+                {fontSize: theme.text.s10, color: theme.product.size},
               ]}>
               {details.size}
             </GenericText>
           </View>
-          <View style={{height: '45%'}}>
+          <View style={styles.bottomRightContainer}>
             <GenericText
               style={[
                 styles.productOfferPriceText,
-                {fontSize: theme.text.s9, color: theme.product.offerPrice},
+                {fontSize: theme.text.s10, color: theme.product.offerPrice},
               ]}>
               {details.offerPrice} {tr('app.currency')}
             </GenericText>
             <GenericText
               style={[
                 styles.productPriceText,
-                {fontSize: theme.text.s9, color: theme.product.price},
+                {fontSize: theme.text.s10, color: theme.product.price},
               ]}>
               {details.price} {tr('app.currency')}
             </GenericText>
+            <Rating rating={details.rating} />
           </View>
         </View>
       </Ripple>
