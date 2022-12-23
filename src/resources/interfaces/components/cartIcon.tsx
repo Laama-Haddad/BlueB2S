@@ -1,9 +1,9 @@
 import {StyleProp} from 'react-native';
 
-export interface FavoriteProps {
+export interface CartIconProps {
   size?: number;
-  isFavorite?: boolean;
+  isAddedToCart?: boolean;
   disable?: boolean;
   style?: StyleProp<any> | StyleProp<any>[];
-  onToggleFavorite?: () => void;
+  onCartItemsChange?: () => void;
 }

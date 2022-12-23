@@ -108,6 +108,14 @@ const lightTheme: CustomTheme = {
     shadowStart: '#44444440',
     shadowEnd: '#eeeeeedd',
   },
+  cartIcon: {
+    addedCart: '#FFFFFF',
+    unAddedCart: '#000000',
+    addedBackground: colors.secondary,
+    unAddedBackground: '#FFFFFF',
+    shadowStart: '#44444440',
+    shadowEnd: '#eeeeeedd',
+  },
   home: {
     title: '#000000',
   },

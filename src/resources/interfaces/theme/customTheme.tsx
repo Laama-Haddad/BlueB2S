@@ -95,6 +95,14 @@ export interface CustomTheme extends Theme {
     shadowStart: string;
     shadowEnd: string;
   };
+  cartIcon: {
+    addedCart: string;
+    unAddedCart: string;
+    addedBackground: string;
+    unAddedBackground: string;
+    shadowStart: string;
+    shadowEnd: string;
+  };
   home: {
     title: string;
   };
