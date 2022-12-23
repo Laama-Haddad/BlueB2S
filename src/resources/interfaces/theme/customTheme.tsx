@@ -87,6 +87,14 @@ export interface CustomTheme extends Theme {
   rating: {
     star: string;
   };
+  favorite: {
+    favoriteHeart: string;
+    unFavoriteHeart: string;
+    favoriteBackground: string;
+    unFavoriteBackground: string;
+    shadowStart: string;
+    shadowEnd: string;
+  };
   home: {
     title: string;
   };

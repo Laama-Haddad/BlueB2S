@@ -100,6 +100,14 @@ const lightTheme: CustomTheme = {
   rating: {
     star: colors.primary,
   },
+  favorite: {
+    favoriteHeart: '#FFFFFF',
+    unFavoriteHeart: '#000000',
+    favoriteBackground: colors.secondary,
+    unFavoriteBackground: '#FFFFFF',
+    shadowStart: '#44444440',
+    shadowEnd: '#eeeeeedd',
+  },
   home: {
     title: '#000000',
   },
