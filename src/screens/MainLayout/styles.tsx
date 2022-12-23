@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   mainScrollView: {
-    paddingHorizontal: '5%',
+    paddingHorizontal: '3%',
     height: '100%',
     zIndex: 2,
   },

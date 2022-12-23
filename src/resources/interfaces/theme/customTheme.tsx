@@ -87,4 +87,7 @@ export interface CustomTheme extends Theme {
   rating: {
     star: string;
   };
+  home: {
+    title: string;
+  };
 }

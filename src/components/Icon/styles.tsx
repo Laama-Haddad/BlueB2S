@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {wdp} from '../../utils/responsive';
+import {getByScreenSize, wdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   center: {
@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   ripple: {
-    width: wdp(8),
-    height: wdp(8),
-    borderRadius: wdp(4),
+    width: getByScreenSize(wdp(8), wdp(6)),
+    height: getByScreenSize(wdp(8), wdp(6)),
+    borderRadius: getByScreenSize(wdp(4), wdp(3)),
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -17,7 +17,7 @@ const lightTheme: CustomTheme = {
   primary: colors.primary,
   secondary: colors.secondary,
   info: colors.info,
-  homeBackground: '#F2F2F2',
+  homeBackground: '#FFFFFF',
   fonts: {
     regular: fontTypes.regular,
     semi_bold: fontTypes.semi_bold,
@@ -99,6 +99,9 @@ const lightTheme: CustomTheme = {
   },
   rating: {
     star: colors.primary,
+  },
+  home: {
+    title: '#000000',
   },
 };
 

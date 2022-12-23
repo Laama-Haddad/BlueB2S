@@ -13,5 +13,13 @@
     "favorite": "Favorite",
     "cart": "My cart",
     "profile": "Profile"
+  },
+  "home": {
+    "searchPlaceHolder": "Search Our Products",
+    "featuredProducts": "FEATURED PRODUCTS",
+    "bestSeller": "BEST SELLER",
+    "exploreCategory": "EXPLORE CATEGORY",
+    "onSale": "ON SALE"
+
   }
 }

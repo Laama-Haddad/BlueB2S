@@ -23,16 +23,16 @@ const MainLayout = ({
   containerStyle,
   ...props
 }: MainLayoutProps) => {
-  const PageView = enableScroll
-    ? () => <View style={styles.mainView} />
-    : () => <Animated.ScrollView style={styles.mainScrollView} />;
+  // const PageView = enableScroll
+  //   ? () => <View style={styles.mainView} />
+  //   : () => <Animated.ScrollView style={styles.mainScrollView} />;
   const theme = useTheme();
   return (
     <View
       style={[
         styles.container,
         {
-          backgroundColor: !!backgroundColor
+          backgroundColor: backgroundColor
             ? backgroundColor
             : theme.homeBackground,
         },
@@ -41,7 +41,9 @@ const MainLayout = ({
       {backHeader && <Header showBackIcon ref={headerRef} {...props} />}
       {tabHeader && <Header showMenuIcon ref={headerRef} {...props} />}
       {customLeftHeader && <Header {...props} />}
-      <PageView style={noPadding && {paddingHorizontal: 0}} onScroll={onScroll}>
+      <Animated.ScrollView
+        style={[styles.mainScrollView, noPadding && {paddingHorizontal: 0}]}
+        onScroll={onScroll}>
         {keyboardAvoidScrollView ? (
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -62,9 +64,9 @@ const MainLayout = ({
         ) : (
           children
         )}
-        {tabPage && <View style={styles.spacer} />}
-        {bottomSpace && <View style={styles.bottomSpacer} />}
-      </PageView>
+      </Animated.ScrollView>
+      {tabPage && <View style={styles.spacer} />}
+      {bottomSpace && <View style={styles.bottomSpacer} />}
     </View>
   );
 };

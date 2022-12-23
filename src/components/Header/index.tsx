@@ -2,9 +2,11 @@ import React from 'react';
 import {Platform, StatusBar, Text, View} from 'react-native';
 import {HeaderProps} from '../../resources/interfaces/components/header';
 import styles from './styles';
-import LogoSVG from '../../resources/assets/svg/logo.svg';
+// @ts-ignore
+import HeaderLogoSVG from '../../resources/assets/svg/headerLogo.svg';
 import Icon from '../Icon';
 import {useTheme} from '@react-navigation/native';
+import {getByScreenSize} from '../../utils/responsive';
 
 function Header({
   noPaddingTop = false,
@@ -21,7 +23,7 @@ function Header({
   iconStyle,
   onBackIconPress,
   onMenuIconPress,
-  showLogo,
+  showLogo = true,
   headerStyle,
 }: HeaderProps) {
   const theme = useTheme();
@@ -65,7 +67,11 @@ function Header({
               name={'chevron-back'}
               type={'Ionicons'}
               color={backIconColor ? backIconColor : theme.icon.icon}
-              size={iconSize ? iconSize : theme.text.s6}
+              size={
+                iconSize
+                  ? iconSize
+                  : getByScreenSize(theme.text.s8, theme.text.s6)
+              }
               role={'button'}
               onPress={onBackPressed}
               style={iconStyle}
@@ -76,7 +82,11 @@ function Header({
               name={'menu'}
               type={'Ionicons'}
               color={menuIconColor ? menuIconColor : theme.icon.icon}
-              size={iconSize ? iconSize : theme.text.s8}
+              size={
+                iconSize
+                  ? iconSize
+                  : getByScreenSize(theme.text.s8, theme.text.s6)
+              }
               role={'button'}
               onPress={onMenuPressed}
               style={iconStyle}
@@ -97,7 +107,12 @@ function Header({
           </Text>
         </View>
         <View style={styles.rightContainer}>
-          {showLogo && <LogoSVG width={50} height={50} />}
+          {showLogo && (
+            <HeaderLogoSVG
+              width={getByScreenSize(50, 75)}
+              height={getByScreenSize(50, 75)}
+            />
+          )}
         </View>
       </View>
     </View>
