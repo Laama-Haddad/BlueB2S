@@ -116,6 +116,10 @@ const lightTheme: CustomTheme = {
     shadowStart: '#44444440',
     shadowEnd: '#eeeeeedd',
   },
+  animationPaginationDots: {
+    selectedDot: colors.primary,
+    unSelectedDot: '#D2D2D2',
+  },
   home: {
     title: '#000000',
   },

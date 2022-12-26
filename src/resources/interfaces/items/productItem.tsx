@@ -1,3 +1,4 @@
+import {ImageItem} from './imageItem';
 export interface ProductItem {
   id: number;
   name: string;
@@ -5,5 +6,7 @@ export interface ProductItem {
   offerPrice: number;
   size: string;
   imageUri: string;
+  images: ImageItem[];
   rating: number;
+  description: string;
 }

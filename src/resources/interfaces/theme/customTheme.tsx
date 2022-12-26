@@ -103,6 +103,10 @@ export interface CustomTheme extends Theme {
     shadowStart: string;
     shadowEnd: string;
   };
+  animationPaginationDots: {
+    selectedDot: string;
+    unSelectedDot: string;
+  };
   home: {
     title: string;
   };
