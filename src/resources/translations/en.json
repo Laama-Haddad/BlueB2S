@@ -20,6 +20,8 @@
     "bestSeller": "BEST SELLER",
     "exploreCategory": "EXPLORE CATEGORY",
     "onSale": "ON SALE"
-
+  },
+  "productDetails": {
+    "headerTitle": "Product Details"
   }
 }

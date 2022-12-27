@@ -123,6 +123,19 @@ const lightTheme: CustomTheme = {
   home: {
     title: '#000000',
   },
+  productDetails: {
+    title: '#1C6758',
+    description: '#5B5B5B',
+    shareIcon: colors.secondary,
+    shareIconBackground: '#FFFFFF',
+    shadowStart: '#44444440',
+    shadowEnd: '#eeeeeedd',
+    offerPrice: colors.primary,
+    price: '#979797',
+    buttonTitle: '#FFFFFF',
+    addButtonBackground: colors.secondary,
+    buyButtonBackground: colors.primary,
+  },
 };
 
 export default lightTheme;

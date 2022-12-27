@@ -9,7 +9,6 @@ import {CartIconProps} from '../../resources/interfaces/components/cartIcon';
 
 const CartIcon = ({
   size,
-  disable = false,
   onCartItemsChange,
   isAddedToCart = false,
   style,
@@ -25,10 +24,10 @@ const CartIcon = ({
       distance={2}
       startColor={theme.cartIcon.shadowStart}
       endColor={theme.cartIcon.shadowEnd}
-      offset={[0, 3]}>
+      offset={[0, 3]}
+      containerStyle={style}>
       <Ripple
         rippleContainerBorderRadius={getByScreenSize(6, 10)}
-        disabled={disable}
         style={[
           styles.container,
           {
@@ -36,7 +35,6 @@ const CartIcon = ({
               ? theme.cartIcon.addedBackground
               : theme.cartIcon.unAddedBackground,
           },
-          style,
         ]}
         onPress={onAddedToCart}>
         <Icon

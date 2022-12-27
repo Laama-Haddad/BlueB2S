@@ -9,7 +9,6 @@ import {Shadow} from 'react-native-shadow-2';
 
 const Favorite = ({
   size,
-  disable = false,
   onToggleFavorite,
   isFavorite = false,
   style,
@@ -25,10 +24,10 @@ const Favorite = ({
       distance={2}
       startColor={theme.favorite.shadowStart}
       endColor={theme.favorite.shadowEnd}
-      offset={[0, 3]}>
+      offset={[0, 3]}
+      containerStyle={style}>
       <Ripple
         rippleContainerBorderRadius={getByScreenSize(6, 10)}
-        disabled={disable}
         style={[
           styles.container,
           {
@@ -36,7 +35,6 @@ const Favorite = ({
               ? theme.favorite.favoriteBackground
               : theme.favorite.unFavoriteBackground,
           },
-          style,
         ]}
         onPress={onFavoriteChange}>
         <Icon

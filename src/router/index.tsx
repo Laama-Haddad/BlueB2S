@@ -10,6 +10,7 @@ import {StackItem} from '../resources/interfaces/items/stackItem';
 import GenericText from '../components/GenericText';
 import {tr} from '../resources/translations';
 import transitions from './transitions';
+import ProductDetails from '../screens/Content/ProductDetails';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -90,6 +91,11 @@ const screens: StackItem[] = [
     id: 0,
     name: 'homeTabs',
     component: HomeTabs,
+  },
+  {
+    id: 1,
+    name: 'productDetails',
+    component: ProductDetails,
   },
 ];
 const AppNavigator = () => {

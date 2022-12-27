@@ -19,7 +19,13 @@ const Home = ({navigation}: HomeProps) => {
   const [keyWord, setKeyword] = useState('');
   const theme = useTheme();
   const renderProductItem = ({item}) => {
-    return <Product details={item} containerStyle={{marginRight: 30}} />;
+    return (
+      <Product
+        details={item}
+        containerStyle={{marginRight: 30}}
+        onPress={() => navigation?.navigate('productDetails', {details: item})}
+      />
+    );
   };
   return (
     <MainLayout tabHeader bottomSpace>

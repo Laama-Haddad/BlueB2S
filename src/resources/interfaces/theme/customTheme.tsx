@@ -110,4 +110,17 @@ export interface CustomTheme extends Theme {
   home: {
     title: string;
   };
+  productDetails: {
+    title: string;
+    description: string;
+    shareIcon: string;
+    shareIconBackground: string;
+    shadowStart: string;
+    shadowEnd: string;
+    offerPrice: string;
+    price: string;
+    buttonTitle: string;
+    addButtonBackground: string;
+    buyButtonBackground: string;
+  };
 }

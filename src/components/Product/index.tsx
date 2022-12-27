@@ -9,7 +9,7 @@ import {tr} from '../../resources/translations';
 import {Shadow} from 'react-native-shadow-2';
 import Rating from '../Rating';
 
-const Product = ({details, containerStyle}: ProductProps) => {
+const Product = ({details, onPress, containerStyle}: ProductProps) => {
   const theme = useTheme();
   return (
     <Shadow
@@ -24,7 +24,8 @@ const Product = ({details, containerStyle}: ProductProps) => {
           styles.container,
           {backgroundColor: theme.product.background},
           containerStyle,
-        ]}>
+        ]}
+        onPress={onPress}>
         <View style={styles.leftContainer}>
           <Image
             source={{uri: details.imageUri}}
