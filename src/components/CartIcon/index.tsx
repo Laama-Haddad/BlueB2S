@@ -40,7 +40,7 @@ const CartIcon = ({
         <Icon
           type={'SVG'}
           name={'cart'}
-          size={size ? size : getByScreenSize(theme.text.s8, theme.text.s6)}
+          size={size ? size : getByScreenSize(theme.text.s8, theme.text.s4)}
           color={
             isAddedToCart
               ? theme.cartIcon.addedCart

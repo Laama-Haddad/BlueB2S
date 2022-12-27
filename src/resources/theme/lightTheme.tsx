@@ -135,7 +135,6 @@ const lightTheme: CustomTheme = {
     shadowEnd: '#eeeeeedd',
     offerPrice: colors.primary,
     price: '#979797',
-    buttonTitle: '#FFFFFF',
     addButtonBackground: colors.secondary,
     buyButtonBackground: colors.primary,
   },

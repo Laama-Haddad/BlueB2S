@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {getByScreenSize} from '../../../utils/responsive';
+import {getByScreenSize, hdp} from '../../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '100%',
+    height: hdp(84),
     paddingVertical: '3%',
   },
   topContainer: {},
@@ -14,18 +14,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: '4%',
   },
-  title: {
-    fontWeight: '600',
-  },
+  title: {},
   shareRipple: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: getByScreenSize(30, 40),
-    height: getByScreenSize(30, 40),
+    width: getByScreenSize(32, 50),
+    height: getByScreenSize(32, 50),
     borderRadius: getByScreenSize(6, 10),
   },
   description: {},
-  centerContainer: {},
+  centerContainer: {
+    marginTop: '2%',
+  },
   ratingContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -33,6 +33,14 @@ const styles = StyleSheet.create({
     paddingVertical: '5%',
     paddingLeft: '5%',
   },
-  bottomContainer: {},
+  bottomContainer: {
+    width: '100%',
+    position: 'absolute',
+    bottom: 10,
+    alignItems: 'center',
+  },
+  buttonStyle: {
+    marginTop: '5%',
+  },
 });
 export default styles;

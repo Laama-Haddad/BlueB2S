@@ -122,7 +122,6 @@ export interface CustomTheme extends Theme {
     shadowEnd: string;
     offerPrice: string;
     price: string;
-    buttonTitle: string;
     addButtonBackground: string;
     buyButtonBackground: string;
   };

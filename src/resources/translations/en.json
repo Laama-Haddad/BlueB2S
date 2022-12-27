@@ -22,6 +22,8 @@
     "onSale": "ON SALE"
   },
   "productDetails": {
-    "headerTitle": "Product Details"
+    "headerTitle": "Product Details",
+    "addToCart": "Add To Cart",
+    "buy": "Buy Now"
   }
 }

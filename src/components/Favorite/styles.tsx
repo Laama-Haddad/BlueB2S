@@ -4,8 +4,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: getByScreenSize(30, 40),
-    height: getByScreenSize(30, 40),
+    width: getByScreenSize(32, 50),
+    height: getByScreenSize(32, 50),
     borderRadius: getByScreenSize(6, 10),
   },
 });

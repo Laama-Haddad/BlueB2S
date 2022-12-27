@@ -40,7 +40,7 @@ const Favorite = ({
         <Icon
           name="hearto"
           type="AntDesign"
-          size={size ? size : getByScreenSize(theme.text.s7, theme.text.s5)}
+          size={size ? size : getByScreenSize(theme.text.s6, theme.text.s5)}
           color={
             isFavorite
               ? theme.favorite.favoriteHeart

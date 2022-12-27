@@ -15,7 +15,11 @@ const Button = ({
   return (
     <Ripple
       rippleContainerBorderRadius={6}
-      style={[styles.ripple, {backgroundColor: backgroundColor}]}
+      style={[
+        styles.ripple,
+        {backgroundColor: backgroundColor},
+        containerStyle,
+      ]}
       onPress={onPress}>
       <GenericText
         style={[
@@ -24,7 +28,6 @@ const Button = ({
             fontSize: theme.text.s7,
             color: titleColor ? titleColor : theme.button.title,
           },
-          containerStyle,
         ]}>
         {title}
       </GenericText>

@@ -14,11 +14,18 @@ import AnimatedPaginationDots from '../../../components/AnimatedPaginationDots';
 import Rating from '../../../components/Rating';
 import Favorite from '../../../components/Favorite';
 import CartIcon from '../../../components/CartIcon';
+import Button from '../../../components/Button';
 
 const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
   const theme = useTheme();
   const {description, images, name, offerPrice, price, rating, size} =
     route?.params.details;
+  const changeFavoriteList = () => {
+    console.log('favorite');
+  };
+  const changeCartList = () => {
+    console.log('cart list');
+  };
   return (
     <MainLayout
       backHeader
@@ -53,7 +60,7 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
                 <Icon
                   type={'Entypo'}
                   name={'share'}
-                  size={getByScreenSize(theme.text.s8, theme.text.s6)}
+                  size={getByScreenSize(theme.text.s6, theme.text.s5)}
                   color={theme.productDetails.shareIcon}
                 />
               </Ripple>
@@ -73,20 +80,22 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
         <View style={styles.centerContainer}>
           <Favorite
             isFavorite={false}
-            onToggleFavorite={() => console.log('add favorite')}
+            onToggleFavorite={() => changeFavoriteList()}
             style={{
               position: 'absolute',
               left: 20,
               top: 20,
+              zIndex: 1,
             }}
           />
           <CartIcon
             isAddedToCart={true}
-            onCartItemsChange={() => console.log('add to cart')}
+            onCartItemsChange={() => changeCartList()}
             style={{
               position: 'absolute',
               right: 20,
               top: 20,
+              zIndex: 1,
             }}
           />
           <AnimatedPaginationDots data={images} />
@@ -115,7 +124,20 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
             />
           </View>
         </View>
-        <View style={styles.bottomContainer} />
+        <View style={styles.bottomContainer}>
+          <Button
+            title={tr('productDetails.addToCart')}
+            backgroundColor={theme.productDetails.addButtonBackground}
+            onPress={() => {}}
+            containerStyle={styles.buttonStyle}
+          />
+          <Button
+            title={tr('productDetails.buy')}
+            backgroundColor={theme.productDetails.buyButtonBackground}
+            onPress={() => {}}
+            containerStyle={styles.buttonStyle}
+          />
+        </View>
       </View>
     </MainLayout>
   );
