@@ -120,6 +120,9 @@ const lightTheme: CustomTheme = {
     selectedDot: colors.primary,
     unSelectedDot: '#D2D2D2',
   },
+  button: {
+    title: '#FFFFFF',
+  },
   home: {
     title: '#000000',
   },

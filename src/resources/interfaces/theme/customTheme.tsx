@@ -107,6 +107,9 @@ export interface CustomTheme extends Theme {
     selectedDot: string;
     unSelectedDot: string;
   };
+  button: {
+    title: string;
+  };
   home: {
     title: string;
   };
