@@ -139,4 +139,10 @@ export interface CustomTheme extends Theme {
     addButtonBackground: string;
     buyButtonBackground: string;
   };
+  cart: {
+    border: string;
+    totalPrice: string;
+    shoppingBackground: string;
+    checkOutBackground: string;
+  };
 }

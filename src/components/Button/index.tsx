@@ -7,6 +7,7 @@ import {useTheme} from '@react-navigation/native';
 const Button = ({
   title,
   titleColor,
+  titleStyle,
   backgroundColor,
   containerStyle,
   onPress,
@@ -28,6 +29,7 @@ const Button = ({
             fontSize: theme.text.s7,
             color: titleColor ? titleColor : theme.button.title,
           },
+          titleStyle,
         ]}>
         {title}
       </GenericText>

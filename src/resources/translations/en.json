@@ -28,9 +28,8 @@
   },
   "cart": {
     "headerTitle": "My Cart",
-    "all": "All",
     "total": "Total",
-    "continue": "Continue Shopping",
+    "shopping": "Continue Shopping",
     "checkOut": "Check Out"
   }
 }

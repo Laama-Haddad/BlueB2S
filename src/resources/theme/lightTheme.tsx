@@ -152,6 +152,12 @@ const lightTheme: CustomTheme = {
     addButtonBackground: colors.secondary,
     buyButtonBackground: colors.primary,
   },
+  cart: {
+    border: '#E6E6E6',
+    totalPrice: '#000000',
+    shoppingBackground: colors.secondary,
+    checkOutBackground: colors.primary,
+  },
 };
 
 export default lightTheme;
