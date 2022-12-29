@@ -123,6 +123,20 @@ const lightTheme: CustomTheme = {
   button: {
     title: '#FFFFFF',
   },
+  cartItem: {
+    containerBackground: '#FFFFFF',
+    containerBorder: '#E6E6E6',
+    title: '#000000',
+    price: colors.primary,
+    close: '#000000',
+    minus: '#000000',
+    plus: colors.primary,
+    quantityBorder: '#000000',
+    quantity: '#000000',
+    minusBackground: '#D2D2D2',
+    shadowStart: '#00000016',
+    shadowEnd: '#ffffff',
+  },
   home: {
     title: '#000000',
   },

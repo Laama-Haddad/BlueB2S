@@ -110,6 +110,20 @@ export interface CustomTheme extends Theme {
   button: {
     title: string;
   };
+  cartItem: {
+    containerBackground: string;
+    containerBorder: string;
+    title: string;
+    price: string;
+    close: string;
+    minus: string;
+    plus: string;
+    quantityBorder: string;
+    quantity: string;
+    minusBackground: string;
+    shadowStart: string;
+    shadowEnd: string;
+  };
   home: {
     title: string;
   };

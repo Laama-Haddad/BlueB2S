@@ -48,6 +48,7 @@ const Icon = ({
   role,
   loading = false,
   background,
+  disabled = false,
   ...props
 }: IconProps) => {
   const theme = useTheme();
@@ -264,10 +265,14 @@ const Icon = ({
         rippleContainerBorderRadius={24}
         style={[
           styles.ripple,
-          {backgroundColor: !!background ? background : theme.icon.background},
+          {
+            backgroundColor: background ? background : theme.icon.background,
+            borderColor: props.color,
+          },
           style,
         ]}
         onPress={onPress}
+        disabled={disabled}
         {...props}>
         {icon()}
       </Ripple>
