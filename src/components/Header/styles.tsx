@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   rightContainer: {width: wdp(10)},
   title: {
     paddingHorizontal: '2%',
+    fontWeight: '700',
   },
 });
 export default styles;

@@ -25,5 +25,12 @@
     "headerTitle": "Product Details",
     "addToCart": "Add To Cart",
     "buy": "Buy Now"
+  },
+  "cart": {
+    "headerTitle": "My Cart",
+    "all": "All",
+    "total": "Total",
+    "continue": "Continue Shopping",
+    "checkOut": "Check Out"
   }
 }

@@ -11,6 +11,7 @@ import GenericText from '../components/GenericText';
 import {tr} from '../resources/translations';
 import transitions from './transitions';
 import ProductDetails from '../screens/Content/ProductDetails';
+import Cart from '../screens/Content/Cart';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -42,7 +43,7 @@ const tabsScreens: TabItem[] = [
   {
     id: 3,
     name: 'cart',
-    component: Home,
+    component: Cart,
     icon: (color, size) => (
       <Icon type={'SVG'} name={'cart'} color={color} size={size} />
     ),

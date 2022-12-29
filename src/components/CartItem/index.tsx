@@ -6,7 +6,8 @@ import {CartItemProps} from '../../resources/interfaces/components/cartItem';
 import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
 import {tr} from '../../resources/translations';
-import {Shadow} from 'react-native-shadow-2';
+import {getByScreenSize} from "../../utils/responsive";
+
 const CartItem = ({
   productId,
   imageUri,
@@ -27,101 +28,104 @@ const CartItem = ({
   };
   const theme = useTheme();
   return (
-    <Shadow
-      distance={1}
-      startColor={theme.cartItem.shadowStart}
-      endColor={theme.cartItem.shadowEnd}
-      offset={[0, 2]}>
-      <View
-        style={[
-          styles.container,
-          {
-            borderColor: theme.cartItem.containerBorder,
-            backgroundColor: theme.cartItem.containerBackground,
-          },
-          containerStyle,
-        ]}>
-        <View style={styles.leftContainer}>
-          <Image
-            source={{uri: imageUri}}
-            resizeMode={'contain'}
-            style={styles.image}
-          />
-        </View>
-        <View style={styles.centerContainer}>
+    // <Shadow
+    //   distance={1}
+    //   startColor={theme.cartItem.shadowStart}
+    //   endColor={theme.cartItem.shadowEnd}
+    //   offset={[0, 2]}>
+    <View
+      style={[
+        styles.container,
+        {
+          borderColor: theme.cartItem.containerBorder,
+          backgroundColor: theme.cartItem.containerBackground,
+        },
+        containerStyle,
+      ]}>
+      <View style={styles.leftContainer}>
+        <Image
+          source={{uri: imageUri}}
+          resizeMode={'contain'}
+          style={styles.image}
+        />
+      </View>
+      <View style={styles.centerContainer}>
+        <GenericText
+          style={[
+            styles.title,
+            {color: theme.cartItem.title, fontSize: theme.text.s8},
+          ]}>
+          {title} {size}
+        </GenericText>
+        <GenericText
+          style={[
+            styles.price,
+            {color: theme.cartItem.price, fontSize: theme.text.s8},
+          ]}>
+          {price} {tr('app.currency')}
+        </GenericText>
+      </View>
+      <View style={styles.rightContainer}>
+        <Icon
+          name={'close'}
+          type={'FontAwesome'}
+          role={'button'}
+          size={getByScreenSize(theme.text.s10, theme.text.s9)}
+          color={theme.cartItem.close}
+          style={{borderWidth: 2}}
+          onPress={() => console.log('delete')}
+        />
+        <View style={styles.quantityContainer}>
+          <View
+            style={[
+              styles.circle,
+              {
+                borderColor: theme.cartItem.quantityBorder,
+                backgroundColor: theme.cartItem.minusBackground,
+              },
+            ]}>
+            <Icon
+              disabled={quantity === 0}
+              type={'FontAwesome'}
+              name={'minus'}
+              role={'button'}
+              color={theme.cartItem.minus}
+              style={{borderWidth: 2}}
+              size={getByScreenSize(theme.text.s10, theme.text.s9)}
+              onPress={() => {
+                onChange(-1);
+              }}
+            />
+          </View>
           <GenericText
             style={[
-              styles.title,
-              {color: theme.cartItem.title, fontSize: theme.text.s8},
+              styles.quantity,
+              {color: theme.cartItem.quantity, fontSize: theme.text.s7},
             ]}>
-            {title} {size}
+            {quantity}
           </GenericText>
-          <GenericText
+          <View
             style={[
-              styles.price,
-              {color: theme.cartItem.price, fontSize: theme.text.s8},
+              styles.circle,
+              {borderColor: theme.cartItem.quantityBorder},
             ]}>
-            {price} {tr('app.currency')}
-          </GenericText>
-        </View>
-        <View style={styles.rightContainer}>
-          <Icon
-            name={'close'}
-            type={'FontAwesome'}
-            role={'button'}
-            size={theme.text.s9}
-            color={theme.cartItem.close}
-            style={{borderWidth: 2}}
-            onPress={() => console.log('delete')}
-          />
-          <View style={styles.quantityContainer}>
-            <View
-              style={[
-                styles.circle,
-                {
-                  borderColor: theme.cartItem.quantityBorder,
-                  backgroundColor: theme.cartItem.minusBackground,
-                },
-              ]}>
-              <Icon
-                disabled={quantity === 0}
-                type={'FontAwesome'}
-                name={'minus'}
-                role={'button'}
-                color={theme.cartItem.minus}
-                style={{borderWidth: 2}}
-                size={theme.text.s9}
-                onPress={() => {
-                  onChange(-1);
-                }}
-              />
-            </View>
-            <GenericText
-              style={[styles.quantity, {color: theme.cartItem.quantity}]}>
-              {quantity}
-            </GenericText>
-            <View
-              style={[
-                styles.circle,
-                {borderColor: theme.cartItem.quantityBorder},
-              ]}>
-              <Icon
-                type={'FontAwesome'}
-                name={'plus'}
-                role={'button'}
-                color={theme.cartItem.plus}
-                style={{borderWidth: 2}}
-                size={theme.text.s9}
-                onPress={() => {
-                  setQuantity(quantity + 1);
-                  onChange(+1);
-                }}
-              />
-            </View>
+            <Icon
+              type={'FontAwesome'}
+              name={'plus'}
+              role={'button'}
+              color={theme.cartItem.plus}
+              style={{borderWidth: 2}}
+              size={getByScreenSize(theme.text.s10, theme.text.s9)}
+              onPress={() => {
+                setQuantity(quantity + 1);
+                onChange(+1);
+              }}
+            />
           </View>
         </View>
       </View>
-    </Shadow>
+    </View>
+    // </Shadow>
   );
 };
 export default CartItem;

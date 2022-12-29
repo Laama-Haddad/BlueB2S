@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   ripple: {
-    width: getByScreenSize(wdp(5), wdp(8)),
-    height: getByScreenSize(wdp(5), wdp(8)),
-    borderRadius: getByScreenSize(wdp(2.5), wdp(4)),
+    width: wdp(5),
+    height: wdp(5),
+    borderRadius: wdp(2.5),
     alignItems: 'center',
     justifyContent: 'center',
   },
