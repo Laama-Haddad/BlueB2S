@@ -42,7 +42,14 @@ const Home = ({navigation}: HomeProps) => {
             width={getByScreenSize(30, 50)}
             height={getByScreenSize(30, 50)}
           />
-          <GenericText style={[styles.title, {color: theme.home.title}]}>
+          <GenericText
+            style={[
+              styles.title,
+              {
+                color: theme.home.title,
+                fontSize: getByScreenSize(theme.text.s9, theme.text.s7),
+              },
+            ]}>
             {tr('home.featuredProducts')}
           </GenericText>
         </View>
@@ -62,7 +69,14 @@ const Home = ({navigation}: HomeProps) => {
             width={getByScreenSize(30, 50)}
             height={getByScreenSize(30, 50)}
           />
-          <GenericText style={[styles.title, {color: theme.home.title}]}>
+          <GenericText
+            style={[
+              styles.title,
+              {
+                color: theme.home.title,
+                fontSize: getByScreenSize(theme.text.s9, theme.text.s7),
+              },
+            ]}>
             {tr('home.bestSeller')}
           </GenericText>
         </View>
@@ -82,7 +96,14 @@ const Home = ({navigation}: HomeProps) => {
             width={getByScreenSize(30, 50)}
             height={getByScreenSize(30, 50)}
           />
-          <GenericText style={[styles.title, {color: theme.home.title}]}>
+          <GenericText
+            style={[
+              styles.title,
+              {
+                color: theme.home.title,
+                fontSize: getByScreenSize(theme.text.s9, theme.text.s7),
+              },
+            ]}>
             {tr('home.exploreCategory')}
           </GenericText>
         </View>
@@ -100,7 +121,14 @@ const Home = ({navigation}: HomeProps) => {
             width={getByScreenSize(30, 50)}
             height={getByScreenSize(30, 50)}
           />
-          <GenericText style={[styles.title, {color: theme.home.title}]}>
+          <GenericText
+            style={[
+              styles.title,
+              {
+                color: theme.home.title,
+                fontSize: getByScreenSize(theme.text.s9, theme.text.s7),
+              },
+            ]}>
             {tr('home.onSale')}
           </GenericText>
         </View>

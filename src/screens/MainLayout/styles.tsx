@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getByScreenSize, hdp} from '../../utils/responsive';
+import {getByScreenSize, hdp, wdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,6 +22,15 @@ const styles = StyleSheet.create({
   },
   bottomSpacer: {
     padding: hdp(7.2),
+  },
+  image: {
+    width: wdp(20),
+    height: wdp(20),
+    borderRadius: wdp(10),
+    borderWidth: 3,
+    position: 'absolute',
+    top: getByScreenSize(hdp(5), hdp(4)),
+    right: wdp(9),
   },
 });
 export default styles;

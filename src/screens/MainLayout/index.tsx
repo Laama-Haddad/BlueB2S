@@ -1,10 +1,17 @@
 import React from 'react';
 import {MainLayoutProps} from '../../resources/interfaces/screens/mainLayout';
 import styles from './styles';
-import {Animated, KeyboardAvoidingView, Platform, View} from 'react-native';
+import {
+  Animated,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+} from 'react-native';
 import Header from '../../components/Header';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useTheme} from '@react-navigation/native';
+import {user} from '../../resources/staticData/user';
 
 const MainLayout = ({
   tabHeader = false,
@@ -21,6 +28,7 @@ const MainLayout = ({
   children,
   headerRef,
   containerStyle,
+  showProfilePic = false,
   ...props
 }: MainLayoutProps) => {
   // const PageView = enableScroll
@@ -40,6 +48,13 @@ const MainLayout = ({
       ]}>
       {backHeader && <Header showBackIcon ref={headerRef} {...props} />}
       {tabHeader && <Header showMenuIcon ref={headerRef} {...props} />}
+      {showProfilePic && (
+        <Image
+          source={{uri: user.profileImage}}
+          resizeMode={'contain'}
+          style={[styles.image, {borderColor: theme.homeBackground}]}
+        />
+      )}
       {customLeftHeader && <Header {...props} />}
       <Animated.ScrollView
         showsVerticalScrollIndicator={false}

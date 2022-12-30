@@ -3,7 +3,7 @@ import {getByScreenSize, hdp, wdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: getByScreenSize(hdp(75),hdp(73)),
+    height: getByScreenSize(hdp(79), hdp(76)),
   },
   titleContainer: {
     alignItems: 'center',
@@ -16,22 +16,13 @@ const styles = StyleSheet.create({
   subTitle: {
     fontWeight: '700',
   },
-  image: {
-    width: wdp(20),
-    height: wdp(20),
-    borderRadius: wdp(10),
-    borderWidth: 3,
-    position: 'absolute',
-    top: -wdp(20),
-    right: 10,
-    zIndex: 1,
-  },
+
   category: {
     fontWeight: '700',
-    marginVertical: getByScreenSize(hdp(2),hdp(1)),
+    marginVertical: getByScreenSize(hdp(2), hdp(1)),
   },
   detailsContainer: {
-    borderWidth: getByScreenSize( 1,2),
+    borderWidth: getByScreenSize(1, 2),
     borderRadius: 5,
     paddingBottom: '3%',
   },

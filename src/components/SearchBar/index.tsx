@@ -22,7 +22,7 @@ const SearchBar = ({
       <Icon
         name={'search'}
         type={'FontAwesome'}
-        size={getByScreenSize(theme.text.s7, theme.text.s5)}
+        size={theme.text.s7}
         color={theme.searchBar.icon}
         style={styles.icon}
       />
@@ -31,6 +31,7 @@ const SearchBar = ({
           {
             fontSize: getByScreenSize(theme.text.s10, theme.text.s9),
             color: theme.searchBar.value,
+            paddingBottom: getByScreenSize(8, 10),
           },
           styles.textInput,
           textInputStyle,

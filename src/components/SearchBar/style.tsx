@@ -5,15 +5,16 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: getByScreenSize(35, 45),
+    height: getByScreenSize(35, 55),
     width: '100%',
     borderRadius: 25,
-    borderWidth: 1,
+    borderWidth: getByScreenSize(1, 2),
   },
   textInput: {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    fontWeight: '600',
   },
   icon: {
     position: 'absolute',

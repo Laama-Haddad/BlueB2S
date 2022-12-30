@@ -9,7 +9,7 @@ import {tr} from '../../../resources/translations';
 import {useTheme} from '@react-navigation/native';
 import Button from '../../../components/Button';
 import Icon from '../../../components/Icon';
-import {getByScreenSize} from '../../../utils/responsive';
+import {getByScreenSize, hdp} from '../../../utils/responsive';
 
 const mandatoryFields = ['fullName', 'mobile', 'email', 'address'];
 const Profile = ({navigation}: ProfileProps) => {
@@ -46,7 +46,7 @@ const Profile = ({navigation}: ProfileProps) => {
     setEditable(false);
   };
   return (
-    <MainLayout tabHeader>
+    <MainLayout tabHeader showLogo={false} showProfilePic={true}>
       <View style={styles.container}>
         <View style={styles.titleContainer}>
           <GenericText
@@ -63,11 +63,6 @@ const Profile = ({navigation}: ProfileProps) => {
             ]}>
             {tr('profile.subTitle')}
           </GenericText>
-          <Image
-            source={{uri: user.profileImage}}
-            resizeMode={'contain'}
-            style={styles.image}
-          />
         </View>
         <GenericText
           style={[
@@ -213,7 +208,7 @@ const Profile = ({navigation}: ProfileProps) => {
             <Icon
               name={'infocirlce'}
               type={'AntDesign'}
-              size={theme.text.s6}
+              size={theme.text.s7}
               color={theme.profile.icon}
             />
             <GenericText
@@ -235,6 +230,7 @@ const Profile = ({navigation}: ProfileProps) => {
               type={'MaterialCommunityIcons'}
               size={theme.text.s6}
               color={theme.profile.icon}
+              style={{marginLeft: -3}}
             />
             <GenericText
               style={[
@@ -251,7 +247,7 @@ const Profile = ({navigation}: ProfileProps) => {
             <Icon
               name={'phone-alt'}
               type={'FontAwesome5'}
-              size={theme.text.s6}
+              size={theme.text.s7}
               color={theme.profile.icon}
             />
             <GenericText
@@ -272,7 +268,7 @@ const Profile = ({navigation}: ProfileProps) => {
           onPress={() => {}}
           containerStyle={{
             position: 'absolute',
-            bottom: getByScreenSize(10, 5),
+            bottom: getByScreenSize(hdp(3), hdp(3)),
           }}
         />
       </View>

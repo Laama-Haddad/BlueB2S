@@ -6,7 +6,7 @@ import styles from './styles';
 import HeaderLogoSVG from '../../resources/assets/svg/headerLogo.svg';
 import Icon from '../Icon';
 import {useTheme} from '@react-navigation/native';
-import {getByScreenSize} from '../../utils/responsive';
+import {getByScreenSize, wdp} from '../../utils/responsive';
 
 function Header({
   noPaddingTop = false,
@@ -47,7 +47,7 @@ function Header({
         style={[
           styles.container,
           {
-            backgroundColor: !!headerBackground
+            backgroundColor: headerBackground
               ? headerBackground
               : theme.header.background,
           },
@@ -74,7 +74,14 @@ function Header({
               }
               role={'button'}
               onPress={onBackPressed}
-              style={iconStyle}
+              style={[
+                {
+                  width: getByScreenSize(wdp(7), wdp(6)),
+                  height: getByScreenSize(wdp(7), wdp(6)),
+                  borderRadius: getByScreenSize(wdp(3.5), wdp(3)),
+                },
+                iconStyle,
+              ]}
             />
           )}
           {showMenuIcon && (
@@ -89,7 +96,14 @@ function Header({
               }
               role={'button'}
               onPress={onMenuPressed}
-              style={iconStyle}
+              style={[
+                {
+                  width: getByScreenSize(wdp(7), wdp(6)),
+                  height: getByScreenSize(wdp(7), wdp(6)),
+                  borderRadius: getByScreenSize(wdp(3.5), wdp(3)),
+                },
+                iconStyle,
+              ]}
             />
           )}
         </View>

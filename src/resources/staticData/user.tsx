@@ -4,7 +4,7 @@ export const user = {
   password: 'B2S',
   confirmPassword: 'B2S',
   mobile: '+460700421603',
-  profileImage: 'https://i.postimg.cc/3w3NpZDV/product1.png',
+  profileImage: 'https://i.postimg.cc/DybgRZF1/profile.jpg',
   balance: 1200,
   jobPosition: 'Basic Member',
   address: 'Butgatan, 16B, LGH 6006,\n61201, StockHolm, Sweden.',
