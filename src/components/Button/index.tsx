@@ -11,6 +11,8 @@ const Button = ({
   backgroundColor,
   containerStyle,
   onPress,
+  disabled = false,
+  ...props
 }: ButtonProps) => {
   const theme = useTheme();
   return (
@@ -18,10 +20,12 @@ const Button = ({
       rippleContainerBorderRadius={6}
       style={[
         styles.ripple,
-        {backgroundColor: backgroundColor},
+        {backgroundColor: disabled ? `${backgroundColor}66` : backgroundColor},
         containerStyle,
       ]}
-      onPress={onPress}>
+      onPress={onPress}
+      disabled={disabled}
+      {...props}>
       <GenericText
         style={[
           styles.title,

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {hdp} from '../../utils/responsive';
+import {getByScreenSize, hdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   mainScrollView: {
-    paddingHorizontal: '3%',
+    paddingHorizontal: '5%',
+    paddingVertical: getByScreenSize(hdp(1.2), hdp(1)),
     height: '100%',
     zIndex: 2,
   },

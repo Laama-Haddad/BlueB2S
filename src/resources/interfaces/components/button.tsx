@@ -7,4 +7,5 @@ export interface ButtonProps {
   backgroundColor: string;
   containerStyle?: StyleProp<any> | StyleProp<any>[];
   onPress: () => void;
+  disabled?: boolean;
 }

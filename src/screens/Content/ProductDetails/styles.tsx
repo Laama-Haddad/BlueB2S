@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: hdp(84),
-    paddingVertical: '3%',
   },
   topContainer: {},
   titleContainer: {

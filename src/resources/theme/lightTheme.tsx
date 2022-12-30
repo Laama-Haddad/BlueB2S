@@ -158,6 +158,19 @@ const lightTheme: CustomTheme = {
     shoppingBackground: colors.secondary,
     checkOutBackground: colors.primary,
   },
+  profile: {
+    title: colors.primary,
+    subTitle: '#A7A3A7',
+    containerBorder: '#E6E6E6',
+    textInputBorder: '#000000',
+    imageBorder: '#FFFFFF',
+    category: '#000000',
+    label: '#9B9B9B',
+    text: '#000000',
+    icon: '#000000',
+    editAccountBackground: colors.primary,
+    logOutBackground: '#D80027',
+  },
 };
 
 export default lightTheme;

@@ -12,6 +12,7 @@ import {tr} from '../resources/translations';
 import transitions from './transitions';
 import ProductDetails from '../screens/Content/ProductDetails';
 import Cart from '../screens/Content/Cart';
+import Profile from '../screens/Content/Profile';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -51,7 +52,7 @@ const tabsScreens: TabItem[] = [
   {
     id: 3,
     name: 'profile',
-    component: Home,
+    component: Profile,
     icon: (color, size) => (
       <Icon type={'Octicons'} name={'person'} color={color} size={size} />
     ),

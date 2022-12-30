@@ -31,5 +31,26 @@
     "total": "Total",
     "shopping": "Continue Shopping",
     "checkOut": "Check Out"
+  },
+  "profile": {
+    "headerTitle": "My Profile",
+    "title": "Hello",
+    "subTitle": "Good To See You",
+    "personalDetails": "Personal Details",
+    "fullName": "Full Name",
+    "address": "Address",
+    "mobile": "Mobile",
+    "email": "Email",
+    "editAccount": "Edit Account",
+    "save": "Save",
+    "support": "Support",
+    "conditions": "General Conditions",
+    "policy": "Privacy Policy",
+    "contact": "Contact Us",
+    "logOut": "Log Out",
+    "fullNamePlaceHolder":"Enter Your FullName",
+    "addressPlaceHolder": "Enter Your Address",
+    "mobilePlaceHolder": "Enter Your Mobile",
+    "emailPlaceHolder": "Enter Your Email"
   }
 }
