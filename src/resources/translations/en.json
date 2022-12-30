@@ -52,5 +52,10 @@
     "addressPlaceHolder": "Enter Your Address",
     "mobilePlaceHolder": "Enter Your Mobile",
     "emailPlaceHolder": "Enter Your Email"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Privacy Policy",
+    "title": "B2S shop privacy policy and  terms and conditions\n (refund and cancellation)",
+    "description": "When you visit Book2Shine.com, we collect information about all \nvisits to our website. We use it to improve your user experience and \nour marketing.\n\nOn this page you can read about:\n\n• what information we collect\n• how we process this information\n• what we do with it\n• who has access to it\n• how you can contact us regarding the policy\n\nThe collection of information on Book2Shine.com takes place within \nthe framework of the existing legislation. The personal data processed \nby Book2Shine.com takes place in accordance with current legislation \nand the EU's Data Protection Regulation (GDPR).\n\nBook2Shine.com automatically tracks IP address and data when you \nvisit our website. Likewise, it is registered if and when you log in or\n subscribe. This is done to make your subsequent visits much easier.\n\nIn this context, we use various analysis tools such as Google Analytics, \nto collect statistics on how Book2Shine.com is used and to make your \nexperience even better.\n"
   }
 }

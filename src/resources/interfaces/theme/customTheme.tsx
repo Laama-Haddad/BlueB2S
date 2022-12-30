@@ -1,5 +1,5 @@
 import {Theme} from '@react-navigation/native';
-import {colors} from "../../theme/colors";
+import {colors} from '../../theme/colors';
 
 export interface CustomTheme extends Theme {
   primary: string;
@@ -158,5 +158,8 @@ export interface CustomTheme extends Theme {
     icon: string;
     editAccountBackground: string;
     logOutBackground: string;
+  };
+  privacyPolicy: {
+    text: string;
   };
 }

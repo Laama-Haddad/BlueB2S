@@ -209,7 +209,7 @@ const Profile = ({navigation}: ProfileProps) => {
             styles.detailsContainer,
             {borderColor: theme.profile.containerBorder, paddingTop: '3%'},
           ]}>
-            <TouchableOpacity style={styles.optionContainer} onPress={()=>{}}>
+          <TouchableOpacity style={styles.optionContainer} onPress={() => {}}>
             <Icon
               name={'infocirlce'}
               type={'AntDesign'}
@@ -227,7 +227,9 @@ const Profile = ({navigation}: ProfileProps) => {
               {tr('profile.conditions')}
             </GenericText>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.optionContainer} onPress={()=>{}}>
+          <TouchableOpacity
+            style={styles.optionContainer}
+            onPress={() => navigation?.navigate('privacyPolicy')}>
             <Icon
               name={'lock-outline'}
               type={'MaterialCommunityIcons'}
@@ -245,7 +247,7 @@ const Profile = ({navigation}: ProfileProps) => {
               {tr('profile.policy')}
             </GenericText>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.optionContainer} onPress={()=>{}}>
+          <TouchableOpacity style={styles.optionContainer} onPress={() => {}}>
             <Icon
               name={'phone-alt'}
               type={'FontAwesome5'}

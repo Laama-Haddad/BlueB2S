@@ -171,6 +171,9 @@ const lightTheme: CustomTheme = {
     editAccountBackground: colors.primary,
     logOutBackground: '#D80027',
   },
+  privacyPolicy: {
+    text: '#000000',
+  },
 };
 
 export default lightTheme;

@@ -13,6 +13,7 @@ import transitions from './transitions';
 import ProductDetails from '../screens/Content/ProductDetails';
 import Cart from '../screens/Content/Cart';
 import Profile from '../screens/Content/Profile';
+import PrivacyPolicy from '../screens/Content/PrivacyPolicy';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -98,6 +99,11 @@ const screens: StackItem[] = [
     id: 1,
     name: 'productDetails',
     component: ProductDetails,
+  },
+  {
+    id: 2,
+    name: 'privacyPolicy',
+    component: PrivacyPolicy,
   },
 ];
 const AppNavigator = () => {

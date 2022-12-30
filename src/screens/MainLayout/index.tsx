@@ -42,6 +42,7 @@ const MainLayout = ({
       {tabHeader && <Header showMenuIcon ref={headerRef} {...props} />}
       {customLeftHeader && <Header {...props} />}
       <Animated.ScrollView
+        showsVerticalScrollIndicator={false}
         style={[styles.mainScrollView, noPadding && {paddingHorizontal: 0}]}
         onScroll={onScroll}>
         {keyboardAvoidScrollView ? (
