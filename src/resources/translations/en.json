@@ -26,6 +26,9 @@
     "addToCart": "Add To Cart",
     "buy": "Buy Now"
   },
+  "favorite": {
+    "headerTitle": "Favorite"
+  },
   "cart": {
     "headerTitle": "My Cart",
     "total": "Total",

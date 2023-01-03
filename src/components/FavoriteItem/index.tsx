@@ -41,11 +41,13 @@ const FavoriteItem = ({
         containerStyle,
       ]}
       onPress={onPress}>
-      <Image
-        source={{uri: imageUri}}
-        resizeMode={'contain'}
-        style={styles.image}
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          source={{uri: imageUri}}
+          resizeMode={'contain'}
+          style={styles.image}
+        />
+      </View>
       <View style={styles.middleContainer}>
         <GenericText
           style={[

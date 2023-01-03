@@ -14,6 +14,7 @@ import ProductDetails from '../screens/Content/ProductDetails';
 import Cart from '../screens/Content/Cart';
 import Profile from '../screens/Content/Profile';
 import PrivacyPolicy from '../screens/Content/PrivacyPolicy';
+import Favorite from '../screens/Content/Favorite';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -37,7 +38,7 @@ const tabsScreens: TabItem[] = [
   {
     id: 2,
     name: 'favorite',
-    component: Home,
+    component: Favorite,
     icon: (color, size) => (
       <Icon type={'AntDesign'} name={'hearto'} color={color} size={size} />
     ),
