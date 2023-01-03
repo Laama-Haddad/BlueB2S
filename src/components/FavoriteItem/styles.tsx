@@ -10,15 +10,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderWidth: getByScreenSize(1, 2),
   },
-  image: {
+  imageContainer: {
     width: wdp(20),
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
     height: '90%',
-    borderWidth: 1,
+    width: '80%',
   },
   middleContainer: {
     height: '100%',
     paddingVertical: '5%',
     justifyContent: 'space-between',
+    paddingHorizontal: '3%',
   },
   text: {
     fontWeight: '700',

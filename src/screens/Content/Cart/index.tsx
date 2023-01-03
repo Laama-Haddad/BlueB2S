@@ -17,7 +17,11 @@ const Cart = ({navigation}: CartProps) => {
     return (
       <CartItem
         productId={item.id}
-        imageUri={item.imageUri}
+        imageUri={
+          !!item.imageUri
+            ? item.imageUri
+            : 'https://dummyimage.com/105/cccccc/000000'
+        }
         title={item.name}
         price={item.offerPrice}
         size={item.size}
