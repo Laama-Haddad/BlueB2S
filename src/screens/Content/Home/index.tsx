@@ -132,6 +132,17 @@ const Home = ({navigation}: HomeProps) => {
             {tr('home.onSale')}
           </GenericText>
         </View>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={products}
+          renderItem={renderProductItem}
+          keyExtractor={item => item.id.toString()}
+          style={{
+            backgroundColor: 'transparent',
+            paddingLeft: '2%',
+          }}
+        />
         <View
           style={{paddingVertical: hdp(7.5), backgroundColor: 'transparent'}}
         />
