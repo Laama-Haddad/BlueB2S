@@ -125,6 +125,14 @@ export interface CustomTheme extends Theme {
     shadowStart: string;
     shadowEnd: string;
   };
+  favoriteItem: {
+    containerBackground: string;
+    containerBorder: string;
+    title: string;
+    price: string;
+    shadowStart: string;
+    shadowEnd: string;
+  };
   home: {
     title: string;
   };

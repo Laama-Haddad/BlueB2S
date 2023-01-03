@@ -137,6 +137,14 @@ const lightTheme: CustomTheme = {
     shadowStart: '#00000016',
     shadowEnd: '#ffffff',
   },
+  favoriteItem: {
+    containerBackground: '#FFFFFF',
+    containerBorder: '#E6E6E6',
+    title: '#000000',
+    price: colors.primary,
+    shadowStart: '#00000016',
+    shadowEnd: '#ffffff',
+  },
   home: {
     title: '#000000',
   },
