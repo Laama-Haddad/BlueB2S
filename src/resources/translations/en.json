@@ -14,6 +14,12 @@
     "cart": "My cart",
     "profile": "Profile"
   },
+  "orderItem": {
+    "orderNo": "Order No",
+    "orderDate": "Order Date",
+    "deliverDate": "Deliver Date",
+    "quan": "Quan"
+  },
   "home": {
     "searchPlaceHolder": "Search Our Products",
     "featuredProducts": "FEATURED PRODUCTS",
@@ -25,6 +31,12 @@
     "headerTitle": "Product Details",
     "addToCart": "Add To Cart",
     "buy": "Buy Now"
+  },
+  "orders": {
+    "headerTitle": "My Orders",
+    "title": "Your cart is empty",
+    "description": "Looks like you haven't made your \n order yet.",
+    "shopButtonTitle": "Shop Now"
   },
   "favorite": {
     "headerTitle": "Favorite"

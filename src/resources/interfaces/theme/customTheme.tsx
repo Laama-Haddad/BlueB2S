@@ -133,6 +133,17 @@ export interface CustomTheme extends Theme {
     shadowStart: string;
     shadowEnd: string;
   };
+  orderListItem: {
+    containerBackground: string;
+    containerBorder: string;
+    cancelIconBackground: string;
+    checkIconBackground: string;
+    shippedIconBackground: string;
+    icon: string;
+    date: string;
+    text: string;
+    price: string;
+  };
   home: {
     title: string;
   };

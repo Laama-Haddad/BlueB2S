@@ -145,6 +145,17 @@ const lightTheme: CustomTheme = {
     shadowStart: '#00000016',
     shadowEnd: '#ffffff',
   },
+  orderListItem: {
+    containerBackground: '#FFFFFF',
+    containerBorder: '#E6E6E6',
+    cancelIconBackground: '#D80027',
+    checkIconBackground: '#1DBF73',
+    shippedIconBackground: colors.secondary,
+    icon: '#FFFFFF',
+    date: '#5B5B5B',
+    text: '#000000',
+    price: colors.primary,
+  },
   home: {
     title: '#000000',
   },

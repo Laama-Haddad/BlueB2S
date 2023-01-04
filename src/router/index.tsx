@@ -15,6 +15,7 @@ import Cart from '../screens/Content/Cart';
 import Profile from '../screens/Content/Profile';
 import PrivacyPolicy from '../screens/Content/PrivacyPolicy';
 import Favorite from '../screens/Content/Favorite';
+import Orders from '../screens/Content/Orders';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -30,7 +31,7 @@ const tabsScreens: TabItem[] = [
   {
     id: 1,
     name: 'orders',
-    component: Home,
+    component: Orders,
     icon: (color, size) => (
       <Icon type={'AntDesign'} name={'tago'} color={color} size={size} />
     ),
