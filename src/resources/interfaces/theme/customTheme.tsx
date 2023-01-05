@@ -144,6 +144,11 @@ export interface CustomTheme extends Theme {
     text: string;
     price: string;
   };
+  comment: {
+    imageBorder: string;
+    title: string;
+    text: string;
+  };
   home: {
     title: string;
   };

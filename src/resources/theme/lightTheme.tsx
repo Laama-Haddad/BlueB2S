@@ -156,6 +156,11 @@ const lightTheme: CustomTheme = {
     text: '#000000',
     price: colors.primary,
   },
+  comment: {
+    imageBorder: '#979797',
+    title: '#282728',
+    text: '#000000',
+  },
   home: {
     title: '#000000',
   },
