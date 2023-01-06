@@ -32,6 +32,14 @@
     "addToCart": "Add To Cart",
     "buy": "Buy Now"
   },
+  "productReview": {
+    "headerTitle": "Product Review",
+    "title": "Overall Rating",
+    "title1": "Out 5",
+    "loadMore":"LoadMore",
+    "subTitle": "Based on",
+    "subTitle1": "Ratings"
+  },
   "orders": {
     "headerTitle": "My Orders",
     "title": "Your cart is empty",

@@ -164,6 +164,13 @@ export interface CustomTheme extends Theme {
     addButtonBackground: string;
     buyButtonBackground: string;
   };
+  productReview: {
+    containerBorder: string;
+    separator: string;
+    lightText: string;
+    darkText: string;
+    emptyStar: string;
+  };
   cart: {
     border: string;
     totalPrice: string;

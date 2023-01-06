@@ -176,6 +176,13 @@ const lightTheme: CustomTheme = {
     addButtonBackground: colors.secondary,
     buyButtonBackground: colors.primary,
   },
+  productReview: {
+    containerBorder: '#E6E6E6',
+    separator: '#D2D2D2',
+    lightText: '#949090',
+    darkText: '#282728',
+    emptyStar: '#000000',
+  },
   cart: {
     border: '#E6E6E6',
     totalPrice: '#000000',

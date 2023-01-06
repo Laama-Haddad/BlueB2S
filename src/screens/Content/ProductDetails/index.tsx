@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import styles from './styles';
 import MainLayout from '../../MainLayout';
@@ -18,6 +18,7 @@ import Button from '../../../components/Button';
 
 const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
   const theme = useTheme();
+  const [ratingValue,setRatingValue]=useState(0);
   const {description, images, name, offerPrice, price, rating, size} =
     route?.params.details;
   const changeFavoriteList = () => {
@@ -118,9 +119,15 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
               </GenericText>
             </View>
             <Rating
-              rating={rating}
+              rating={ratingValue}
               starSize={theme.text.s6}
               starStyle={{marginLeft: '2%'}}
+              onChange={setRatingValue}
+              onPress={() =>
+                navigation?.navigate('productReview', {
+                  details: route?.params.details,
+                })
+              }
             />
           </View>
         </View>

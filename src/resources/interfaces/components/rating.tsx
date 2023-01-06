@@ -2,7 +2,7 @@ import {StyleProp} from 'react-native';
 
 export interface RatingProps {
   rating: number;
-  onChange?: () => void;
+  onChange?: (value: number) => void;
   maxStars?: number;
   starSize?: number;
   fullStarColor?: string;
@@ -13,4 +13,5 @@ export interface RatingProps {
   enableSwiping?: boolean;
   onRatingStart?: () => void;
   onRatingEnd?: () => void;
+  onPress?: () => void;
 }
