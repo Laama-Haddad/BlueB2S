@@ -5,7 +5,7 @@ import {RatingProps} from '../../resources/interfaces/components/rating';
 import {TouchableOpacity} from 'react-native';
 
 const Rating = ({
-  rating,
+  rating = 0,
   onChange,
   maxStars = 5,
   starSize,

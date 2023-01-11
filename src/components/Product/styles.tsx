@@ -5,11 +5,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: wdp(44),
-    width: wdp(44),
+    height: wdp(40),
+    width: wdp(40),
     borderRadius: 4,
     flexDirection: 'row',
-    padding: '3%',
+    padding: '5%',
   },
   leftContainer: {
     width: '40%',

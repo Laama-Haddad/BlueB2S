@@ -15,12 +15,11 @@ import Rating from '../../../components/Rating';
 import Favorite from '../../../components/Favorite';
 import CartIcon from '../../../components/CartIcon';
 import Button from '../../../components/Button';
-
 const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
   const theme = useTheme();
-  const [ratingValue,setRatingValue]=useState(0);
   const {description, images, name, offerPrice, price, rating, size} =
     route?.params.details;
+  const [ratingValue, setRatingValue] = useState(rating);
   const changeFavoriteList = () => {
     console.log('favorite');
   };

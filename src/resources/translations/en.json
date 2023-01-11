@@ -40,6 +40,15 @@
     "subTitle": "Based on",
     "subTitle1": "Ratings"
   },
+  "writeReview": {
+    "headerTitle": "Write Review",
+    "title": "Your Opinion Matters!",
+    "yourRating": "Your Overall Rating Of this Service",
+    "write": "Write Comment",
+    "placeHolderComment": "Would you like to write anything about the merchant? ",
+    "characters": "characters remaining",
+    "submit": "Submit"
+  },
   "orders": {
     "headerTitle": "My Orders",
     "title": "Your cart is empty",

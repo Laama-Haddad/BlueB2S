@@ -1,5 +1,4 @@
 import {Theme} from '@react-navigation/native';
-import {colors} from '../../theme/colors';
 
 export interface CustomTheme extends Theme {
   primary: string;
@@ -169,6 +168,14 @@ export interface CustomTheme extends Theme {
     separator: string;
     lightText: string;
     darkText: string;
+    emptyStar: string;
+  };
+  writeReview: {
+    text: string;
+    placeHolderComment: string;
+    grayText: string;
+    submitBackground: string;
+    containerBorder: string;
     emptyStar: string;
   };
   cart: {

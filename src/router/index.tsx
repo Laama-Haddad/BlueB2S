@@ -17,6 +17,7 @@ import PrivacyPolicy from '../screens/Content/PrivacyPolicy';
 import Favorite from '../screens/Content/Favorite';
 import Orders from '../screens/Content/Orders';
 import ProductReview from '../screens/Content/ProductReview';
+import WriteReview from '../screens/Content/WriteReview';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -110,6 +111,11 @@ const screens: StackItem[] = [
   },
   {
     id: 3,
+    name: 'writeReview',
+    component: WriteReview,
+  },
+  {
+    id: 4,
     name: 'privacyPolicy',
     component: PrivacyPolicy,
   },

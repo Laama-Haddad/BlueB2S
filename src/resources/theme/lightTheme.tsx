@@ -183,6 +183,14 @@ const lightTheme: CustomTheme = {
     darkText: '#282728',
     emptyStar: '#000000',
   },
+  writeReview: {
+    text: '#000000',
+    placeHolderComment: '#777474',
+    grayText: '#666363',
+    submitBackground: colors.primary,
+    containerBorder: '#E6E6E6',
+    emptyStar: '#000000',
+  },
   cart: {
     border: '#E6E6E6',
     totalPrice: '#000000',

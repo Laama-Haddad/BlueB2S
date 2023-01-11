@@ -1,6 +1,6 @@
 import React from 'react';
 import MainLayout from '../../MainLayout';
-import {FlatList, View} from 'react-native';
+import {FlatList, TouchableOpacity, View} from 'react-native';
 import {tr} from '../../../resources/translations';
 import styles from './styles';
 import GenericText from '../../../components/GenericText';
@@ -12,7 +12,7 @@ import Rating from '../../../components/Rating';
 import {ProductPreviewProps} from '../../../resources/interfaces/screens/productPreview';
 
 const ProductReview = ({navigation, route}: ProductPreviewProps) => {
-  const {rating} = route?.params.details;
+  const {rating} = route?.params?.details;
   const theme = useTheme();
   const renderItem = ({item}) => {
     return (
@@ -41,7 +41,12 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
           styles.topContainer,
           {borderColor: theme.productReview.separator},
         ]}>
-        <View
+        <TouchableOpacity
+          onPress={() =>
+            navigation?.navigate('writeReview', {
+              details: route?.params.details,
+            })
+          }
           style={[
             styles.titleContainer,
             {borderColor: theme.productReview.containerBorder},
@@ -67,7 +72,7 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
             starStyle={{marginLeft: '2%'}}
             containerStyle={{paddingLeft: '6%'}}
           />
-        </View>
+        </TouchableOpacity>
       </View>
       <FlatList
         showsVerticalScrollIndicator={false}
