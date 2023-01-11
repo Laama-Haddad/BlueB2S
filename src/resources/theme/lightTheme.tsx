@@ -191,6 +191,17 @@ const lightTheme: CustomTheme = {
     containerBorder: '#E6E6E6',
     emptyStar: '#000000',
   },
+  placeOrder: {
+    containerBorder: '#E6E6E6',
+    lightText: '#5B5B5B',
+    darkText: '#000000',
+    coloredText: colors.primary,
+    grayContainerBackground: '#D9D9D9',
+    submitBackground: colors.primary,
+    separator: '#D2D2D2',
+    outlineCircle: '#000000',
+    solidCircle: colors.primary,
+  },
   cart: {
     border: '#E6E6E6',
     totalPrice: '#000000',

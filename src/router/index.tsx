@@ -15,9 +15,10 @@ import Cart from '../screens/Content/Cart';
 import Profile from '../screens/Content/Profile';
 import PrivacyPolicy from '../screens/Content/PrivacyPolicy';
 import Favorite from '../screens/Content/Favorite';
-import Orders from '../screens/Content/Orders';
+import Orders from '../screens/Content/Order/Orders';
 import ProductReview from '../screens/Content/ProductReview';
 import WriteReview from '../screens/Content/WriteReview';
+import PlaceOrder from '../screens/Content/Order/PlaceOrder';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -118,6 +119,11 @@ const screens: StackItem[] = [
     id: 4,
     name: 'privacyPolicy',
     component: PrivacyPolicy,
+  },
+  {
+    id: 5,
+    name: 'placeOrder',
+    component: PlaceOrder,
   },
 ];
 const AppNavigator = () => {

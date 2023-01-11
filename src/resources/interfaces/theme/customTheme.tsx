@@ -178,6 +178,17 @@ export interface CustomTheme extends Theme {
     containerBorder: string;
     emptyStar: string;
   };
+  placeOrder: {
+    containerBorder: string;
+    lightText: string;
+    darkText: string;
+    coloredText: string;
+    grayContainerBackground: string;
+    submitBackground: string;
+    separator: string;
+    outlineCircle: string;
+    solidCircle: string;
+  };
   cart: {
     border: string;
     totalPrice: string;

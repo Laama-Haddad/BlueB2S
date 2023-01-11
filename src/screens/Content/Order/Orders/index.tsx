@@ -1,11 +1,11 @@
 import React from 'react';
-import MainLayout from '../../MainLayout';
+import MainLayout from '../../../MainLayout';
 import {FlatList, View} from 'react-native';
-import {tr} from '../../../resources/translations';
-import {hdp} from '../../../utils/responsive';
-import {orderList} from '../../../resources/staticData/orders';
-import {OrdersProps} from '../../../resources/interfaces/screens/orders';
-import OrderListItem from '../../../components/OrderListItem';
+import {tr} from '../../../../resources/translations';
+import {hdp} from '../../../../utils/responsive';
+import {orderList} from '../../../../resources/staticData/orders';
+import {OrdersProps} from '../../../../resources/interfaces/screens/orders';
+import OrderListItem from '../../../../components/OrderListItem';
 
 const Orders = ({navigation}: OrdersProps) => {
   const renderItem = ({item}) => {

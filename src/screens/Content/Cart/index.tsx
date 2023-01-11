@@ -66,7 +66,7 @@ const Cart = ({navigation}: CartProps) => {
             titleStyle={{
               fontSize: getByScreenSize(theme.text.s9, theme.text.s7),
             }}
-            onPress={() => navigation?.navigate('home')}
+            onPress={() => navigation?.navigate('placeOrder')}
           />
         </View>
       </>

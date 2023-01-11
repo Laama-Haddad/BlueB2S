@@ -55,6 +55,21 @@
     "description": "Looks like you haven't made your \n order yet.",
     "shopButtonTitle": "Shop Now"
   },
+  "placeOrder": {
+    "headerTitle": "Place Your Order",
+    "shippingTo": "Shipping To",
+    "orderCost": "Order Cost",
+    "shippingCost": "Shipping Cost",
+    "estimatedVat": "Estimated VAT",
+    "totalAmount": "Total Amount",
+    "shippingAddress": "Shipping Address",
+    "select": "Select Payment Method",
+    "agree": "By placing your order, you agree to Book2Shine shop's",
+    "policy": "privacy policy",
+    "condition": "terms and conditions.",
+    "and": "and",
+    "submit": "Place Your Order"
+  },
   "favorite": {
     "headerTitle": "Favorite"
   },
