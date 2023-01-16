@@ -207,6 +207,8 @@ const lightTheme: CustomTheme = {
     totalPrice: '#000000',
     shoppingBackground: colors.secondary,
     checkOutBackground: colors.primary,
+    emptyTitle: '#000000',
+    emptyMessage: '#888888',
   },
   profile: {
     title: colors.primary,

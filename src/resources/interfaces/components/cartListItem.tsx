@@ -8,5 +8,6 @@ export interface CartItemProps {
   size: string;
   selectedQuantity: number;
   onQuantityChange: ({quantity, id: number}) => void;
+  onDeletePress: () => void;
   containerStyle?: StyleProp<any> | StyleProp<any>[];
 }

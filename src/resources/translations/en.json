@@ -77,7 +77,14 @@
     "headerTitle": "My Cart",
     "total": "Total",
     "shopping": "Continue Shopping",
-    "checkOut": "Check Out"
+    "checkOut": "Check Out",
+    "addToCartSuccessMessage": "Your item added to cart successfully",
+    "addToCartFailedMessage": "Failed in added to cart",
+    "emptyCart": "Your Cart is Empty",
+    "deleteFromCartSuccessMessage": "Your item removed from cart successfully",
+    "deleteFromCartFailedMessage": "Failed in deleted from cart",
+    "emptyTitle": "Hey, it feels so light!",
+    "emptyMessage": "There is nothing in your cart. Let's add\nsome items."
   },
   "profile": {
     "headerTitle": "My Profile",

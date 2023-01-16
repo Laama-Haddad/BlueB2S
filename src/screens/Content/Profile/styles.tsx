@@ -3,7 +3,7 @@ import {getByScreenSize, hdp, wdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: getByScreenSize(hdp(79), hdp(76)),
+    height: getByScreenSize(hdp(79), hdp(75)),
   },
   titleContainer: {
     alignItems: 'center',

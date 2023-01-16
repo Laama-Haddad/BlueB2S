@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {Image, View} from 'react-native';
 import styles from './styles';
 import Icon from '../Icon';
-import {CartItemProps} from '../../resources/interfaces/components/cartItem';
+import {CartItemProps} from '../../resources/interfaces/components/cartListItem';
 import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
 import {tr} from '../../resources/translations';
-import {getByScreenSize} from "../../utils/responsive";
+import {getByScreenSize} from '../../utils/responsive';
 
-const CartItem = ({
+const CartListItem = ({
   productId,
   imageUri,
   title,
@@ -16,6 +16,7 @@ const CartItem = ({
   size,
   selectedQuantity = 1,
   onQuantityChange,
+  onDeletePress,
   containerStyle,
 }: CartItemProps) => {
   const [quantity, setQuantity] = useState(selectedQuantity);
@@ -73,7 +74,7 @@ const CartItem = ({
           size={getByScreenSize(theme.text.s10, theme.text.s9)}
           color={theme.cartItem.close}
           style={{borderWidth: 2}}
-          onPress={() => console.log('delete')}
+          onPress={onDeletePress}
         />
         <View style={styles.quantityContainer}>
           <View
@@ -85,7 +86,7 @@ const CartItem = ({
               },
             ]}>
             <Icon
-              disabled={quantity === 0}
+              disabled={quantity === 1}
               type={'FontAwesome'}
               name={'minus'}
               role={'button'}
@@ -128,4 +129,4 @@ const CartItem = ({
     // </Shadow>
   );
 };
-export default CartItem;
+export default CartListItem;

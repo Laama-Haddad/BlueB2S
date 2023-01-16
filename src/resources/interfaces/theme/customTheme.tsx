@@ -194,6 +194,8 @@ export interface CustomTheme extends Theme {
     totalPrice: string;
     shoppingBackground: string;
     checkOutBackground: string;
+    emptyTitle: string;
+    emptyMessage: string;
   };
   profile: {
     title: string;

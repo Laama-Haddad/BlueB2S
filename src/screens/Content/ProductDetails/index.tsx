@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import styles from './styles';
 import MainLayout from '../../MainLayout';
@@ -15,17 +15,38 @@ import Rating from '../../../components/Rating';
 import Favorite from '../../../components/Favorite';
 import CartIcon from '../../../components/CartIcon';
 import Button from '../../../components/Button';
-const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
+import {CartItem} from '../../../resources/interfaces/items/cartItem';
+import {ProductItem} from '../../../resources/interfaces/items/productItem';
+import {updateCartList} from '../../../utils/cartFuncs';
+import {RootState} from '../../../redux/store';
+import {connect} from 'react-redux';
+const ProductDetails = ({navigation, route, cart}: ProductDetailsProps) => {
   const theme = useTheme();
-  const {description, images, name, offerPrice, price, rating, size} =
+  const {cartList} = cart;
+  const {description, images, name, offerPrice, price, rating, size, id} =
     route?.params.details;
   const [ratingValue, setRatingValue] = useState(rating);
+  const [exist, setExist] = useState(
+    cartList.findIndex(cartItem => cartItem.id === id) > -1,
+  );
   const changeFavoriteList = () => {
     console.log('favorite');
   };
-  const changeCartList = () => {
-    console.log('cart list');
+  const updateCart = (item: ProductItem) => {
+    const tempItem: CartItem = {
+      ...item,
+      itemCartId: cartList.length,
+      quantity: 1,
+    };
+    updateCartList(cartList, tempItem, exist).then();
   };
+  useEffect(() => {
+    setExist(
+      cartList.findIndex(cartItem => cartItem.id === route?.params.details.id) >
+        -1,
+    );
+  }, [cartList, route?.params.details.id]);
+
   return (
     <MainLayout
       backHeader
@@ -89,8 +110,8 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
             }}
           />
           <CartIcon
-            isAddedToCart={true}
-            onCartItemsChange={() => changeCartList()}
+            isAddedToCart={exist}
+            onCartItemsChange={() => updateCart(route?.params?.details)}
             style={{
               position: 'absolute',
               right: 20,
@@ -148,4 +169,9 @@ const ProductDetails = ({navigation, route}: ProductDetailsProps) => {
     </MainLayout>
   );
 };
-export default ProductDetails;
+const mapStateToProps = (state: RootState) => ({
+  cart: state.cart,
+  // wish: state.wish
+});
+
+export default connect(mapStateToProps)(ProductDetails);
