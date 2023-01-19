@@ -107,6 +107,8 @@ const lightTheme: CustomTheme = {
     unFavoriteBackground: '#FFFFFF',
     shadowStart: '#44444440',
     shadowEnd: '#eeeeeedd',
+    emptyTitle: '#000000',
+    emptyMessage: '#888888',
   },
   cartIcon: {
     addedCart: '#FFFFFF',

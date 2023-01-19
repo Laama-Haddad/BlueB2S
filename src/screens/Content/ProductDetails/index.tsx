@@ -20,17 +20,27 @@ import {ProductItem} from '../../../resources/interfaces/items/productItem';
 import {updateCartList} from '../../../utils/cartFuncs';
 import {RootState} from '../../../redux/store';
 import {connect} from 'react-redux';
-const ProductDetails = ({navigation, route, cart}: ProductDetailsProps) => {
+import {updateFavoriteList} from '../../../utils/favoriteFuncs';
+const ProductDetails = ({
+  navigation,
+  route,
+  cart,
+  favorite,
+}: ProductDetailsProps) => {
   const theme = useTheme();
   const {cartList} = cart;
+  const {favoriteList} = favorite;
   const {description, images, name, offerPrice, price, rating, size, id} =
     route?.params.details;
   const [ratingValue, setRatingValue] = useState(rating);
   const [exist, setExist] = useState(
     cartList.findIndex(cartItem => cartItem.id === id) > -1,
   );
+  const [fav, setFav] = useState(favoriteList.includes(id));
   const changeFavoriteList = () => {
-    console.log('favorite');
+    let newValue = !favoriteList.includes(id);
+    setFav(newValue);
+    updateFavoriteList(favoriteList, id, newValue).then();
   };
   const updateCart = (item: ProductItem) => {
     const tempItem: CartItem = {
@@ -45,7 +55,8 @@ const ProductDetails = ({navigation, route, cart}: ProductDetailsProps) => {
       cartList.findIndex(cartItem => cartItem.id === route?.params.details.id) >
         -1,
     );
-  }, [cartList, route?.params.details.id]);
+    setFav(favoriteList.includes(id));
+  }, [favoriteList, cartList, id, route?.params.details.id]);
 
   return (
     <MainLayout
@@ -100,7 +111,7 @@ const ProductDetails = ({navigation, route, cart}: ProductDetailsProps) => {
         </View>
         <View style={styles.centerContainer}>
           <Favorite
-            isFavorite={false}
+            isFavorite={fav}
             onToggleFavorite={() => changeFavoriteList()}
             style={{
               position: 'absolute',
@@ -171,7 +182,7 @@ const ProductDetails = ({navigation, route, cart}: ProductDetailsProps) => {
 };
 const mapStateToProps = (state: RootState) => ({
   cart: state.cart,
-  // wish: state.wish
+  favorite: state.favorite,
 });
 
 export default connect(mapStateToProps)(ProductDetails);

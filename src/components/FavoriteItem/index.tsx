@@ -71,6 +71,7 @@ const FavoriteItem = ({
         style={styles.favorite}
       />
       <CartIcon
+        isAddedToCart={isAddedToCart}
         onCartItemsChange={() => onChangeAddedToCart()}
         style={styles.cart}
       />

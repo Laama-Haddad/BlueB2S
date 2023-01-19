@@ -94,6 +94,8 @@ export interface CustomTheme extends Theme {
     unFavoriteBackground: string;
     shadowStart: string;
     shadowEnd: string;
+    emptyTitle: string;
+    emptyMessage: string;
   };
   cartIcon: {
     addedCart: string;

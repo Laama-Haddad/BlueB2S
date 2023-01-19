@@ -18,6 +18,7 @@ import {Platform, UIManager} from 'react-native';
 import {keys} from './api/keys';
 import {getLocalData} from './utils/storage';
 import {saveCartList} from './screens/Content/Cart/action';
+import GlobalModal from "./connected-components/Modal";
 
 const App = () => {
   const copyDataFromLocalToReducer = async () => {
@@ -36,6 +37,7 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer ref={navigationRef} theme={lightTheme}>
         <AppNavigator />
+        <GlobalModal />
       </NavigationContainer>
     </Provider>
   );

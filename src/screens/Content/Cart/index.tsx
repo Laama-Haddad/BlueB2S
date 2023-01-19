@@ -47,7 +47,7 @@ const Cart = ({navigation, cart}: CartProps) => {
         </GenericText>
         <GenericText
           style={{
-            fontSize: theme.text.s7,
+            fontSize: theme.text.s9,
             color: theme.cart.emptyMessage,
             textAlign: 'center',
             marginTop: '1%',
