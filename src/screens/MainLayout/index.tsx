@@ -18,7 +18,7 @@ const MainLayout = ({
   backHeader = false,
   customLeftHeader = false,
   tabPage = false,
-  enableScroll = true,
+  enableScroll = false,
   noPadding = false,
   backgroundColor,
   bottomSpace = false,
@@ -31,10 +31,33 @@ const MainLayout = ({
   showProfilePic = false,
   ...props
 }: MainLayoutProps) => {
-  // const PageView = enableScroll
-  //   ? () => <View style={styles.mainView} />
-  //   : () => <Animated.ScrollView style={styles.mainScrollView} />;
   const theme = useTheme();
+  const renderContent = () => {
+    return (
+      <>
+        {keyboardAvoidScrollView ? (
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            keyboardVerticalOffset={48}
+            style={{
+              flexGrow: 1,
+              width: '100%',
+            }}>
+            <KeyboardAwareScrollView
+              enableOnAndroid={enableOnAndroid}
+              contentContainerStyle={{
+                flexGrow: 1,
+              }}
+              keyboardShouldPersistTaps="handled">
+              {children}
+            </KeyboardAwareScrollView>
+          </KeyboardAvoidingView>
+        ) : (
+          <>{children}</>
+        )}
+      </>
+    );
+  };
   return (
     <View
       style={[
@@ -56,31 +79,18 @@ const MainLayout = ({
         />
       )}
       {customLeftHeader && <Header {...props} />}
-      <Animated.ScrollView
-        showsVerticalScrollIndicator={false}
-        style={[styles.mainScrollView, noPadding && {paddingHorizontal: 0}]}
-        onScroll={onScroll}>
-        {keyboardAvoidScrollView ? (
-          <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            keyboardVerticalOffset={48}
-            style={{
-              flexGrow: 1,
-              width: '100%',
-            }}>
-            <KeyboardAwareScrollView
-              enableOnAndroid={enableOnAndroid}
-              contentContainerStyle={{
-                flexGrow: 1,
-              }}
-              keyboardShouldPersistTaps="handled">
-              {children}
-            </KeyboardAwareScrollView>
-          </KeyboardAvoidingView>
-        ) : (
-          children
-        )}
-      </Animated.ScrollView>
+      {!enableScroll ? (
+        <View style={[styles.mainView, noPadding && {paddingHorizontal: 0}]}>
+          {renderContent()}
+        </View>
+      ) : (
+        <Animated.ScrollView
+          showsVerticalScrollIndicator={false}
+          style={[styles.mainScrollView, noPadding && {paddingHorizontal: 0}]}
+          onScroll={onScroll}>
+          {renderContent()}
+        </Animated.ScrollView>
+      )}
       {tabPage && <View style={styles.spacer} />}
       {bottomSpace && <View style={styles.bottomSpacer} />}
     </View>

@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   },
   mainView: {
     paddingHorizontal: '5%',
+    paddingVertical: getByScreenSize(hdp(1.2), hdp(1)),
     flexGrow: 1,
     height: '100%',
     zIndex: 2,

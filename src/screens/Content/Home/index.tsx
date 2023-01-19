@@ -28,7 +28,7 @@ const Home = ({navigation}: HomeProps) => {
     );
   };
   return (
-    <MainLayout tabHeader bottomSpace>
+    <MainLayout tabHeader bottomSpace enableScroll>
       <View style={styles.container}>
         <SearchBar
           value={keyWord}

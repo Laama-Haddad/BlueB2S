@@ -18,14 +18,15 @@ const Orders = ({navigation}: OrdersProps) => {
         deliverDate={item.deliverDate}
         numOfItems={item.numOfItems}
         price={item.price}
-        onPress={() => {}
+        onPress={
+          () => {}
           // navigation?.navigate('trackOrder', {order: item})
         }
       />
     );
   };
   const renderFooter = () => {
-    return <View style={{height: hdp(15)}} />;
+    return <View style={{height: hdp(20)}} />;
   };
   return (
     <MainLayout tabHeader title={tr('orders.headerTitle')}>
