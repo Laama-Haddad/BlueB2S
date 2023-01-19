@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {wdp} from '../../utils/responsive';
+import {getByScreenSize, wdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: wdp(40),
-    width: wdp(40),
+    height: wdp(getByScreenSize(40, 35)),
+    width: wdp(getByScreenSize(40, 35)),
     borderRadius: 4,
     flexDirection: 'row',
     padding: '5%',

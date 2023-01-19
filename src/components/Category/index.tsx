@@ -18,18 +18,18 @@ const Category = ({details, containerStyle}: CategoryProps) => {
         {backgroundColor: theme.category.background},
         containerStyle,
       ]}>
-      <Shadow
-        distance={4}
-        startColor={theme.category.shadowStart}
-        endColor={theme.category.shadowEnd}
-        offset={[-1, 4]}
-        style={styles.imageContainer}>
-        <Image
-          source={{uri: details.imageUri}}
-          resizeMode={'stretch'}
-          style={[styles.image]}
-        />
-      </Shadow>
+      {/*<Shadow*/}
+      {/*  distance={4}*/}
+      {/*  startColor={theme.category.shadowStart}*/}
+      {/*  endColor={theme.category.shadowEnd}*/}
+      {/*  offset={[-1, 4]}*/}
+      {/*  style={styles.imageContainer}>*/}
+      <Image
+        source={{uri: details.imageUri}}
+        resizeMode={'stretch'}
+        style={[styles.image]}
+      />
+      {/*</Shadow>*/}
       <GenericText
         style={[
           styles.categoryNameText,

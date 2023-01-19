@@ -32,12 +32,16 @@ const styles = StyleSheet.create({
   favorite: {
     position: 'absolute',
     right: 10,
-    top: 10,
+    top: 5,
+    width: getByScreenSize(28, 50),
+    height: getByScreenSize(28, 50),
   },
   cart: {
+    width: getByScreenSize(28, 50),
+    height: getByScreenSize(28, 50),
     position: 'absolute',
     right: 10,
-    bottom: 10,
+    bottom: 12,
   },
 });
 export default styles;
