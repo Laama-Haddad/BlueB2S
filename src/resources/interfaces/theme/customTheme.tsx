@@ -44,6 +44,12 @@ export interface CustomTheme extends Theme {
     background: string;
     title: string;
   };
+  textInput: {
+    activeUnderlineColor: string;
+    underlineColor: string;
+    eyeIcon: string;
+    required: string;
+  };
   searchBar: {
     border: string;
     icon: string;

@@ -57,6 +57,12 @@ const lightTheme: CustomTheme = {
     background: '#C500FF',
     title: '#000000',
   },
+  textInput: {
+    activeUnderlineColor: colors.secondary,
+    underlineColor: colors.primary,
+    eyeIcon: '#aaaaaa',
+    required: '#D80027',
+  },
   searchBar: {
     border: '#979797',
     icon: '#979797',
