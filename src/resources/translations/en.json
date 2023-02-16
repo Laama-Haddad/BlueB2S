@@ -32,6 +32,23 @@
     "signUp": "Sign up",
     "guest": "Continue as a guest"
   },
+  "signUp": {
+    "title": "Sign up",
+    "subTitle": "Create your account",
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "mobileLabel": "Mobile Number",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "agree": "By creating an account, I agree Blue B2S's",
+    "terms": "Terms & Conditions",
+    "and": "and",
+    "privacy": "Privacy Policy.",
+    "submit": "Sign up",
+    "already": "Already have an account?",
+    "signIn": "Sign in"
+  },
   "home": {
     "searchPlaceHolder": "Search Our Products",
     "featuredProducts": "FEATURED PRODUCTS",

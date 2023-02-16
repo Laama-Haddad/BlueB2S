@@ -163,6 +163,11 @@ export interface CustomTheme extends Theme {
     appName: string;
     guest: string;
   };
+  signUp: {
+    title: string;
+    submitBackground: string;
+    already: string;
+  };
   home: {
     title: string;
   };

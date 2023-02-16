@@ -176,6 +176,11 @@ const lightTheme: CustomTheme = {
     appName: colors.primary,
     guest: '#979797',
   },
+  signUp: {
+    title: '#000000',
+    submitBackground: colors.secondary,
+    already: '#666666',
+  },
   home: {
     title: '#000000',
   },

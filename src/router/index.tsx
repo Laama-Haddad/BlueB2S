@@ -20,6 +20,7 @@ import ProductReview from '../screens/Content/ProductReview';
 import WriteReview from '../screens/Content/WriteReview';
 import PlaceOrder from '../screens/Content/Order/PlaceOrder';
 import SignIn from '../screens/Auth/SignIn';
+import SignUp from '../screens/Auth/SignUp';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -132,6 +133,11 @@ const authScreens: StackItem[] = [
     id: 0,
     name: 'signIn',
     component: SignIn,
+  },
+  {
+    id: 1,
+    name: 'signUp',
+    component: SignUp,
   },
 ];
 const AppNavigator = () => {

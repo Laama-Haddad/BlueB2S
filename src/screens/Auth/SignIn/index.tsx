@@ -9,9 +9,10 @@ import Button from '../../../components/Button';
 import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {getByScreenSize} from '../../../utils/responsive';
 import {useTheme} from '@react-navigation/native';
+import {SignInProps} from '../../../resources/interfaces/screens/signIn';
 
 const mandatoryFields = ['email', 'password'];
-const SignIn = () => {
+const SignIn = ({navigation}: SignInProps) => {
   const theme = useTheme();
   const [form, updateForm] = useState({
     email: '',
@@ -94,7 +95,7 @@ const SignIn = () => {
             style={{fontSize: theme.text.s8, color: theme.signIn.title}}>
             {tr('signIn.new')}
           </GenericText>
-          <TouchableOpacity onPress={() => console.log('appname')}>
+          <TouchableOpacity onPress={() => navigation?.navigate('signUp')}>
             <GenericText
               style={{
                 fontSize: theme.text.s8,
