@@ -169,6 +169,13 @@ const lightTheme: CustomTheme = {
     title: '#282728',
     text: '#000000',
   },
+  signIn: {
+    title: '#000000',
+    submitBackground: colors.secondary,
+    forgot: '#979797',
+    appName: colors.primary,
+    guest: '#979797',
+  },
   home: {
     title: '#000000',
   },

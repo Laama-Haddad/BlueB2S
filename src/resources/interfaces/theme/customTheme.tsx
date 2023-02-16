@@ -156,6 +156,13 @@ export interface CustomTheme extends Theme {
     title: string;
     text: string;
   };
+  signIn: {
+    title: string;
+    submitBackground: string;
+    forgot: string;
+    appName: string;
+    guest: string;
+  };
   home: {
     title: string;
   };

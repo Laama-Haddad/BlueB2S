@@ -19,6 +19,7 @@ import Orders from '../screens/Content/Order/Orders';
 import ProductReview from '../screens/Content/ProductReview';
 import WriteReview from '../screens/Content/WriteReview';
 import PlaceOrder from '../screens/Content/Order/PlaceOrder';
+import SignIn from '../screens/Auth/SignIn';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -126,8 +127,15 @@ const screens: StackItem[] = [
     component: PlaceOrder,
   },
 ];
+const authScreens: StackItem[] = [
+  {
+    id: 0,
+    name: 'signIn',
+    component: SignIn,
+  },
+];
 const AppNavigator = () => {
-  const [router, setRouter] = useState<string>('home');
+  const [router, setRouter] = useState<string>('auth');
   const selectRouter = useCallback(() => {
     if (router === 'home') {
       return (
@@ -139,6 +147,24 @@ const AppNavigator = () => {
                 key={idx}
                 options={{
                   headerShown: false,
+                }}
+                name={screen.name}
+                component={screen.component}
+              />
+            ))}
+          </Stack.Group>
+        </Stack.Navigator>
+      );
+    } else if (router === 'auth') {
+      return (
+        <Stack.Navigator screenOptions={{gestureEnabled: true}}>
+          <Stack.Group>
+            {authScreens.map((screen, idx) => (
+              <Stack.Screen
+                key={idx}
+                options={{
+                  headerShown: false,
+                  ...transitions.RightToLeft,
                 }}
                 name={screen.name}
                 component={screen.component}

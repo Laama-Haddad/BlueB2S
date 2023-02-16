@@ -1,6 +1,6 @@
 {
   "app": {
-    "appName": "BlueB2S",
+    "appName": "Blue B2S",
     "loading": "Loading",
     "currency": "SEK",
     "yes": "Yes",
@@ -21,6 +21,16 @@
     "orderDate": "Order Date",
     "deliverDate": "Deliver Date",
     "quan": "Quan"
+  },
+  "signIn": {
+    "title": "Sign in",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submit": "Sign in",
+    "forgot": "Forgot Password?",
+    "new": "New to",
+    "signUp": "Sign up",
+    "guest": "Continue as a guest"
   },
   "home": {
     "searchPlaceHolder": "Search Our Products",
