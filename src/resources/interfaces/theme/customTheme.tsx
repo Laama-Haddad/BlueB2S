@@ -102,6 +102,7 @@ export interface CustomTheme extends Theme {
     shadowEnd: string;
     emptyTitle: string;
     emptyMessage: string;
+    heart: string;
   };
   cartIcon: {
     addedCart: string;
@@ -162,11 +163,13 @@ export interface CustomTheme extends Theme {
     forgot: string;
     appName: string;
     guest: string;
+    back: string;
   };
   signUp: {
     title: string;
     submitBackground: string;
     already: string;
+    back: string;
   };
   home: {
     title: string;

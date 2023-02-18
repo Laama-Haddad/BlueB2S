@@ -127,21 +127,20 @@ const screens: StackItem[] = [
     name: 'placeOrder',
     component: PlaceOrder,
   },
-];
-const authScreens: StackItem[] = [
   {
-    id: 0,
+    id: 6,
     name: 'signIn',
     component: SignIn,
   },
   {
-    id: 1,
+    id: 7,
     name: 'signUp',
     component: SignUp,
   },
 ];
+
 const AppNavigator = () => {
-  const [router, setRouter] = useState<string>('auth');
+  const [router, setRouter] = useState<string>('home');
   const selectRouter = useCallback(() => {
     if (router === 'home') {
       return (
@@ -153,24 +152,6 @@ const AppNavigator = () => {
                 key={idx}
                 options={{
                   headerShown: false,
-                }}
-                name={screen.name}
-                component={screen.component}
-              />
-            ))}
-          </Stack.Group>
-        </Stack.Navigator>
-      );
-    } else if (router === 'auth') {
-      return (
-        <Stack.Navigator screenOptions={{gestureEnabled: true}}>
-          <Stack.Group>
-            {authScreens.map((screen, idx) => (
-              <Stack.Screen
-                key={idx}
-                options={{
-                  headerShown: false,
-                  ...transitions.RightToLeft,
                 }}
                 name={screen.name}
                 component={screen.component}

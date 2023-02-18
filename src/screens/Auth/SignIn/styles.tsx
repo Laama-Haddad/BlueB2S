@@ -4,12 +4,9 @@ import {hdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   topContainer: {
     alignItems: 'center',
-    justifyContent: 'space-around',
-    height: hdp(25),
-    paddingVertical: '5%',
-  },
-  title: {
-    fontWeight: '700',
+    justifyContent: 'center',
+    height: hdp(20),
+    paddingTop: '15%',
   },
   passwordTextInput: {
     marginTop: '4%',
@@ -20,12 +17,6 @@ const styles = StyleSheet.create({
     marginBottom: '15%',
     width: '100%',
     textAlign: 'center',
-  },
-  bottomContainer: {
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    height: hdp(12),
-    paddingVertical: '4%',
   },
 });
 export default styles;

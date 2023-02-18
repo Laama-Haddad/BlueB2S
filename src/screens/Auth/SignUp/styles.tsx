@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
   topContainer: {
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: hdp(18),
-    paddingTop: '9%',
+    height: hdp(22),
+    paddingTop: '15%',
     paddingBottom: '2%',
   },
   title: {

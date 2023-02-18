@@ -1,14 +1,19 @@
 import {StyleSheet} from 'react-native';
-import {getByScreenSize, hdp} from '../../../utils/responsive';
+import {hdp} from '../../../utils/responsive';
 
 const styles = StyleSheet.create({
-  emptyContainer: {
+  topContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    height: hdp(20),
+    paddingTop: '15%',
+  },
+  emptyContainer: {
+    alignItems: 'center',
     width: '100%',
-    height: getByScreenSize(hdp(79), hdp(75)),
   },
   text: {
+    marginTop: '15%',
     fontWeight: '700',
   },
 });

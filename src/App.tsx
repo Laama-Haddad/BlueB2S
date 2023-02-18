@@ -18,12 +18,18 @@ import {Platform, UIManager} from 'react-native';
 import {keys} from './api/keys';
 import {getLocalData} from './utils/storage';
 import {saveCartList} from './screens/Content/Cart/action';
-import GlobalModal from "./connected-components/Modal";
+import GlobalModal from './connected-components/Modal';
+import {setAuthStatus} from './screens/Auth/SignIn/action';
+import {saveFavoriteList} from './screens/Content/Favorite/action';
 
 const App = () => {
   const copyDataFromLocalToReducer = async () => {
     let cartList = await getLocalData(keys.CART);
     saveCartList(!cartList ? [] : cartList);
+    let favoriteList = await getLocalData(keys.FAVORITE);
+    saveFavoriteList(!favoriteList ? [] : favoriteList);
+    let logged = await getLocalData(keys.AUTH);
+    setAuthStatus(logged ? logged : {logged: false});
   };
   useEffect(() => {
     if (Platform.OS === 'android') {

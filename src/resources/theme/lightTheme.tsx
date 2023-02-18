@@ -115,6 +115,7 @@ const lightTheme: CustomTheme = {
     shadowEnd: '#eeeeeedd',
     emptyTitle: '#000000',
     emptyMessage: '#888888',
+    heart: colors.secondary,
   },
   cartIcon: {
     addedCart: '#FFFFFF',
@@ -175,11 +176,13 @@ const lightTheme: CustomTheme = {
     forgot: '#979797',
     appName: colors.primary,
     guest: '#979797',
+    back: '#000000',
   },
   signUp: {
     title: '#000000',
     submitBackground: colors.secondary,
     already: '#666666',
+    back: '#000000',
   },
   home: {
     title: '#000000',

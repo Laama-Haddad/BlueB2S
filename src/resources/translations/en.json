@@ -108,7 +108,8 @@
     "emptyTitle": "Favorite List is Empty!",
     "emptyMessage": "You have no items in your favorite List.\n Start Adding product in your favoriteList\n and checkout at once",
     "shopping": "Continue Shopping",
-    "confirmDeleteFavoriteMessage": "Are you sure you want to unfavorite ?"
+    "confirmDeleteFavoriteMessage": "Are you sure you want to unfavorite ?",
+    "signInTitle": "Sign in to view your favorite List"
   },
   "cart": {
     "headerTitle": "My Cart",
@@ -141,7 +142,9 @@
     "fullNamePlaceHolder":"Enter Your FullName",
     "addressPlaceHolder": "Enter Your Address",
     "mobilePlaceHolder": "Enter Your Mobile",
-    "emailPlaceHolder": "Enter Your Email"
+    "emailPlaceHolder": "Enter Your Email",
+    "signIn": "Sign in",
+    "confirmLogoutMessage": "Are you sure you want to Log out?"
   },
   "privacyPolicy": {
     "headerTitle": "Privacy Policy",

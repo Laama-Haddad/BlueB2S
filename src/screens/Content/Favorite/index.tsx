@@ -17,11 +17,14 @@ import {updateFavoriteList} from '../../../utils/favoriteFuncs';
 import {ProductItem} from '../../../resources/interfaces/items/productItem';
 import {CartItem} from '../../../resources/interfaces/items/cartItem';
 import {updateCartList} from '../../../utils/cartFuncs';
+import SignInForm from '../../Auth/SignIn/SignInForm';
+import Icon from '../../../components/Icon';
 
-const Favorite = ({navigation, cart, favorite}: FavoriteProps) => {
-  const {cartList} = cart;
+const Favorite = ({navigation, cart, favorite, auth}: FavoriteProps) => {
   const theme = useTheme();
+  const {cartList} = cart;
   const {favoriteList} = favorite;
+  const {logged} = auth;
   const updateCart = (inCart: boolean, item: ProductItem) => {
     const tempItem: CartItem = {
       ...item,
@@ -29,6 +32,18 @@ const Favorite = ({navigation, cart, favorite}: FavoriteProps) => {
       quantity: 1,
     };
     updateCartList(cartList, tempItem, inCart).then();
+  };
+  const renderHeartImage = () => {
+    return (
+      <View style={styles.topContainer}>
+        <Icon
+          type={'AntDesign'}
+          name={'hearto'}
+          color={theme.favorite.heart}
+          size={110}
+        />
+      </View>
+    );
   };
   const renderItem = ({item}) => {
     let idx = favoriteList.findIndex(itemId => itemId === item.id);
@@ -79,6 +94,7 @@ const Favorite = ({navigation, cart, favorite}: FavoriteProps) => {
   const renderEmptyList = () => {
     return (
       <View style={styles.emptyContainer}>
+        {renderHeartImage()}
         <GenericText
           style={[
             styles.text,
@@ -110,7 +126,15 @@ const Favorite = ({navigation, cart, favorite}: FavoriteProps) => {
   };
   return (
     <MainLayout tabHeader title={tr('favorite.headerTitle')}>
-      {favoriteList.length === 0 ? (
+      {!logged ? (
+        <>
+          {renderHeartImage()}
+          <SignInForm
+            title={tr('favorite.signInTitle')}
+            navigation={navigation}
+          />
+        </>
+      ) : favoriteList.length === 0 ? (
         renderEmptyList()
       ) : (
         <FlatList
@@ -129,6 +153,7 @@ const Favorite = ({navigation, cart, favorite}: FavoriteProps) => {
 const mapStateToProps = (state: RootState) => ({
   favorite: state.favorite,
   cart: state.cart,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps)(Favorite);

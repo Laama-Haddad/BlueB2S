@@ -1,7 +1,6 @@
 import {NavigationProp} from '@react-navigation/native';
-import {AuthState} from './signIn';
 
-export interface ProfileProps {
+export interface SignInFormProps {
   navigation?: NavigationProp<any>;
-  auth: AuthState;
+  title: string;
 }

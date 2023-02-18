@@ -10,6 +10,8 @@ import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {getByScreenSize} from '../../../utils/responsive';
 import {useTheme} from '@react-navigation/native';
 import {SignUpProps} from '../../../resources/interfaces/screens/signUp';
+import Icon from '../../../components/Icon';
+import {ToggleAuth} from '../../../utils/authFuncs';
 
 const mandatoryFields = [
   'firstName',
@@ -51,14 +53,28 @@ const SignUp = ({navigation}: SignUpProps) => {
     }
   }, [form]);
   const submit = async () => {
-    // ToggleAuth({logged: true}).then();
+    ToggleAuth({logged: true}).then();
+    navigation?.navigate('home');
   };
   return (
     <MainLayout enableScroll>
       <View style={styles.topContainer}>
+        <Icon
+          name={'chevron-back'}
+          type={'Ionicons'}
+          color={theme.signUp.back}
+          size={theme.text.s2}
+          style={{
+            position: 'absolute',
+            left: -getByScreenSize(12, 18),
+            top: getByScreenSize(5, 10),
+            zIndex: 1,
+          }}
+          onPress={() => navigation?.goBack()}
+        />
         <LogoSVG
-          width={getByScreenSize(50, 70)}
-          height={getByScreenSize(50, 70)}
+          width={getByScreenSize(70, 90)}
+          height={getByScreenSize(70, 90)}
         />
         <GenericText
           style={[
@@ -106,7 +122,7 @@ const SignUp = ({navigation}: SignUpProps) => {
       />
       <GenericTextInput
         label={tr('signUp.passwordLabel')}
-        value={form.email}
+        value={form.password}
         onChangeText={text => handleChange('password', text)}
         required
         secureTextEntry
@@ -115,7 +131,7 @@ const SignUp = ({navigation}: SignUpProps) => {
       />
       <GenericTextInput
         label={tr('signUp.confirmPasswordLabel')}
-        value={form.email}
+        value={form.confirmPassword}
         onChangeText={text => handleChange('confirmPassword', text)}
         required
         secureTextEntry
