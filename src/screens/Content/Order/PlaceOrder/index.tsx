@@ -7,17 +7,33 @@ import GenericText from '../../../../components/GenericText';
 import {PlaceOrderProps} from '../../../../resources/interfaces/screens/placeOrder';
 import {useTheme} from '@react-navigation/native';
 import Button from '../../../../components/Button';
-import {hdp} from '../../../../utils/responsive';
+import {hdp, wdp} from '../../../../utils/responsive';
+import RadioGroup from '../../../../components/RadioGroup';
+import {PaymentMethodItem} from '../../../../resources/interfaces/items/paymentMethodItem';
+import CirclePaymentMethod from '../../../../components/CirclePaymentMethod';
 
 const PlaceOrder = ({navigation}: PlaceOrderProps) => {
   const theme = useTheme();
-  const [selected, setSelected] = useState(false);
-  const paymentMethodList = [
-    'ImagePayPal',
-    'ImageMastercard',
-    'ImageVISAcard',
-    'ImageLocalgateway',
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const paymentMethodList: PaymentMethodItem[] = [
+    {
+      id: 0,
+      name: 'ImagePayPal',
+    },
+    {
+      id: 1,
+      name: 'ImageMastercard',
+    },
+    {
+      id: 2,
+      name: 'ImageVISAcard',
+    },
+    {
+      id: 3,
+      name: 'ImageLocalgateway',
+    },
   ];
+
   const renderPolicyContainer = () => {
     return (
       <View style={{marginTop: '7%', marginBottom: '5%'}}>
@@ -53,37 +69,6 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
       </View>
     );
   };
-  const renderItem = (item, key) => {
-    return (
-      <View key={key} style={styles.radioButtonRow}>
-        <View
-          style={[
-            styles.outlineCircle,
-            {borderColor: theme.placeOrder.outlineCircle},
-          ]}>
-          {selected && (
-            <View
-              style={[
-                styles.solidCircle,
-                {backgroundColor: theme.placeOrder.solidCircle},
-              ]}
-            />
-          )}
-        </View>
-        <GenericText
-          style={[
-            styles.radioText,
-            {
-              fontSize: theme.text.s8,
-              backgroundColor: theme.placeOrder.grayContainerBackground,
-              color: theme.placeOrder.darkText,
-            },
-          ]}>
-          {item}
-        </GenericText>
-      </View>
-    );
-  };
   return (
     <MainLayout
       backHeader
@@ -108,7 +93,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 styles.text,
                 {fontSize: theme.text.s9, color: theme.placeOrder.darkText},
               ]}>
-              James Button, Rol, Brazil.
+              Brazil
             </GenericText>
           </View>
           <View
@@ -221,7 +206,23 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
             {tr('placeOrder.select')}
           </GenericText>
         </View>
-        {paymentMethodList.map((item, key) => renderItem(item, key))}
+        <RadioGroup
+          list={paymentMethodList}
+          renderItem={(item, selected) => (
+            <CirclePaymentMethod
+              paymentMethodItem={{id: item.id, name: item.name}}
+              selected={selected === item.id}
+            />
+          )}
+          onValueChange={selectedId =>
+            paymentMethodList.filter(item =>
+              item.id === selectedId
+                ? setPaymentMethod(item.name)
+                : setPaymentMethod(''),
+            )
+          }
+          radius={wdp(8)}
+        />
         {renderPolicyContainer()}
         <Button
           title={tr('placeOrder.submit')}

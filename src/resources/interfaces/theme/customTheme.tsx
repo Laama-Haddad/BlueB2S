@@ -157,6 +157,12 @@ export interface CustomTheme extends Theme {
     title: string;
     text: string;
   };
+  circlePaymentMethod: {
+    grayContainerBackground: string;
+    outlineCircle: string;
+    solidCircle: string;
+    text: string;
+  };
   signIn: {
     title: string;
     submitBackground: string;
@@ -206,11 +212,8 @@ export interface CustomTheme extends Theme {
     lightText: string;
     darkText: string;
     coloredText: string;
-    grayContainerBackground: string;
     submitBackground: string;
     separator: string;
-    outlineCircle: string;
-    solidCircle: string;
   };
   cart: {
     border: string;

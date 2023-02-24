@@ -170,6 +170,12 @@ const lightTheme: CustomTheme = {
     title: '#282728',
     text: '#000000',
   },
+  circlePaymentMethod: {
+    grayContainerBackground: '#D9D9D9',
+    outlineCircle: '#000000',
+    solidCircle: colors.primary,
+    text: '#000000',
+  },
   signIn: {
     title: '#000000',
     submitBackground: colors.secondary,
@@ -219,11 +225,8 @@ const lightTheme: CustomTheme = {
     lightText: '#5B5B5B',
     darkText: '#000000',
     coloredText: colors.primary,
-    grayContainerBackground: '#D9D9D9',
     submitBackground: colors.primary,
     separator: '#D2D2D2',
-    outlineCircle: '#000000',
-    solidCircle: colors.primary,
   },
   cart: {
     border: '#E6E6E6',
