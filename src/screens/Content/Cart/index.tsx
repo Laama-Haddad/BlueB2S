@@ -13,6 +13,7 @@ import {RootState} from '../../../redux/store';
 import {connect} from 'react-redux';
 import {updateCartList} from '../../../utils/cartFuncs';
 import {CartItem} from '../../../resources/interfaces/items/cartItem';
+import Icon from '../../../components/Icon';
 
 const Cart = ({navigation, cart}: CartProps) => {
   const theme = useTheme();
@@ -38,6 +39,14 @@ const Cart = ({navigation, cart}: CartProps) => {
   const renderEmptyCart = () => {
     return (
       <View style={styles.emptyContainer}>
+        <View style={styles.topContainer}>
+          <Icon
+            type={'AntDesign'}
+            name={'shoppingcart'}
+            color={theme.favorite.heart}
+            size={110}
+          />
+        </View>
         <GenericText
           style={[
             styles.text,

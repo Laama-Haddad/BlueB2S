@@ -72,7 +72,7 @@ const MainLayout = ({
         containerStyle,
       ]}>
       {backHeader && <Header showBackIcon ref={headerRef} {...props} />}
-      {tabHeader && <Header showMenuIcon ref={headerRef} {...props} />}
+      {tabHeader && <Header ref={headerRef} {...props} />}
       {showProfilePic && (
         <Image
           source={

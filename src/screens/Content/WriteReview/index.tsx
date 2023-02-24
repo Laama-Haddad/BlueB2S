@@ -16,6 +16,7 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
   const theme = useTheme();
   const [charsNum, setCharsNum] = useState(maxLength);
   const [comment, setComment] = useState('');
+  const [yourRating, setYourRating] = useState(0);
   const onChangeText = (text, callBack) => {
     setComment(text);
     console.log(charsNum, 'before');
@@ -53,9 +54,10 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
             {tr('writeReview.yourRating')}
           </GenericText>
           <Rating
-            rating={route?.params?.details?.rating}
+            rating={yourRating}
             starSize={theme.text.s5}
             emptyStarColor={theme.writeReview.emptyStar}
+            // onChange={setYourRating}
           />
         </View>
         <GenericText

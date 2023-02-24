@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: getByScreenSize(hdp(79), hdp(75)),
   },
+  topContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: hdp(20),
+    paddingTop: '15%',
+  },
   totalPriceContainer: {
     borderWidth: getByScreenSize(1, 2),
     height: hdp(7),
@@ -24,9 +30,7 @@ const styles = StyleSheet.create({
   },
   emptyContainer: {
     alignItems: 'center',
-    justifyContent: 'center',
     width: '100%',
-    height: '100%',
   },
   footerContainer: {
     position: 'absolute',
@@ -34,6 +38,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   text: {
+    marginTop: '15%',
     fontWeight: '700',
   },
 });

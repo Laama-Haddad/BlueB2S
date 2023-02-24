@@ -55,7 +55,7 @@ const lightTheme: CustomTheme = {
   },
   header: {
     background: '#C500FF',
-    title: '#000000',
+    title: '#FFFFFF',
   },
   textInput: {
     activeUnderlineColor: colors.secondary,

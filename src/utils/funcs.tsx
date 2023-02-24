@@ -6,6 +6,6 @@ export const showToastAndroid = (msg: string) => {
     ToastAndroid.LONG,
     ToastAndroid.BOTTOM,
     25,
-    50,
+    5,
   );
 };

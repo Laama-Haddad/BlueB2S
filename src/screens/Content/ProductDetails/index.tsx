@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import {View, Share, Linking} from 'react-native';
 import styles from './styles';
 import MainLayout from '../../MainLayout';
 import {useTheme} from '@react-navigation/native';
@@ -21,6 +21,7 @@ import {updateCartList} from '../../../utils/cartFuncs';
 import {RootState} from '../../../redux/store';
 import {connect} from 'react-redux';
 import {updateFavoriteList} from '../../../utils/favoriteFuncs';
+
 const ProductDetails = ({
   navigation,
   route,
@@ -30,8 +31,17 @@ const ProductDetails = ({
   const theme = useTheme();
   const {cartList} = cart;
   const {favoriteList} = favorite;
-  const {description, images, name, offerPrice, price, rating, size, id} =
-    route?.params.details;
+  const {
+    description,
+    images,
+    name,
+    offerPrice,
+    price,
+    rating,
+    size,
+    id,
+    imageUri,
+  } = route?.params.details;
   const [ratingValue, setRatingValue] = useState(rating);
   const [exist, setExist] = useState(
     cartList.findIndex(cartItem => cartItem.id === id) > -1,
@@ -49,6 +59,9 @@ const ProductDetails = ({
       quantity: 1,
     };
     updateCartList(cartList, tempItem, exist).then();
+    if (!exist) {
+      navigation?.navigate('cart');
+    }
   };
   useEffect(() => {
     setExist(
@@ -57,7 +70,16 @@ const ProductDetails = ({
     );
     setFav(favoriteList.includes(id));
   }, [favoriteList, cartList, id, route?.params.details.id]);
-
+  const handleShare = async () => {
+    try {
+      await Share.share({
+        message: `${name} - ${description} - ${imageUri}`,
+        url: imageUri,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <MainLayout
       backHeader
@@ -88,7 +110,7 @@ const ProductDetails = ({
                     backgroundColor: theme.productDetails.shareIconBackground,
                   },
                 ]}
-                onPress={() => console.log('share')}>
+                onPress={() => handleShare()}>
                 <Icon
                   type={'Entypo'}
                   name={'share'}
@@ -154,7 +176,7 @@ const ProductDetails = ({
               starSize={theme.text.s6}
               starStyle={{marginLeft: '2%'}}
               onChange={setRatingValue}
-              onPress={() =>
+              onRatingStart={() =>
                 navigation?.navigate('productReview', {
                   details: route?.params.details,
                 })
@@ -164,9 +186,10 @@ const ProductDetails = ({
         </View>
         <View style={styles.bottomContainer}>
           <Button
+            disabled={exist}
             title={tr('productDetails.addToCart')}
             backgroundColor={theme.productDetails.addButtonBackground}
-            onPress={() => {}}
+            onPress={() => updateCart(route?.params?.details)}
             containerStyle={styles.buttonStyle}
           />
           <Button

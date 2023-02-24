@@ -61,7 +61,7 @@ const Profile = ({navigation, auth}: ProfileProps) => {
                 styles.title,
                 {fontSize: theme.text.s6, color: theme.profile.title},
               ]}>
-              {tr('profile.title')} James
+              {tr('profile.title')} {form.fullName}
             </GenericText>
             <GenericText
               style={[
@@ -108,7 +108,7 @@ const Profile = ({navigation, auth}: ProfileProps) => {
                   editable={editable}
                   placeholder={tr('profile.fullNamePlaceHolder')}
                   value={form.fullName}
-                  onChangeText={text => handleChange('username', text)}
+                  onChangeText={text => handleChange('fullName', text)}
                   style={{
                     color: theme.profile.text,
                     fontSize: getByScreenSize(theme.text.s9, theme.text.s7),

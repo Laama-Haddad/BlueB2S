@@ -13,5 +13,4 @@ export interface RatingProps {
   enableSwiping?: boolean;
   onRatingStart?: () => void;
   onRatingEnd?: () => void;
-  onPress?: () => void;
 }

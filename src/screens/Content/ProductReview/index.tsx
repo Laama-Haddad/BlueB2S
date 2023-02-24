@@ -71,6 +71,11 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
             starSize={theme.text.s3}
             starStyle={{marginLeft: '2%'}}
             containerStyle={{paddingLeft: '6%'}}
+            onRatingStart={() =>
+              navigation?.navigate('writeReview', {
+                details: route?.params.details,
+              })
+            }
           />
         </TouchableOpacity>
       </View>

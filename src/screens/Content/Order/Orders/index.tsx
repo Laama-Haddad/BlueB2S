@@ -18,10 +18,10 @@ const Orders = ({navigation}: OrdersProps) => {
         deliverDate={item.deliverDate}
         numOfItems={item.numOfItems}
         price={item.price}
-        onPress={
-          () => {}
-          // navigation?.navigate('trackOrder', {order: item})
-        }
+        // onPress={
+        //   () => {}
+        //   navigation?.navigate('trackOrder', {order: item})
+        // }
       />
     );
   };
