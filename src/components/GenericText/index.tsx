@@ -25,7 +25,7 @@ const GenericText = ({style, children, ...props}: GenericTextProps) => {
     );
   } else {
     return (
-      <Text style={style} {...props}>
+      <Text style={[{fontFamily: theme.fonts.regular}, style]} {...props}>
         {children}
       </Text>
     );

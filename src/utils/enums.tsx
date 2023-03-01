@@ -15,11 +15,11 @@ export const months = {
   12: 'December',
 };
 export const fontTypes = {
-  bold: Platform.OS === 'android' ? 'Myriad Pro Bold' : 'MyriadPro-Bold',
+  bold: Platform.OS === 'android' ? 'Roboto Bold' : 'Roboto-Bold',
   semi_bold:
-    Platform.OS === 'android' ? 'Myriad Pro SemiBold' : 'MyriadPro-SemiBold',
+    Platform.OS === 'android' ? 'Roboto Medium' : 'Roboto-Medium',
   regular:
-    Platform.OS === 'android' ? 'Myriad Pro Regular' : 'MyriadPro-Regular',
+    Platform.OS === 'android' ? 'Roboto Light' : 'Roboto-Light',
 };
 export const modalTypes = {
   info: 'info',
