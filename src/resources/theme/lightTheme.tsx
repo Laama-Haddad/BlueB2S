@@ -176,6 +176,13 @@ const lightTheme: CustomTheme = {
     solidCircle: colors.primary,
     text: '#000000',
   },
+  accordionList: {
+    background: '#eeeeee',
+    title: '#000000',
+    titleIcon: '#000000',
+    item: '#333333',
+    itemIcon: '#333333',
+  },
   signIn: {
     title: '#000000',
     submitBackground: colors.secondary,

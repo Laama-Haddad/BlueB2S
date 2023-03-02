@@ -17,6 +17,7 @@
     "lodash.memoize": "^4.1.2",
     "react": "18.1.0",
     "react-native": "0.70.6",
+    "react-native-accordion-list-view": "^2.0.1",
     "react-native-animated-pagination-dots": "^0.1.73",
     "react-native-asset": "^2.1.0",
     "react-native-encrypted-storage": "^4.0.3",

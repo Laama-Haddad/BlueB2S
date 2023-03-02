@@ -163,6 +163,13 @@ export interface CustomTheme extends Theme {
     solidCircle: string;
     text: string;
   };
+  accordionList: {
+    background: string;
+    title: string;
+    titleIcon: string;
+    item: string;
+    itemIcon: string;
+  };
   signIn: {
     title: string;
     submitBackground: string;
