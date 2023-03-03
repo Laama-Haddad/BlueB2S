@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StatusBar, Text, View} from 'react-native';
+import {Platform, StatusBar, View} from 'react-native';
 import {HeaderProps} from '../../resources/interfaces/components/header';
 import styles from './styles';
 // @ts-ignore
@@ -7,6 +7,7 @@ import HeaderLogoSVG from '../../resources/assets/svg/headerLogo.svg';
 import Icon from '../Icon';
 import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, wdp} from '../../utils/responsive';
+import GenericText from '../GenericText';
 
 function Header({
   noPaddingTop = false,
@@ -17,21 +18,21 @@ function Header({
   titleStyle,
   showBackIcon,
   backIconColor,
-  showMenuIcon,
-  menuIconColor,
+  // showMenuIcon,
+  // menuIconColor,
   iconSize,
   iconStyle,
   onBackIconPress,
-  onMenuIconPress,
+  // onMenuIconPress,
   showLogo = true,
   headerStyle,
 }: HeaderProps) {
   const theme = useTheme();
-  const onMenuPressed = () => {
-    if (onMenuIconPress) {
-      onMenuIconPress();
-    }
-  };
+  // const onMenuPressed = () => {
+  //   if (onMenuIconPress) {
+  //     onMenuIconPress();
+  //   }
+  // };
   const onBackPressed = () => {
     if (onBackIconPress) {
       onBackIconPress();
@@ -61,8 +62,8 @@ function Header({
           },
           headerStyle,
         ]}>
-        <View style={styles.leftContainer}>
-          {showBackIcon && (
+        {showBackIcon && (
+          <View style={styles.leftContainer}>
             <Icon
               name={'chevron-back'}
               type={'Ionicons'}
@@ -83,32 +84,32 @@ function Header({
                 iconStyle,
               ]}
             />
-          )}
-          {showMenuIcon && (
-            <Icon
-              name={'menu'}
-              type={'Ionicons'}
-              color={menuIconColor ? menuIconColor : theme.icon.icon}
-              size={
-                iconSize
-                  ? iconSize
-                  : getByScreenSize(theme.text.s8, theme.text.s6)
-              }
-              role={'button'}
-              onPress={onMenuPressed}
-              style={[
-                {
-                  width: getByScreenSize(wdp(7), wdp(6)),
-                  height: getByScreenSize(wdp(7), wdp(6)),
-                  borderRadius: getByScreenSize(wdp(3.5), wdp(3)),
-                },
-                iconStyle,
-              ]}
-            />
-          )}
-        </View>
+            {/*{showMenuIcon && (*/}
+            {/*  <Icon*/}
+            {/*    name={'menu'}*/}
+            {/*    type={'Ionicons'}*/}
+            {/*    color={menuIconColor ? menuIconColor : theme.icon.icon}*/}
+            {/*    size={*/}
+            {/*      iconSize*/}
+            {/*        ? iconSize*/}
+            {/*        : getByScreenSize(theme.text.s8, theme.text.s6)*/}
+            {/*    }*/}
+            {/*    role={'button'}*/}
+            {/*    onPress={onMenuPressed}*/}
+            {/*    style={[*/}
+            {/*      {*/}
+            {/*        width: getByScreenSize(wdp(7), wdp(6)),*/}
+            {/*        height: getByScreenSize(wdp(7), wdp(6)),*/}
+            {/*        borderRadius: getByScreenSize(wdp(3.5), wdp(3)),*/}
+            {/*      },*/}
+            {/*      iconStyle,*/}
+            {/*    ]}*/}
+            {/*  />*/}
+            {/*)}*/}
+          </View>
+        )}
         <View style={styles.centerContainer}>
-          <Text
+          <GenericText
             style={[
               styles.title,
               {
@@ -118,7 +119,7 @@ function Header({
               titleStyle,
             ]}>
             {title}
-          </Text>
+          </GenericText>
         </View>
         <View style={styles.rightContainer}>
           {showLogo && (

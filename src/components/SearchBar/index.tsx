@@ -31,7 +31,7 @@ const SearchBar = ({
           {
             fontSize: getByScreenSize(theme.text.s10, theme.text.s9),
             color: theme.searchBar.value,
-            paddingBottom: getByScreenSize(8, 10),
+            paddingBottom: getByScreenSize(7.5, 10),
           },
           styles.textInput,
           textInputStyle,

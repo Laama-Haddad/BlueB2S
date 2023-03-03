@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: wdp(getByScreenSize(40, 35)),
     width: wdp(getByScreenSize(40, 35)),
-    borderRadius: 4,
+    borderRadius: getByScreenSize(4, 8),
     flexDirection: 'row',
     padding: '5%',
   },

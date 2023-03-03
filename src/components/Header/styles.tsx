@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getByScreenSize, hdp, wdp} from '../../utils/responsive';
+import {hdp, wdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {

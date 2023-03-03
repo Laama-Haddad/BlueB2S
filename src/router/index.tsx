@@ -119,7 +119,7 @@ const screens: StackItem[] = [
     component: WriteReview,
   },
   {
-    id:4,
+    id: 4,
     name: 'updateProfile',
     component: UpdateProfile,
   },

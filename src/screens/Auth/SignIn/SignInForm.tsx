@@ -14,19 +14,19 @@ import {useTheme} from '@react-navigation/native';
 import {ToggleAuth} from '../../../utils/authFuncs';
 import {SignInFormProps} from '../../../resources/interfaces/screens/signInForm';
 import {useSelector} from 'react-redux';
+import config from '../../../config';
 
 const mandatoryFields = ['email', 'password'];
 const SignInForm = ({navigation, title}: SignInFormProps) => {
   const theme = useTheme();
   const user = useSelector(state => state?.user);
-  console.log(user);
   const {personalInfo} = user;
   const [form, updateForm] = useState({
     email: '',
     password: '',
   });
   const [formComplete, setFormComplete] = useState(false);
-  const [error, setError] = useState(error);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleChange = (key, value) => {
     updateForm({
@@ -34,8 +34,11 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
       [key]: value,
     });
   };
+  if (config.debug) {
+    console.log(user);
+  }
   useEffect(() => {
-      setError(false);
+    setError(false);
     let _formComplete = true;
     for (let index = 0; index < mandatoryFields.length; index++) {
       const field = mandatoryFields[index];

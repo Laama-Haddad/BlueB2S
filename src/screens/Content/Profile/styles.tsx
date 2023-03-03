@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     marginTop: hdp(getByScreenSize(3, 8)),
-    marginBottom:  hdp(getByScreenSize(3, 2)),
+    marginBottom: hdp(getByScreenSize(3, 2)),
   },
   title: {
-    fontWeight: '600',
+    fontWeight: '700',
   },
   subTitle: {
     fontWeight: '700',

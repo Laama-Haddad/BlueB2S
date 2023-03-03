@@ -1,6 +1,5 @@
 import React from 'react';
 import {useTheme} from '@react-navigation/native';
-import {Shadow} from 'react-native-shadow-2';
 import {CategoryProps} from '../../resources/interfaces/components/category';
 import styles from './styles';
 import Ripple from 'react-native-material-ripple';
@@ -18,18 +17,11 @@ const Category = ({details, containerStyle}: CategoryProps) => {
         {backgroundColor: theme.category.background},
         containerStyle,
       ]}>
-      {/*<Shadow*/}
-      {/*  distance={4}*/}
-      {/*  startColor={theme.category.shadowStart}*/}
-      {/*  endColor={theme.category.shadowEnd}*/}
-      {/*  offset={[-1, 4]}*/}
-      {/*  style={styles.imageContainer}>*/}
       <Image
         source={{uri: details.imageUri}}
         resizeMode={'stretch'}
         style={[styles.image]}
       />
-      {/*</Shadow>*/}
       <GenericText
         style={[
           styles.categoryNameText,

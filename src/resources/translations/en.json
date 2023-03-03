@@ -52,6 +52,7 @@
     "errorMessage": "There is no match between passwords"
   },
   "home": {
+    "headerTitle": "Home",
     "searchPlaceHolder": "Search Our Products",
     "featuredProducts": "FEATURED PRODUCTS",
     "bestSeller": "BEST SELLER",

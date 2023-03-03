@@ -28,7 +28,11 @@ const Home = ({navigation}: HomeProps) => {
     );
   };
   return (
-    <MainLayout tabHeader bottomSpace enableScroll>
+    <MainLayout
+      tabHeader
+      bottomSpace
+      enableScroll
+      title={tr('home.headerTitle')}>
       <View style={styles.container}>
         <SearchBar
           value={keyWord}

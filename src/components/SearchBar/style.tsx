@@ -7,11 +7,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: getByScreenSize(35, 55),
     width: '100%',
-    borderRadius: 25,
+    borderRadius: getByScreenSize(25, 30),
     borderWidth: getByScreenSize(1, 2),
   },
   textInput: {
     height: '100%',
+    width: '83%',
     alignItems: 'center',
     justifyContent: 'center',
     fontWeight: '600',

@@ -6,17 +6,11 @@ import Ripple from 'react-native-material-ripple';
 import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
 import {tr} from '../../resources/translations';
-import {Shadow} from 'react-native-shadow-2';
 import Rating from '../Rating';
 
 const Product = ({details, onPress, containerStyle}: ProductProps) => {
   const theme = useTheme();
   return (
-    // <Shadow
-    //   distance={6}
-    //   startColor={theme.product.shadowStart}
-    //   endColor={theme.product.shadowEnd}
-    //   offset={[0, 3]}>
     <Ripple
       disabled={!onPress}
       rippleContainerBorderRadius={4}
@@ -70,7 +64,6 @@ const Product = ({details, onPress, containerStyle}: ProductProps) => {
         </View>
       </View>
     </Ripple>
-    // </Shadow>
   );
 };
 
