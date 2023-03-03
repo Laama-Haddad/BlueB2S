@@ -232,16 +232,13 @@ export interface CustomTheme extends Theme {
   };
   profile: {
     title: string;
-    subTitle: string;
-    containerBorder: string;
-    imageBorder: string;
-    textInputBorder: string;
-    category: string;
-    label: string;
-    text: string;
     icon: string;
-    editAccountBackground: string;
-    logOutBackground: string;
+    backgroundSignIn: string;
+  };
+  updateProfile: {
+    title: string;
+    submitBackground: string;
+    icon: string;
   };
   privacyPolicy: {
     text: string;

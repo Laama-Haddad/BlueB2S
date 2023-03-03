@@ -1,9 +1,10 @@
 export const user = {
-  fullName: 'B2S Company',
+  firstName: 'B2S',
+  lastName: 'Company',
   email: 'B2S@gmail.com',
   password: 'B2S',
   confirmPassword: 'B2S',
-  mobile: '+460700421603',
+  mobile: '+971509036118',
   profileImage: 'https://i.postimg.cc/DybgRZF1/profile.jpg',
   balance: 1200,
   jobPosition: 'Basic Member',

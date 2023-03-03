@@ -1,9 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-  },
+  container: {},
   accordionItem: {
     fontWeight: '700',
     marginBottom: '1%',

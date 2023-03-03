@@ -35,7 +35,7 @@ const AccordionItemList = ({
       <GenericText
         style={[
           styles.accordionItem,
-          {fontSize: theme.text.s6, color: theme.accordionList.title},
+          {fontSize: theme.text.s7, color: theme.accordionList.title},
         ]}>
         {title}
       </GenericText>

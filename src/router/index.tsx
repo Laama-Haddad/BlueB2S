@@ -21,6 +21,7 @@ import WriteReview from '../screens/Content/WriteReview';
 import PlaceOrder from '../screens/Content/Order/PlaceOrder';
 import SignIn from '../screens/Auth/SignIn';
 import SignUp from '../screens/Auth/SignUp';
+import UpdateProfile from "../screens/Content/UpdateProfile";
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -118,22 +119,27 @@ const screens: StackItem[] = [
     component: WriteReview,
   },
   {
-    id: 4,
+    id:4,
+    name: 'updateProfile',
+    component: UpdateProfile,
+  },
+  {
+    id: 5,
     name: 'privacyPolicy',
     component: PrivacyPolicy,
   },
   {
-    id: 5,
+    id: 6,
     name: 'placeOrder',
     component: PlaceOrder,
   },
   {
-    id: 6,
+    id: 7,
     name: 'signIn',
     component: SignIn,
   },
   {
-    id: 7,
+    id: 8,
     name: 'signUp',
     component: SignUp,
   },

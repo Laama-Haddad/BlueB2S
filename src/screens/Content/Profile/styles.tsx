@@ -6,17 +6,19 @@ const styles = StyleSheet.create({
     height: getByScreenSize(hdp(79), hdp(75)),
   },
   titleContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     width: '100%',
+    marginTop: hdp(getByScreenSize(3, 8)),
+    marginBottom:  hdp(getByScreenSize(3, 2)),
   },
   title: {
-    fontWeight: '700',
+    fontWeight: '600',
   },
   subTitle: {
     fontWeight: '700',
   },
-
   category: {
     fontWeight: '700',
     marginVertical: getByScreenSize(hdp(2), hdp(1)),
