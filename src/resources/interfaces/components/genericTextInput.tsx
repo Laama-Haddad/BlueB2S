@@ -6,6 +6,7 @@ export interface GenericTextInputProps extends TextInputAndroidProps {
   secureTextEntry?: boolean;
   noEye?: boolean;
   required?: boolean;
+  keyboardType?: string;
   placeholder?: string;
   placeholderTextColor?: string;
   value?: string;

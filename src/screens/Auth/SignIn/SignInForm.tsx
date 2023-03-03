@@ -2,21 +2,32 @@ import GenericTextInput from '../../../components/GenericTextInput';
 import {tr} from '../../../resources/translations';
 import styles from './styles';
 import Button from '../../../components/Button';
-import {TouchableOpacity, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Platform,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import GenericText from '../../../components/GenericText';
 import React, {useEffect, useState} from 'react';
 import {useTheme} from '@react-navigation/native';
 import {ToggleAuth} from '../../../utils/authFuncs';
 import {SignInFormProps} from '../../../resources/interfaces/screens/signInForm';
+import {useSelector} from 'react-redux';
 
 const mandatoryFields = ['email', 'password'];
 const SignInForm = ({navigation, title}: SignInFormProps) => {
   const theme = useTheme();
+  const user = useSelector(state => state?.user);
+  console.log(user);
+  const {personalInfo} = user;
   const [form, updateForm] = useState({
     email: '',
     password: '',
   });
   const [formComplete, setFormComplete] = useState(false);
+  const [error, setError] = useState(error);
+  const [loading, setLoading] = useState(false);
   const handleChange = (key, value) => {
     updateForm({
       ...form,
@@ -24,6 +35,7 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
     });
   };
   useEffect(() => {
+      setError(false);
     let _formComplete = true;
     for (let index = 0; index < mandatoryFields.length; index++) {
       const field = mandatoryFields[index];
@@ -38,8 +50,16 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
     }
   }, [form]);
   const submit = async () => {
-    ToggleAuth({logged: true}).then();
-    navigation?.goBack();
+    if (
+      personalInfo.email.toLowerCase() === form.email.toLowerCase() &&
+      personalInfo.password === form.password
+    ) {
+      setLoading(true);
+      ToggleAuth({logged: true}).then();
+      navigation?.goBack();
+    } else {
+      setError(true);
+    }
   };
   return (
     <>
@@ -68,10 +88,22 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
         noEye={false}
         containerStyle={styles.passwordTextInput}
       />
+      {error && (
+        <GenericText
+          style={{
+            fontSize: theme.text.s9,
+            color: theme.signIn.error,
+            marginBottom: '9%',
+            marginTop: '-5%',
+          }}>
+          {tr('signIn.errorMessage')}
+        </GenericText>
+      )}
       <Button
         title={tr('signIn.title')}
         backgroundColor={theme.signIn.submitBackground}
-        onPress={() => submit()}
+        disabled={!formComplete}
+        onPress={() => formComplete && submit()}
       />
       <TouchableOpacity onPress={() => console.log('forgot')}>
         <GenericText
@@ -85,6 +117,12 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
           {tr('signIn.forgot')}
         </GenericText>
       </TouchableOpacity>
+      <ActivityIndicator
+        size={Platform.OS === 'ios' ? 'large' : 35}
+        animating={loading}
+        style={{marginVertical: '3%'}}
+        color={theme.updateProfile.loading}
+      />
       <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <GenericText
           style={{fontSize: theme.text.s8, color: theme.signIn.title}}>

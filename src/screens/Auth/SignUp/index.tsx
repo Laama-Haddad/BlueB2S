@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Platform,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import MainLayout from '../../MainLayout';
 import GenericText from '../../../components/GenericText';
 import {tr} from '../../../resources/translations';
@@ -12,6 +17,8 @@ import {useTheme} from '@react-navigation/native';
 import {SignUpProps} from '../../../resources/interfaces/screens/signUp';
 import Icon from '../../../components/Icon';
 import {ToggleAuth} from '../../../utils/authFuncs';
+import {SaveUser} from '../../../utils/userFuncs';
+import {PersonalInformation} from '../../../resources/interfaces/items/userItem';
 
 const mandatoryFields = [
   'firstName',
@@ -32,6 +39,17 @@ const SignUp = ({navigation}: SignUpProps) => {
     confirmPassword: '',
   });
   const [formComplete, setFormComplete] = useState(false);
+  const [matchPasswords, setMatchPasswords] = useState(true);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (form.password && form.confirmPassword) {
+      setMatchPasswords(form.password === form.confirmPassword);
+    } else if (matchPasswords) {
+      if (form.password || form.confirmPassword) {
+        setMatchPasswords(false);
+      }
+    }
+  }, [form.password, form.confirmPassword]);
   const handleChange = (key, value) => {
     updateForm({
       ...form,
@@ -53,11 +71,27 @@ const SignUp = ({navigation}: SignUpProps) => {
     }
   }, [form]);
   const submit = async () => {
+    setLoading(true);
     ToggleAuth({logged: true}).then();
+    let temp: PersonalInformation = {
+      firstName: form.firstName,
+      lastName: form.lastName,
+      mobile: form.mobile,
+      email: form.email,
+      password: form.password,
+      profileImage: '',
+    };
+    await SaveUser({personalInfo: temp});
     navigation?.navigate('home');
   };
   return (
     <MainLayout enableScroll>
+      <ActivityIndicator
+        size={Platform.OS === 'ios' ? 'large' : 35}
+        animating={loading}
+        style={styles.loading}
+        color={theme.updateProfile.loading}
+      />
       <View style={styles.topContainer}>
         <Icon
           name={'chevron-back'}
@@ -110,6 +144,7 @@ const SignUp = ({navigation}: SignUpProps) => {
         label={tr('signUp.mobileLabel')}
         value={form.mobile}
         onChangeText={text => handleChange('mobile', text)}
+        keyboardType={'numeric'}
         required
         containerStyle={styles.textInput}
       />
@@ -138,37 +173,52 @@ const SignUp = ({navigation}: SignUpProps) => {
         noEye={false}
         containerStyle={styles.textInput}
       />
-      <View style={styles.termsContainer}>
+      {!matchPasswords && (
         <GenericText
-          style={{fontSize: theme.text.s9, color: theme.signUp.title}}>
-          {tr('signUp.agree')}
+          style={{fontSize: theme.text.s9, color: theme.signUp.error}}>
+          {tr('signUp.errorMessage')}
         </GenericText>
+      )}
+      <View style={styles.termsContainer}>
         <GenericText
           style={{
             fontSize: theme.text.s9,
             color: theme.signUp.title,
-            textDecorationLine: 'underline',
+            marginVertical: '2%',
           }}>
-          {tr('signUp.terms')}
+          {tr('signUp.agree')}
         </GenericText>
+        <TouchableOpacity onPress={() => console.log('conditions')}>
+          <GenericText
+            style={{
+              fontSize: theme.text.s9,
+              color: theme.signUp.title,
+              textDecorationLine: 'underline',
+            }}>
+            {tr('signUp.terms')}
+          </GenericText>
+        </TouchableOpacity>
         <GenericText
           style={{fontSize: theme.text.s9, color: theme.signUp.title}}>
           {' '}
           {tr('signUp.and')}{' '}
         </GenericText>
-        <GenericText
-          style={{
-            fontSize: theme.text.s9,
-            color: theme.signUp.title,
-            textDecorationLine: 'underline',
-          }}>
-          {tr('signUp.privacy')}
-        </GenericText>
+        <TouchableOpacity onPress={() => navigation?.navigate('privacyPolicy')}>
+          <GenericText
+            style={{
+              fontSize: theme.text.s9,
+              color: theme.signUp.title,
+              textDecorationLine: 'underline',
+            }}>
+            {tr('signUp.privacy')}
+          </GenericText>
+        </TouchableOpacity>
       </View>
       <Button
         title={tr('signUp.title')}
         backgroundColor={theme.signUp.submitBackground}
-        onPress={() => submit()}
+        disabled={!formComplete || !matchPasswords}
+        onPress={() => formComplete && matchPasswords && submit()}
       />
       <View
         style={{

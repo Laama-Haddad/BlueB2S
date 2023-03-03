@@ -177,12 +177,16 @@ export interface CustomTheme extends Theme {
     appName: string;
     guest: string;
     back: string;
+    error: string;
+    loading: string;
   };
   signUp: {
     title: string;
     submitBackground: string;
     already: string;
     back: string;
+    error: string;
+    loading: string;
   };
   home: {
     title: string;
@@ -239,6 +243,7 @@ export interface CustomTheme extends Theme {
     title: string;
     submitBackground: string;
     icon: string;
+    loading: string;
   };
   privacyPolicy: {
     text: string;

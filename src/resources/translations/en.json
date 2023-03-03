@@ -30,7 +30,8 @@
     "forgot": "Forgot Password?",
     "new": "New to",
     "signUp": "Sign up",
-    "guest": "Continue as a guest"
+    "guest": "Continue as a guest",
+    "errorMessage": "There is an error in email or password"
   },
   "signUp": {
     "title": "Sign up",
@@ -47,7 +48,8 @@
     "privacy": "Privacy Policy.",
     "submit": "Sign up",
     "already": "Already have an account?",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "errorMessage": "There is no match between passwords"
   },
   "home": {
     "searchPlaceHolder": "Search Our Products",
@@ -144,12 +146,13 @@
   "updateProfile": {
     "headerTitle": "Update Profile",
     "account": "Account Details",
-    "firstNamePlaceHolder":"Enter Your FirstName",
-    "lastNamePlaceHolder":"Enter Your LastName",
-    "mobilePlaceHolder": "Enter Your Mobile",
-    "emailPlaceHolder": "Enter Your Email",
+    "firstNameLabel":"First Name",
+    "lastNameLabel":"Last Name",
+    "mobileLabel": "Mobile",
+    "emailLabel": "Email",
     "submit": "Update Profile",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "updateDoneAlertMessage": "Profile Updated"
   },
   "privacyPolicy": {
     "headerTitle": "Privacy Policy",

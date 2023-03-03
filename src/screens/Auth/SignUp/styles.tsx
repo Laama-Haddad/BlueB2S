@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {hdp} from '../../../utils/responsive';
+import {hdp, wdp} from '../../../utils/responsive';
 
 const styles = StyleSheet.create({
   topContainer: {
@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginVertical: '7%',
     paddingHorizontal: '5%',
+  },
+  loading: {
+    position: 'absolute',
+    top: hdp(50),
+    left: wdp(40),
+    zIndex: 1,
   },
 });
 export default styles;

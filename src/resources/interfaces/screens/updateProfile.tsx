@@ -1,7 +1,7 @@
 import {NavigationProp} from '@react-navigation/native';
-import {AuthState} from './signIn';
+import {UserState} from './signUp';
 
 export interface UpdateProfileProps {
   navigation?: NavigationProp<any>;
-  auth: AuthState;
+  user: UserState;
 }

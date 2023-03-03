@@ -190,12 +190,16 @@ const lightTheme: CustomTheme = {
     appName: colors.primary,
     guest: '#979797',
     back: '#000000',
+    error: '#D80027',
+    loading: '#000000',
   },
   signUp: {
     title: '#000000',
     submitBackground: colors.secondary,
     already: '#666666',
     back: '#000000',
+    error: '#D80027',
+    loading: '#000000',
   },
   home: {
     title: '#000000',
@@ -252,6 +256,7 @@ const lightTheme: CustomTheme = {
     title: '#000000',
     submitBackground: colors.primary,
     icon: '#666666',
+    loading: '#000000',
   },
   privacyPolicy: {
     text: '#000000',

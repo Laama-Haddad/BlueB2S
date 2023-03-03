@@ -21,6 +21,7 @@ import {saveCartList} from './screens/Content/Cart/action';
 import GlobalModal from './connected-components/Modal';
 import {setAuthStatus} from './screens/Auth/SignIn/action';
 import {saveFavoriteList} from './screens/Content/Favorite/action';
+import {setUserStatus} from './screens/Auth/SignUp/action';
 
 const App = () => {
   const copyDataFromLocalToReducer = async () => {
@@ -30,6 +31,21 @@ const App = () => {
     saveFavoriteList(!favoriteList ? [] : favoriteList);
     let logged = await getLocalData(keys.AUTH);
     setAuthStatus(logged ? logged : {logged: false});
+    let user = await getLocalData(keys.USER);
+    setUserStatus(
+      user
+        ? user
+        : {
+            personalInfo: {
+              firstName: '',
+              lastName: '',
+              email: '',
+              password: '',
+              mobile: '',
+              profileImage: '',
+            },
+          },
+    );
   };
   useEffect(() => {
     if (Platform.OS === 'android') {

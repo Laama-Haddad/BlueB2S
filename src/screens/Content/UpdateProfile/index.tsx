@@ -2,29 +2,32 @@ import React, {useEffect, useState} from 'react';
 import MainLayout from '../../MainLayout';
 import {tr} from '../../../resources/translations';
 import GenericTextInput from '../../../components/GenericTextInput';
-import {user} from '../../../resources/staticData/user';
 import {useTheme} from '@react-navigation/native';
 import Button from '../../../components/Button';
 import {UpdateProfileProps} from '../../../resources/interfaces/screens/updateProfile';
 import GenericText from '../../../components/GenericText';
 import styles from './styles';
-import {Image, View} from 'react-native';
+import {ActivityIndicator, Image, Platform, View} from 'react-native';
 import {RootState} from '../../../redux/store';
 import {connect} from 'react-redux';
-import {setAuthStatus} from '../../Auth/SignIn/action';
 import Icon from '../../../components/Icon';
+import {SaveUser} from '../../../utils/userFuncs';
+import {PersonalInformation} from '../../../resources/interfaces/items/userItem';
+import {showToastAndroid} from '../../../utils/funcs';
 
-const mandatoryFields = ['fullName', 'mobile', 'email', 'address'];
-const UpdateProfile = ({navigation, auth}: UpdateProfileProps) => {
+const mandatoryFields = ['firstName', 'lastName', 'mobile', 'email'];
+const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
+  const {personalInfo} = user;
   const [form, updateForm] = useState({
-    firstName: user && user.firstName,
-    lastName: user && user.lastName,
-    mobile: user && user.mobile,
-    email: user && user.email,
+    firstName: personalInfo && personalInfo?.firstName,
+    lastName: personalInfo && personalInfo?.lastName,
+    mobile: personalInfo && personalInfo?.mobile,
+    email: personalInfo && personalInfo?.email,
   });
-  const [formComplete, setFormComplete] = useState(false);
+  const [formComplete, setFormComplete] = useState(true);
+  const [noChange, setNoChange] = useState(true);
+  const [loading, setLoading] = useState(false);
   const theme = useTheme();
-  const {logged} = auth;
   const handleChange = (key, value) => {
     updateForm({
       ...form,
@@ -37,16 +40,24 @@ const UpdateProfile = ({navigation, auth}: UpdateProfileProps) => {
       const field = mandatoryFields[index];
       if (!form[field] || form[field].length <= 0) {
         setFormComplete(false);
-        _formComplete = false;
         break;
       }
     }
     if (_formComplete) {
       setFormComplete(true);
-      navigation?.goBack();
     }
   }, [form]);
-  const submit = async () => {};
+  const submit = async () => {
+    let temp: PersonalInformation = {
+      ...personalInfo,
+      ...form,
+      profileImage: '',
+    };
+    setLoading(true);
+    await SaveUser({personalInfo: temp});
+    setLoading(false);
+    showToastAndroid(tr('updateProfile.updateDoneAlertMessage'));
+  };
   return (
     <MainLayout
       backHeader
@@ -56,8 +67,8 @@ const UpdateProfile = ({navigation, auth}: UpdateProfileProps) => {
         <View style={styles.topContainer}>
           <Image
             source={
-              logged
-                ? {uri: user.profileImage}
+              personalInfo.profileImage != ''
+                ? {uri: personalInfo.profileImage}
                 : {
                     uri: 'https://i.postimg.cc/tT700h6t/download.png',
                   }
@@ -84,40 +95,56 @@ const UpdateProfile = ({navigation, auth}: UpdateProfileProps) => {
         </GenericText>
         <GenericTextInput
           required
-          placeholder={tr('updateProfile.firstNamePlaceHolder')}
+          label={tr('updateProfile.firstNameLabel')}
           value={form.firstName}
-          onChangeText={text => handleChange('firstName', text)}
+          onChangeText={text => {
+            handleChange('firstName', text);
+            setNoChange(false);
+          }}
           containerStyle={{marginBottom: '3%'}}
         />
         <GenericTextInput
           required
-          placeholder={tr('updateProfile.lastNamePlaceHolder')}
+          label={tr('updateProfile.lastNameLabel')}
           value={form.lastName}
-          onChangeText={text => handleChange('lastName', text)}
+          onChangeText={text => {
+            handleChange('lastName', text);
+            setNoChange(false);
+          }}
           containerStyle={{marginBottom: '3%'}}
         />
         <GenericTextInput
           required
-          placeholder={tr('updateProfile.mobilePlaceHolder')}
-          placeholderTextColor={theme.profile.label}
+          label={tr('updateProfile.mobileLabel')}
           value={form.mobile}
-          onChangeText={text => handleChange('mobile', text)}
+          onChangeText={text => {
+            handleChange('mobile', text);
+            setNoChange(false);
+          }}
           containerStyle={{marginBottom: '3%'}}
         />
         <GenericTextInput
           required
-          placeholder={tr('updateProfile.emailPlaceHolder')}
-          placeholderTextColor={theme.profile.label}
+          label={tr('updateProfile.emailLabel')}
           value={form.email}
-          onChangeText={text => handleChange('email', text)}
+          onChangeText={text => {
+            handleChange('email', text);
+            setNoChange(false);
+          }}
           containerStyle={{marginBottom: '3%'}}
+        />
+        <ActivityIndicator
+          size={Platform.OS === 'ios' ? 'large' : 35}
+          animating={loading}
+          style={{marginVertical: '3%'}}
+          color={theme.updateProfile.loading}
         />
         <View style={styles.bottomContainer}>
           <Button
             title={tr('updateProfile.submit')}
             backgroundColor={theme.updateProfile.submitBackground}
-            disabled={!formComplete}
-            onPress={() => submit()}
+            disabled={!formComplete || noChange}
+            onPress={() => formComplete && submit()}
           />
           <Button
             title={tr('updateProfile.changePassword')}
@@ -131,6 +158,7 @@ const UpdateProfile = ({navigation, auth}: UpdateProfileProps) => {
 };
 const mapStateToProps = (state: RootState) => ({
   auth: state.auth,
+  user: state.user,
 });
 
-export default connect(mapStateToProps, {setAuthStatus})(UpdateProfile);
+export default connect(mapStateToProps)(UpdateProfile);

@@ -35,7 +35,7 @@ const SignIn = ({navigation}: SignInProps) => {
         />
       </View>
       <SignInForm navigation={navigation} title={tr('signIn.title')} />
-      <TouchableOpacity onPress={() => console.log('guest')}>
+      <TouchableOpacity onPress={() => navigation?.goBack()}>
         <GenericText
           style={{
             fontSize: theme.text.s9,

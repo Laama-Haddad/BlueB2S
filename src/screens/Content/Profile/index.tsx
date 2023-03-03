@@ -17,9 +17,10 @@ import {ToggleAuth} from '../../../utils/authFuncs';
 import {AccordionItem} from '../../../resources/interfaces/components/accordionItemListProps';
 import {wdp} from '../../../utils/responsive';
 
-const Profile = ({navigation, auth}: ProfileProps) => {
+const Profile = ({navigation, auth, user}: ProfileProps) => {
   const theme = useTheme();
   const {logged} = auth;
+  const {personalInfo} = user;
   const accountData: AccordionItem[] = [
     {
       id: 0,
@@ -133,7 +134,7 @@ const Profile = ({navigation, auth}: ProfileProps) => {
                   styles.title,
                   {fontSize: theme.text.s9, color: theme.profile.title},
                 ]}>
-                {tr('profile.title')} {'B2S'}
+                {tr('profile.title')} {personalInfo?.firstName}
               </GenericText>
               <Icon
                 name={'edit'}
@@ -161,6 +162,7 @@ const Profile = ({navigation, auth}: ProfileProps) => {
 };
 const mapStateToProps = (state: RootState) => ({
   auth: state.auth,
+  user: state.user,
 });
 
 export default connect(mapStateToProps, {setAuthStatus})(Profile);
