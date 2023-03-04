@@ -13,6 +13,7 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {RootState} from '../../../redux/store';
@@ -25,6 +26,7 @@ import {getByScreenSize, wdp} from '../../../utils/responsive';
 import ImagePicker from 'react-native-image-crop-picker';
 import Modal from 'react-native-modal';
 import config from '../../../config';
+import {ImageItem} from '../../../resources/interfaces/items/imageItem';
 
 const mandatoryFields = ['firstName', 'lastName', 'mobile', 'email'];
 const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
@@ -41,7 +43,7 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
   const openModal = () => setShowModal(true);
-  const [photoUri, setPhotoUri] = useState(personalInfo.profileImage);
+  const [photo, setPhoto] = useState(personalInfo.profileImage);
   const theme = useTheme();
   const handleChange = (key, value) => {
     updateForm({
@@ -67,7 +69,7 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
     let temp: PersonalInformation = {
       ...personalInfo,
       ...form,
-      profileImage: photoUri,
+      profileImage: photo,
     };
     setLoading(true);
     await SaveUser({personalInfo: temp});
@@ -83,7 +85,12 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
     })
       .then(image => {
         if (image.path != '') {
-          setPhotoUri(image.path);
+          let temp: ImageItem = {
+            id: 0,
+            name: 'profileImage',
+            uri: image.path,
+          };
+          setPhoto(temp);
           setNoChange(false);
         }
       })
@@ -105,7 +112,12 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
     })
       .then(image => {
         if (image.path != '') {
-          setPhotoUri(image.path);
+          let temp: ImageItem = {
+            id: 0,
+            name: 'profileImage',
+            uri: image.path,
+          };
+          setPhoto(temp);
           setNoChange(false);
         }
       })
@@ -123,11 +135,17 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
       title={tr('updateProfile.headerTitle')}
       onBackIconPress={() => navigation?.goBack()}>
       <View style={styles.container}>
-        <View style={styles.topContainer}>
+        <TouchableOpacity
+          style={styles.topContainer}
+          onPress={() =>
+            navigation?.navigate('imageViewer', {
+              image: photo,
+            })
+          }>
           <Image
             source={
-              photoUri != ''
-                ? {uri: photoUri}
+              photo
+                ? {uri: photo.uri}
                 : {
                     uri: 'https://i.postimg.cc/tT700h6t/download.png',
                   }
@@ -153,7 +171,7 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
               },
             ]}
           />
-        </View>
+        </TouchableOpacity>
         <GenericText
           style={[
             styles.title,

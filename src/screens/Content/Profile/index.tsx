@@ -124,6 +124,11 @@ const Profile = ({navigation, auth, user}: ProfileProps) => {
       tabHeader
       showLogo={false}
       showProfilePic
+      onPressProfilePic={() =>
+        navigation?.navigate('imageViewer', {
+          image: personalInfo?.profileImage,
+        })
+      }
       title={tr('profile.headerTitle')}>
       <View style={styles.container}>
         {logged ? (

@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     position: 'absolute',
-    top: hdp(5),
-    left: wdp(3),
+    top: hdp(2),
+    left: hdp(2),
     opacity: 0.4,
     zIndex: 1,
   },

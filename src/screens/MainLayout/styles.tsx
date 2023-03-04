@@ -24,14 +24,16 @@ const styles = StyleSheet.create({
   bottomSpacer: {
     padding: hdp(7.2),
   },
+  imageContainer: {
+    position: 'absolute',
+    top: getByScreenSize(hdp(5), hdp(4)),
+    right: wdp(9),
+  },
   image: {
     width: wdp(20),
     height: wdp(20),
     borderRadius: wdp(10),
     borderWidth: 3,
-    position: 'absolute',
-    top: getByScreenSize(hdp(5), hdp(4)),
-    right: wdp(9),
   },
 });
 export default styles;

@@ -6,6 +6,7 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import Header from '../../components/Header';
@@ -29,10 +30,12 @@ const MainLayout = ({
   headerRef,
   containerStyle,
   showProfilePic = false,
+  onPressProfilePic,
   ...props
 }: MainLayoutProps) => {
   const theme = useTheme();
   const user = useSelector(state => state.user);
+  const {logged} = useSelector(state => state.auth);
   const {personalInfo} = user;
   const renderContent = () => {
     return (
@@ -74,17 +77,22 @@ const MainLayout = ({
       {backHeader && <Header showBackIcon ref={headerRef} {...props} />}
       {tabHeader && <Header ref={headerRef} {...props} />}
       {showProfilePic && (
-        <Image
-          source={
-            personalInfo.profileImage
-              ? {uri: personalInfo?.profileImage}
-              : {
-                  uri: 'https://i.postimg.cc/tT700h6t/download.png',
-                }
-          }
-          resizeMode={'contain'}
-          style={[styles.image, {borderColor: theme.homeBackground}]}
-        />
+        <TouchableOpacity
+          style={[styles.imageContainer]}
+          disabled={!personalInfo.profileImage || !logged}
+          onPress={onPressProfilePic}>
+          <Image
+            source={
+              !!personalInfo.profileImage && logged
+                ? {uri: personalInfo?.profileImage.uri}
+                : {
+                    uri: 'https://i.postimg.cc/tT700h6t/download.png',
+                  }
+            }
+            resizeMode={'contain'}
+            style={[styles.image, {borderColor: theme.homeBackground}]}
+          />
+        </TouchableOpacity>
       )}
       {customLeftHeader && <Header {...props} />}
       {!enableScroll ? (

@@ -18,4 +18,5 @@ export interface MainLayoutProps extends HeaderProps {
   headerRef?: React.Ref<any>;
   containerStyle?: StyleProp<any> | StyleProp<any>[];
   showProfilePic?: boolean;
+  onPressProfilePic?: () => void;
 }
