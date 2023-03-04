@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {getByScreenSize, hdp, wdp} from '../../../utils/responsive';
+
 const styles = StyleSheet.create({
   container: {
     height: getByScreenSize(hdp(83), hdp(79)),
@@ -31,6 +32,26 @@ const styles = StyleSheet.create({
     width: '100%',
     height: hdp(12),
     justifyContent: 'space-between',
+  },
+  modal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+  optionsStyle: {
+    flexDirection: 'row',
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    height: wdp(35),
+  },
+  optionStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  modalLabel: {
+    fontWeight: '600',
+    marginHorizontal: '5%',
   },
 });
 export default styles;

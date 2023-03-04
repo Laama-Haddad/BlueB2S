@@ -259,6 +259,9 @@ const lightTheme: CustomTheme = {
     cameraBackground: '#ffffff',
     cameraBorder: '#eeeeee',
     loading: '#000000',
+    modalBackground: '#eeeeee',
+    modalIcon: '#000000',
+    modalLabel: '#000000',
   },
   privacyPolicy: {
     text: '#000000',

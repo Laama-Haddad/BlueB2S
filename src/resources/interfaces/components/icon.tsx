@@ -12,6 +12,6 @@ export interface IconProps {
   stroke?: string;
   loading?: boolean;
   background?: string;
-  border: string;
+  border?: string;
   disabled?: boolean;
 }

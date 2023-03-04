@@ -246,6 +246,9 @@ export interface CustomTheme extends Theme {
     cameraBackground: string;
     cameraBorder: string;
     loading: string;
+    modalBackground: string;
+    modalIcon: string;
+    modalLabel: string;
   };
   privacyPolicy: {
     text: string;

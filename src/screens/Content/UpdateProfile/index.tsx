@@ -7,7 +7,14 @@ import Button from '../../../components/Button';
 import {UpdateProfileProps} from '../../../resources/interfaces/screens/updateProfile';
 import GenericText from '../../../components/GenericText';
 import styles from './styles';
-import {ActivityIndicator, Image, Platform, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  Platform,
+  Pressable,
+  SafeAreaView,
+  View,
+} from 'react-native';
 import {RootState} from '../../../redux/store';
 import {connect} from 'react-redux';
 import Icon from '../../../components/Icon';
@@ -15,6 +22,9 @@ import {SaveUser} from '../../../utils/userFuncs';
 import {PersonalInformation} from '../../../resources/interfaces/items/userItem';
 import {showToastAndroid} from '../../../utils/funcs';
 import {getByScreenSize, wdp} from '../../../utils/responsive';
+import ImagePicker from 'react-native-image-crop-picker';
+import Modal from 'react-native-modal';
+import config from '../../../config';
 
 const mandatoryFields = ['firstName', 'lastName', 'mobile', 'email'];
 const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
@@ -28,6 +38,10 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
   const [formComplete, setFormComplete] = useState(true);
   const [noChange, setNoChange] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = () => setShowModal(false);
+  const openModal = () => setShowModal(true);
+  const [photoUri, setPhotoUri] = useState(personalInfo.profileImage);
   const theme = useTheme();
   const handleChange = (key, value) => {
     updateForm({
@@ -48,20 +62,61 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
       setFormComplete(true);
     }
   }, [form]);
+
   const submit = async () => {
     let temp: PersonalInformation = {
       ...personalInfo,
       ...form,
-      profileImage: '',
+      profileImage: photoUri,
     };
     setLoading(true);
     await SaveUser({personalInfo: temp});
     setLoading(false);
     showToastAndroid(tr('updateProfile.updateDoneAlertMessage'));
   };
-  const selectYourPic = () => {
-    console.log('bvdn');
-  };
+
+  async function takePhotoFromCamera() {
+    ImagePicker.openCamera({
+      width: 200,
+      height: 200,
+      cropping: true,
+    })
+      .then(image => {
+        if (image.path != '') {
+          setPhotoUri(image.path);
+          setNoChange(false);
+        }
+      })
+      .finally(closeModal)
+      .catch(err => {
+        if (config.debug) {
+          console.log(' Error fetching image from Camera roll ', err);
+        }
+      });
+  }
+
+  async function choosePhotosFromGallery() {
+    ImagePicker.openPicker({
+      width: 80,
+      height: 80,
+      multiple: false,
+      cropping: true,
+      mediaType: 'photo',
+    })
+      .then(image => {
+        if (image.path != '') {
+          setPhotoUri(image.path);
+          setNoChange(false);
+        }
+      })
+      .finally(closeModal)
+      .catch(err => {
+        if (config.debug) {
+          console.log(' Error fetching images from gallery ', err);
+        }
+      });
+  }
+
   return (
     <MainLayout
       backHeader
@@ -71,8 +126,8 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
         <View style={styles.topContainer}>
           <Image
             source={
-              personalInfo.profileImage != ''
-                ? {uri: personalInfo.profileImage}
+              photoUri != ''
+                ? {uri: photoUri}
                 : {
                     uri: 'https://i.postimg.cc/tT700h6t/download.png',
                   }
@@ -86,7 +141,7 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
             size={theme.text.s9}
             color={theme.updateProfile.cameraIcon}
             role={'button'}
-            onPress={() => selectYourPic()}
+            onPress={openModal}
             background={theme.updateProfile.cameraBackground}
             border={theme.updateProfile.cameraBorder}
             style={[
@@ -165,6 +220,62 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
             onPress={() => console.log('change password')}
           />
         </View>
+        <Modal
+          isVisible={showModal}
+          onBackButtonPress={closeModal}
+          onBackdropPress={closeModal}
+          style={styles.modal}>
+          <SafeAreaView
+            style={[
+              styles.optionsStyle,
+              {backgroundColor: theme.updateProfile.modalBackground},
+            ]}>
+            <Pressable
+              style={styles.optionStyle}
+              onPress={() => {
+                choosePhotosFromGallery().then();
+              }}>
+              <Icon
+                type={'Entypo'}
+                name={'images'}
+                color={theme.updateProfile.modalIcon}
+                size={theme.text.s7}
+              />
+              <GenericText
+                style={[
+                  styles.modalLabel,
+                  {
+                    fontSize: theme.text.s7,
+                    color: theme.updateProfile.modalLabel,
+                  },
+                ]}>
+                {tr('updateProfile.gallery')}
+              </GenericText>
+            </Pressable>
+            <Pressable
+              style={styles.optionStyle}
+              onPress={() => {
+                takePhotoFromCamera().then();
+              }}>
+              <Icon
+                type={'FontAwesome'}
+                name={'camera'}
+                color={theme.updateProfile.modalIcon}
+                size={theme.text.s7}
+              />
+              <GenericText
+                style={[
+                  styles.modalLabel,
+                  {
+                    fontSize: theme.text.s7,
+                    color: theme.updateProfile.modalLabel,
+                  },
+                ]}>
+                {tr('updateProfile.camera')}
+              </GenericText>
+            </Pressable>
+          </SafeAreaView>
+        </Modal>
       </View>
     </MainLayout>
   );
