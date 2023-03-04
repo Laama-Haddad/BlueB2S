@@ -7,44 +7,11 @@ export const dataList: CategoryItem[] = [
     categoryImageUri: 'https://i.postimg.cc/XJMKP6WZ/category1.png',
     productsList: [
       {
-        id: 1,
-        name: 'REVOLAX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
-        imageUri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-        images: [
-          {
-            id: 0,
-            name: 'image0',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-          },
-          {
-            id: 1,
-            name: 'image1',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
-          },
-          {
-            id: 2,
-            name: 'image2',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-          },
-          {
-            id: 3,
-            name: 'image3',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
-          },
-        ],
-        rating: 4.5,
-        description:
-          'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
-      },
-      {
         id: 2,
-        name: 'Pink Ahabha Kit',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'Pink Ahabha',
+        price: 100,
+        offerPrice: 80,
+        size: '2ml',
         imageUri: 'https://i.postimg.cc/X7868MmF/Kyliiessin.jpg',
         images: [
           {
@@ -80,9 +47,9 @@ export const dataList: CategoryItem[] = [
       {
         id: 3,
         name: 'Nacific',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        price: 50,
+        offerPrice: 30,
+        size: '1ml',
         imageUri: 'https://i.postimg.cc/rFLt4W2s/nacific.jpg',
         images: [
           {
@@ -107,10 +74,10 @@ export const dataList: CategoryItem[] = [
       },
       {
         id: 4,
-        name: 'Nasfic Fresh Hard',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'Fresh Hard',
+        price: 300,
+        offerPrice: 280,
+        size: '1ml',
         imageUri: 'https://i.postimg.cc/QdKGrBVg/fresh.jpg',
         images: [
           {
@@ -142,10 +109,10 @@ export const dataList: CategoryItem[] = [
     productsList: [
       {
         id: 1,
-        name: 'Joseon Ginseng',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'Joseon',
+        price: 800,
+        offerPrice: 500,
+        size: '2ml',
         imageUri: 'https://i.postimg.cc/DZL1VcKV/Joseon.jpg',
         images: [
           {
@@ -176,9 +143,9 @@ export const dataList: CategoryItem[] = [
       {
         id: 2,
         name: 'COSRX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        price: 900,
+        offerPrice: 500,
+        size: '6ml',
         imageUri: 'https://i.postimg.cc/XqZS7XQ0/COSRX.jpg',
         images: [
           {
@@ -218,10 +185,10 @@ export const dataList: CategoryItem[] = [
       },
       {
         id: 3,
-        name: 'Serum/Collagen',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'Serum',
+        price: 700,
+        offerPrice: 600,
+        size: '4ml',
         imageUri: 'https://i.postimg.cc/DZS4FPkf/labs.jpg',
         images: [
           {
@@ -261,10 +228,10 @@ export const dataList: CategoryItem[] = [
       },
       {
         id: 4,
-        name: 'ATTITUDE Sunscreen',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'ATTITUDE',
+        price: 800,
+        offerPrice: 600,
+        size: '5ml',
         imageUri: 'https://i.postimg.cc/SKP1y41B/tude.jpg',
         images: [
           {
@@ -291,10 +258,10 @@ export const dataList: CategoryItem[] = [
     productsList: [
       {
         id: 1,
-        name: 'IASO Youth Balm BB',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        name: 'IASO Youth',
+        price: 700,
+        offerPrice: 500,
+        size: '6ml',
         imageUri: 'https://i.postimg.cc/jdNDchrP/IASO.jpg',
         images: [
           {
@@ -334,102 +301,69 @@ export const dataList: CategoryItem[] = [
       },
       {
         id: 2,
-        name: 'REVOLAX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
-        imageUri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
+        name: 'Nacific',
+        price: 400,
+        offerPrice: 350,
+        size: '1ml',
+        imageUri: 'https://i.postimg.cc/rFLt4W2s/nacific.jpg',
         images: [
           {
             id: 0,
             name: 'image0',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
+            uri: 'https://i.postimg.cc/9Q7t2V2w/nacific1.jpg',
           },
           {
             id: 1,
             name: 'image1',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
+            uri: 'https://i.postimg.cc/Qd8943tr/nacific2.jpg',
           },
           {
             id: 2,
             name: 'image2',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-          },
-          {
-            id: 3,
-            name: 'image3',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
-          },
-        ],
-        rating: 2.4,
-        description:
-          'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
-      },
-      {
-        id: 3,
-        name: 'REVOLAX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
-        imageUri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-        images: [
-          {
-            id: 0,
-            name: 'image0',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-          },
-          {
-            id: 1,
-            name: 'image1',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
-          },
-          {
-            id: 2,
-            name: 'image2',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
-          },
-          {
-            id: 3,
-            name: 'image3',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
+            uri: 'https://i.postimg.cc/vT7ThqwB/nacific3.jpg',
           },
         ],
         rating: 1.4,
         description:
-          'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
+          'Nacific Fresh Cica Plus Clear Kit (Cleansing Foam, Toner, Serum, Cream) Travel Size Skin Care Set',
       },
       {
-        id: 4,
-        name: 'REVOLAX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
-        imageUri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
+        id: 3,
+        name: 'Pink Ahabha',
+        price: 800,
+        offerPrice: 400,
+        size: '1ml',
+        imageUri: 'https://i.postimg.cc/X7868MmF/Kyliiessin.jpg',
         images: [
           {
             id: 0,
             name: 'image0',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
+            uri: 'https://i.postimg.cc/Kzkc0tHd/pink1.jpg',
           },
           {
             id: 1,
             name: 'image1',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
+            uri: 'https://i.postimg.cc/zGzJ9sQw/pink2.jpg',
           },
           {
             id: 2,
             name: 'image2',
-            uri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
+            uri: 'https://i.postimg.cc/D03h5HsX/pink3.jpg',
           },
           {
             id: 3,
             name: 'image3',
-            uri: 'https://i.postimg.cc/MZBh1JbM/product2.png',
+            uri: 'https://i.postimg.cc/g22WMvwN/pink4.jpg',
+          },
+          {
+            id: 4,
+            name: 'image3',
+            uri: 'https://i.postimg.cc/qRyVtwYM/pink5.jpg',
           },
         ],
-        rating: 4.4,
+        rating: 2.4,
         description:
-          'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
+          'Nacific Pink AHA BHA Kit (Cleansing Foam, Toner, Serum, Cream) Travel Size Skin Care Set, Gluten Free & Paraben Free! Choose From Skincare Set, Toner or Makeup Wipes! (Skincare Set)',
       },
     ],
   },
@@ -441,9 +375,9 @@ export const dataList: CategoryItem[] = [
       {
         id: 1,
         name: 'REVOLAX',
-        price: 399,
-        offerPrice: 299,
-        size: 'Fine 1*1ml',
+        price: 400,
+        offerPrice: 350,
+        size: '3ml',
         imageUri: 'https://i.postimg.cc/3w3NpZDV/product1.png',
         images: [
           {

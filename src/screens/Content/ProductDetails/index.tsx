@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Share, Linking} from 'react-native';
+import {View, Share} from 'react-native';
 import styles from './styles';
 import MainLayout from '../../MainLayout';
 import {useTheme} from '@react-navigation/native';
@@ -77,7 +77,7 @@ const ProductDetails = ({
         url: imageUri,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error?.message);
     }
   };
   return (
@@ -148,7 +148,7 @@ const ProductDetails = ({
               onCartItemsChange={() => updateCart(route?.params?.details)}
             />
           </View>
-          <AnimatedPaginationDots data={images} />
+          <AnimatedPaginationDots data={images} navigation={navigation} />
           <View style={styles.ratingContainer}>
             <View>
               <GenericText

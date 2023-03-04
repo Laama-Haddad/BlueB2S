@@ -21,8 +21,9 @@ import WriteReview from '../screens/Content/WriteReview';
 import PlaceOrder from '../screens/Content/Order/PlaceOrder';
 import SignIn from '../screens/Auth/SignIn';
 import SignUp from '../screens/Auth/SignUp';
-import UpdateProfile from "../screens/Content/UpdateProfile";
-import Splash from "../screens/Content/Splash";
+import UpdateProfile from '../screens/Content/UpdateProfile';
+import Splash from '../screens/Content/Splash';
+import ImageViewer from '../screens/Content/ImageViewer';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -116,36 +117,41 @@ const screens: StackItem[] = [
   },
   {
     id: 3,
+    name: 'imageViewer',
+    component: ImageViewer,
+  },
+  {
+    id: 4,
     name: 'productReview',
     component: ProductReview,
   },
   {
-    id: 4,
+    id: 5,
     name: 'writeReview',
     component: WriteReview,
   },
   {
-    id: 5,
+    id: 6,
     name: 'updateProfile',
     component: UpdateProfile,
   },
   {
-    id: 6,
+    id: 7,
     name: 'privacyPolicy',
     component: PrivacyPolicy,
   },
   {
-    id: 7,
+    id: 8,
     name: 'placeOrder',
     component: PlaceOrder,
   },
   {
-    id: 8,
+    id: 9,
     name: 'signIn',
     component: SignIn,
   },
   {
-    id: 9,
+    id: 10,
     name: 'signUp',
     component: SignUp,
   },

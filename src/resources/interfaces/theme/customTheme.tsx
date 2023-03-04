@@ -207,6 +207,12 @@ export interface CustomTheme extends Theme {
     addButtonBackground: string;
     buyButtonBackground: string;
   };
+  imageViewer: {
+    headerBackground: string;
+    backIcon: string;
+    backIconBackground: string;
+    background: string;
+  };
   productReview: {
     containerBorder: string;
     separator: string;

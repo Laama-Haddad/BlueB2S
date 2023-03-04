@@ -18,12 +18,12 @@ import {dataList} from '../../../resources/staticData/list';
 const Home = ({navigation}: HomeProps) => {
   const [keyWord, setKeyword] = useState('');
   const theme = useTheme();
-  const [list,setList]=useState(dataList);
+  const [list, setList] = useState(dataList);
   const renderProductItem = ({item}) => {
     return (
       <Product
         details={item}
-        containerStyle={{marginRight: getByScreenSize(20,30)}}
+        containerStyle={{marginRight: getByScreenSize(20, 30)}}
         onPress={() => navigation?.navigate('productDetails', {details: item})}
       />
     );

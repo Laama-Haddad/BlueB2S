@@ -1,5 +1,5 @@
 import React from 'react';
-import {Animated, Image, View} from 'react-native';
+import {Animated, Image, TouchableOpacity, View} from 'react-native';
 import PagerView, {
   PagerViewOnPageScrollEventData,
 } from 'react-native-pager-view';
@@ -9,12 +9,12 @@ import styles from './styles';
 import {AnimationPaginationDotsProps} from '../../resources/interfaces/components/animationPaginationDots';
 import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, wdp} from '../../utils/responsive';
-
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
 const AnimatedPaginationDots = ({
   data,
   containerStyle,
+  navigation,
 }: AnimationPaginationDotsProps) => {
   const ref = React.useRef<PagerView>(null);
   const scrollOffsetAnimatedValue = React.useRef(new Animated.Value(0)).current;
@@ -55,13 +55,18 @@ const AnimatedPaginationDots = ({
         style={styles.PagerView}
         onPageScroll={onPageScroll}>
         {data.map(({id}) => (
-          <View key={id} style={styles.imageContainer}>
+          <TouchableOpacity
+            key={id}
+            style={styles.imageContainer}
+            onPress={() =>
+              navigation?.navigate('imageViewer', {image: data[id]})
+            }>
             <Image
               source={{uri: data[id].uri}}
               resizeMode={'contain'}
               style={[styles.image]}
             />
-          </View>
+          </TouchableOpacity>
         ))}
       </AnimatedPagerView>
       <View style={styles.dotContainer}>

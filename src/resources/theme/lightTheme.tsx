@@ -220,6 +220,12 @@ const lightTheme: CustomTheme = {
     addButtonBackground: colors.secondary,
     buyButtonBackground: colors.primary,
   },
+  imageViewer: {
+    headerBackground: '#000000',
+    backIcon: '#FFFFFF',
+    backIconBackground: '#FFFFFF55',
+    background: '#000000',
+  },
   productReview: {
     containerBorder: '#E6E6E6',
     separator: '#D2D2D2',
