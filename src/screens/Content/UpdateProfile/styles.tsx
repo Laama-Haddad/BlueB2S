@@ -12,10 +12,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     marginVertical: '5%',
   },
-  editIcon: {
+  cameraIcon: {
+    borderWidth: getByScreenSize(1, 2),
     position: 'absolute',
-    bottom: wdp(10),
-    right: wdp(30),
+    bottom: wdp(8),
+    right: wdp(29),
   },
   title: {
     fontWeight: '700',

@@ -255,7 +255,9 @@ const lightTheme: CustomTheme = {
   updateProfile: {
     title: '#000000',
     submitBackground: colors.primary,
-    icon: '#666666',
+    cameraIcon: '#000000',
+    cameraBackground: '#ffffff',
+    cameraBorder: '#eeeeee',
     loading: '#000000',
   },
   privacyPolicy: {

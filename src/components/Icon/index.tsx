@@ -48,6 +48,7 @@ const Icon = ({
   role,
   loading = false,
   background,
+  border,
   disabled = false,
   ...props
 }: IconProps) => {
@@ -267,7 +268,7 @@ const Icon = ({
           styles.ripple,
           {
             backgroundColor: background ? background : theme.icon.background,
-            borderColor: props.color,
+            borderColor: border ? border : props.color,
           },
           style,
         ]}

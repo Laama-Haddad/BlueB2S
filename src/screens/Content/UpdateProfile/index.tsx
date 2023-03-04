@@ -14,6 +14,7 @@ import Icon from '../../../components/Icon';
 import {SaveUser} from '../../../utils/userFuncs';
 import {PersonalInformation} from '../../../resources/interfaces/items/userItem';
 import {showToastAndroid} from '../../../utils/funcs';
+import {getByScreenSize, wdp} from '../../../utils/responsive';
 
 const mandatoryFields = ['firstName', 'lastName', 'mobile', 'email'];
 const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
@@ -58,6 +59,9 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
     setLoading(false);
     showToastAndroid(tr('updateProfile.updateDoneAlertMessage'));
   };
+  const selectYourPic = () => {
+    console.log('bvdn');
+  };
   return (
     <MainLayout
       backHeader
@@ -77,13 +81,22 @@ const UpdateProfile = ({navigation, user}: UpdateProfileProps) => {
             style={[styles.image, {borderColor: theme.homeBackground}]}
           />
           <Icon
-            type={'MaterialCommunityIcons'}
-            name={'circle-edit-outline'}
-            size={theme.text.s7}
-            color={theme.updateProfile.icon}
+            type={'FontAwesome'}
+            name={'camera'}
+            size={theme.text.s9}
+            color={theme.updateProfile.cameraIcon}
             role={'button'}
-            onPress={() => {}}
-            style={styles.editIcon}
+            onPress={() => selectYourPic()}
+            background={theme.updateProfile.cameraBackground}
+            border={theme.updateProfile.cameraBorder}
+            style={[
+              styles.cameraIcon,
+              {
+                width: wdp(getByScreenSize(8, 6)),
+                height: wdp(getByScreenSize(8, 6)),
+                borderRadius: wdp(getByScreenSize(4, 3)),
+              },
+            ]}
           />
         </View>
         <GenericText

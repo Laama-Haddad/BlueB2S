@@ -242,7 +242,9 @@ export interface CustomTheme extends Theme {
   updateProfile: {
     title: string;
     submitBackground: string;
-    icon: string;
+    cameraIcon: string;
+    cameraBackground: string;
+    cameraBorder: string;
     loading: string;
   };
   privacyPolicy: {

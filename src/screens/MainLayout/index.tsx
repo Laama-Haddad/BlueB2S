@@ -11,7 +11,6 @@ import {
 import Header from '../../components/Header';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useTheme} from '@react-navigation/native';
-import {user} from '../../resources/staticData/user';
 import {useSelector} from 'react-redux';
 
 const MainLayout = ({
@@ -33,7 +32,8 @@ const MainLayout = ({
   ...props
 }: MainLayoutProps) => {
   const theme = useTheme();
-  const userStatus = useSelector(state => state.auth);
+  const user = useSelector(state => state.user);
+  const {personalInfo} = user;
   const renderContent = () => {
     return (
       <>
@@ -76,8 +76,8 @@ const MainLayout = ({
       {showProfilePic && (
         <Image
           source={
-            userStatus.logged
-              ? {uri: user.profileImage}
+            personalInfo.profileImage
+              ? {uri: personalInfo?.profileImage}
               : {
                   uri: 'https://i.postimg.cc/tT700h6t/download.png',
                 }
