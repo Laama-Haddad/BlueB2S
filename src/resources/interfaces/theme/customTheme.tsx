@@ -188,6 +188,10 @@ export interface CustomTheme extends Theme {
     error: string;
     loading: string;
   };
+  splash: {
+    background: string;
+    text: string;
+  };
   home: {
     title: string;
   };

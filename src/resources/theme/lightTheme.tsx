@@ -201,6 +201,10 @@ const lightTheme: CustomTheme = {
     error: '#D80027',
     loading: '#000000',
   },
+  splash: {
+    background: '#FFFFFF',
+    text: colors.secondary,
+  },
   home: {
     title: '#000000',
   },
