@@ -82,6 +82,7 @@ const ProductDetails = ({
   };
   return (
     <MainLayout
+      enableScroll
       backHeader
       title={tr('productDetails.headerTitle')}
       onBackIconPress={() => navigation?.goBack()}>
@@ -132,26 +133,21 @@ const ProductDetails = ({
           </GenericText>
         </View>
         <View style={styles.centerContainer}>
-          <Favorite
-            isFavorite={fav}
-            onToggleFavorite={() => changeFavoriteList()}
+          <View
             style={{
-              position: 'absolute',
-              left: 20,
-              top: 20,
-              zIndex: 1,
-            }}
-          />
-          <CartIcon
-            isAddedToCart={exist}
-            onCartItemsChange={() => updateCart(route?.params?.details)}
-            style={{
-              position: 'absolute',
-              right: 20,
-              top: 20,
-              zIndex: 1,
-            }}
-          />
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}>
+            <Favorite
+              isFavorite={fav}
+              onToggleFavorite={() => changeFavoriteList()}
+            />
+            <CartIcon
+              isAddedToCart={exist}
+              onCartItemsChange={() => updateCart(route?.params?.details)}
+            />
+          </View>
           <AnimatedPaginationDots data={images} />
           <View style={styles.ratingContainer}>
             <View>

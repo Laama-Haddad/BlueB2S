@@ -1,5 +1,8 @@
+import {ProductItem} from './productItem';
+
 export interface CategoryItem {
   id: number;
-  name: string;
-  imageUri: string;
+  categoryName: string;
+  categoryImageUri: string;
+  productsList: ProductItem[];
 }

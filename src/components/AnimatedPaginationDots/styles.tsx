@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {hdp, wdp} from '../../utils/responsive';
+import {getByScreenSize, hdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '5%',
+    borderRadius: getByScreenSize(4, 8),
   },
   image: {
-    width: wdp(30),
-    height: '90%',
+    width: '100%',
+    height: '80%',
+    borderRadius: getByScreenSize(4, 8),
   },
   dotContainer: {
     justifyContent: 'center',

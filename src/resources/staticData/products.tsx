@@ -1,3 +1,4 @@
+// This file is not used in this Code.
 import {ProductItem} from '../interfaces/items/productItem';
 
 export const products: ProductItem[] = [

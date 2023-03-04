@@ -23,23 +23,23 @@ const styles = StyleSheet.create({
   },
   description: {},
   centerContainer: {
-    marginTop: '2%',
+    marginTop: '4%',
   },
   ratingContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: '5%',
+    paddingVertical: '2%',
     paddingLeft: '5%',
   },
   bottomContainer: {
     width: '100%',
     position: 'absolute',
-    bottom: 10,
+    bottom: getByScreenSize(10, 30),
     alignItems: 'center',
   },
   buttonStyle: {
-    marginTop: '5%',
+    marginTop: '3%',
   },
 });
 export default styles;

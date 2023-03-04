@@ -10,19 +10,20 @@ import {tr} from '../../../resources/translations';
 import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, hdp} from '../../../utils/responsive';
-import {products} from '../../../resources/staticData/products';
 import Product from '../../../components/Product';
 import Category from '../../../components/Category';
 import {categories} from '../../../resources/staticData/categories';
+import {dataList} from '../../../resources/staticData/list';
 
 const Home = ({navigation}: HomeProps) => {
   const [keyWord, setKeyword] = useState('');
   const theme = useTheme();
+  const [list,setList]=useState(dataList);
   const renderProductItem = ({item}) => {
     return (
       <Product
         details={item}
-        containerStyle={{marginRight: 30}}
+        containerStyle={{marginRight: getByScreenSize(20,30)}}
         onPress={() => navigation?.navigate('productDetails', {details: item})}
       />
     );
@@ -60,7 +61,7 @@ const Home = ({navigation}: HomeProps) => {
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={products}
+          data={list[0].productsList}
           renderItem={renderProductItem}
           keyExtractor={item => item.id.toString()}
           style={{
@@ -87,7 +88,7 @@ const Home = ({navigation}: HomeProps) => {
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={products}
+          data={list[1].productsList}
           renderItem={renderProductItem}
           keyExtractor={item => item.id.toString()}
           style={{
@@ -139,7 +140,7 @@ const Home = ({navigation}: HomeProps) => {
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={products}
+          data={list[2].productsList}
           renderItem={renderProductItem}
           keyExtractor={item => item.id.toString()}
           style={{

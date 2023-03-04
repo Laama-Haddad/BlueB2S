@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: wdp(getByScreenSize(40, 35)),
-    width: wdp(getByScreenSize(40, 35)),
+    height: wdp(getByScreenSize(36, 30)),
+    width: wdp(getByScreenSize(36, 30)),
     borderRadius: getByScreenSize(4, 8),
     flexDirection: 'row',
     padding: '5%',
