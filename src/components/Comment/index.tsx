@@ -1,6 +1,5 @@
 import {Image, View} from 'react-native';
 import styles from './styles';
-import {user} from '../../resources/staticData/user';
 import React from 'react';
 import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
@@ -9,6 +8,7 @@ import {CommentProps} from '../../resources/interfaces/components/commentProps';
 
 const Comment = ({
   ownerName,
+  ownerImage,
   rating,
   time,
   comment,
@@ -19,7 +19,13 @@ const Comment = ({
     <View style={[styles.container, containerStyle]}>
       <View style={styles.topContainer}>
         <Image
-          source={{uri: user.profileImage}}
+          source={
+            ownerImage
+              ? {uri: ownerImage.uri}
+              : {
+                  uri: 'https://i.postimg.cc/tT700h6t/download.png',
+                }
+          }
           resizeMode={'contain'}
           style={[styles.image, {borderColor: theme.comment.imageBorder}]}
         />

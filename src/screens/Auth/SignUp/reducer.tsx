@@ -1,7 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {UserState} from '../../../resources/interfaces/screens/signUp';
 import {PersonalInformation} from '../../../resources/interfaces/items/userItem';
-import {ImageItem} from '../../../resources/interfaces/items/imageItem';
 
 const initialState: UserState = {
   personalInfo: {
@@ -10,7 +9,7 @@ const initialState: UserState = {
     email: '',
     password: '',
     mobile: '',
-    profileImage: ImageItem,
+    profileImage: null,
   },
 };
 

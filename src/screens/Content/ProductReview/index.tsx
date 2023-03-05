@@ -19,7 +19,7 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
       <Comment
         id={item.id}
         ownerName={item.ownerName}
-        ownerImageUri={item.ownerImageUri}
+        ownerImage={item.ownerImage}
         comment={item.comment}
         rating={item.rating}
         time={item.time}

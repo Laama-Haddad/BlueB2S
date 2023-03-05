@@ -79,7 +79,8 @@
     "write": "Write Comment",
     "placeHolderComment": "Would you like to write anything about the merchant? ",
     "characters": "characters remaining",
-    "submit": "Submit"
+    "submit": "Submit",
+    "message": "Please Sign In To Write Your Comment"
   },
   "orders": {
     "headerTitle": "My Orders",

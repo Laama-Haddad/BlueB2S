@@ -11,6 +11,7 @@ import {tr} from '../../../resources/translations';
 import GenericTextInput from '../../../components/GenericTextInput';
 import styles from './styles';
 import Button from '../../../components/Button';
+// @ts-ignore
 import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {getByScreenSize} from '../../../utils/responsive';
 import {useTheme} from '@react-navigation/native';
@@ -79,7 +80,7 @@ const SignUp = ({navigation}: SignUpProps) => {
       mobile: form.mobile,
       email: form.email,
       password: form.password,
-      profileImage: '',
+      profileImage: null,
     };
     await SaveUser({personalInfo: temp});
     navigation?.navigate('home');
@@ -160,7 +161,7 @@ const SignUp = ({navigation}: SignUpProps) => {
         value={form.password}
         onChangeText={text => handleChange('password', text)}
         required
-        secureTextEntry
+        secureTextEntry={form.password.length !== 0}
         noEye={false}
         containerStyle={styles.textInput}
       />
@@ -169,7 +170,7 @@ const SignUp = ({navigation}: SignUpProps) => {
         value={form.confirmPassword}
         onChangeText={text => handleChange('confirmPassword', text)}
         required
-        secureTextEntry
+        secureTextEntry={form.password.length !== 0}
         noEye={false}
         containerStyle={styles.textInput}
       />

@@ -1,7 +1,9 @@
+import {ImageItem} from './imageItem';
+
 export interface CommentItem {
   id: number;
   ownerName: string;
-  ownerImageUri: string;
+  ownerImage?: ImageItem | null;
   comment: string;
   rating: number;
   time: string;

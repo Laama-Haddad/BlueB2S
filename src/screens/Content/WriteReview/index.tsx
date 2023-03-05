@@ -9,7 +9,9 @@ import {TextInput, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import Rating from '../../../components/Rating';
 import Button from '../../../components/Button';
-import {getByScreenSize} from '../../../utils/responsive';
+import {getByScreenSize, wdp} from '../../../utils/responsive';
+import {useSelector} from 'react-redux';
+import {showToastAndroid} from '../../../utils/funcs';
 
 const maxLength = 300;
 const WriteReview = ({navigation, route}: WriteReviewProps) => {
@@ -17,10 +19,9 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
   const [charsNum, setCharsNum] = useState(maxLength);
   const [comment, setComment] = useState('');
   const [yourRating, setYourRating] = useState(0);
-  const onChangeText = (text, callBack) => {
-    setComment(text);
-    console.log(charsNum, 'before');
-    callBack();
+  const {logged} = useSelector(state => state.auth);
+  const handleLength = () => {
+    setCharsNum(maxLength - comment.length);
   };
   return (
     <MainLayout
@@ -40,7 +41,14 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
           ]}>
           {tr('writeReview.title')}
         </GenericText>
-        <Product details={route?.params.details} />
+        <Product
+          details={route?.params.details}
+          containerStyle={{
+            height: wdp(getByScreenSize(45, 35)),
+            width: wdp(getByScreenSize(45, 35)),
+            borderRadius: getByScreenSize(4, 8),
+          }}
+        />
         <View
           style={[
             styles.ratingContainer,
@@ -70,13 +78,11 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
         </GenericText>
         <TextInput
           multiline
-          onChange={text => {
-            onChangeText(text, () => {
-              let temp = maxLength - comment.length;
-              setCharsNum(temp);
-              console.log(charsNum, 'after');
-            });
+          onChangeText={text => {
+            setComment(text);
+            handleLength();
           }}
+          onEndEditing={() => handleLength()}
           value={comment}
           maxLength={maxLength}
           placeholderTextColor={theme.writeReview.placeHolderComment}
@@ -93,12 +99,16 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
             fontSize: theme.text.s11,
             color: theme.writeReview.grayText,
           }}>
-          {charsNum} {tr('writeReview.characters')}
+          {charsNum * 1} {tr('writeReview.characters')}
         </GenericText>
         <Button
           title={tr('writeReview.submit')}
           backgroundColor={theme.writeReview.submitBackground}
-          onPress={() => navigation?.goBack()}
+          onPress={() =>
+            logged
+              ? navigation?.goBack()
+              : showToastAndroid(tr('writeReview.message'))
+          }
           containerStyle={styles.submit}
         />
       </View>

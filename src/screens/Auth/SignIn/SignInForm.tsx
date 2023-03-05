@@ -87,8 +87,7 @@ const SignInForm = ({navigation, title}: SignInFormProps) => {
         value={form.password}
         onChangeText={text => handleChange('password', text)}
         required
-        secureTextEntry
-        noEye={false}
+        secureTextEntry={form.password.length !== 0}
         containerStyle={styles.passwordTextInput}
       />
       {error && (

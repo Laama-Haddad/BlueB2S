@@ -42,7 +42,7 @@ const App = () => {
               email: '',
               password: '',
               mobile: '',
-              profileImage: '',
+              profileImage: null,
             },
           },
     );

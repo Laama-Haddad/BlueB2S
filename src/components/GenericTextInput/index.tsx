@@ -30,6 +30,7 @@ const GenericTextInput = forwardRef(
           ref={ref}
           activeUnderlineColor={theme.textInput.activeUnderlineColor}
           underlineColor={theme.textInput.underlineColor}
+          secureTextEntry={withEye && !passwordVisible}
           label={label}
           style={[styles.textInput, textInputStyle]}
           {...props}
@@ -52,14 +53,14 @@ const GenericTextInput = forwardRef(
             type="Ionicons"
             name={passwordVisible ? 'eye' : 'eye-off'}
             color={theme.textInput.eyeIcon}
-            size={getByScreenSize(18, 25)}
+            size={getByScreenSize(18, 30)}
             role="button"
             onPress={() => setPasswordVisible(!passwordVisible)}
             style={{
               backgroundColor: 'transparent',
               position: 'absolute',
               right: getByScreenSize(7, 3),
-              top: getByScreenSize(17, 15),
+              top: getByScreenSize(17, 8),
             }}
           />
         )}

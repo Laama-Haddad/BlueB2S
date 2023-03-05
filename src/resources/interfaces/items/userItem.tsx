@@ -6,5 +6,5 @@ export interface PersonalInformation {
   email: string;
   password: string;
   mobile: string;
-  profileImage: ImageItem;
+  profileImage: ImageItem | null;
 }
