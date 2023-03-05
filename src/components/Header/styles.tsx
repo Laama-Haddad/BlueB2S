@@ -1,15 +1,15 @@
 import {StyleSheet} from 'react-native';
-import {hdp, wdp} from '../../utils/responsive';
+import {getByScreenSize, hdp, wdp} from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: hdp(10),
+    height: hdp(getByScreenSize(7,8)),
     width: '100%',
-    borderBottomRightRadius: 25,
-    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: getByScreenSize(25,35),
+    borderBottomLeftRadius: getByScreenSize(25,40),
     paddingHorizontal: '3%',
   },
   leftContainer: {

@@ -10,7 +10,7 @@ import {getByScreenSize, wdp} from '../../utils/responsive';
 import GenericText from '../GenericText';
 
 function Header({
-  noPaddingTop = false,
+  noPaddingTop = true,
   isModal = false,
   headerBackground,
   title,

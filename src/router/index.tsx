@@ -92,7 +92,11 @@ const HomeTabs = () => {
                 focused ? '#C500FF' : '#222222',
                 getByScreenSize(20, 25),
               ),
-            tabBarStyle: {height: getByScreenSize(50, 80)},
+            tabBarStyle: {
+              height: getByScreenSize(55, 80),
+              paddingBottom: '2%',
+              paddingTop: '1%',
+            },
           }}
         />
       ))}

@@ -29,11 +29,6 @@ const CartListItem = ({
   };
   const theme = useTheme();
   return (
-    // <Shadow
-    //   distance={1}
-    //   startColor={theme.cartItem.shadowStart}
-    //   endColor={theme.cartItem.shadowEnd}
-    //   offset={[0, 2]}>
     <View
       style={[
         styles.container,
@@ -77,27 +72,18 @@ const CartListItem = ({
           onPress={onDeletePress}
         />
         <View style={styles.quantityContainer}>
-          <View
-            style={[
-              styles.circle,
-              {
-                borderColor: theme.cartItem.quantityBorder,
-                backgroundColor: theme.cartItem.minusBackground,
-              },
-            ]}>
-            <Icon
-              disabled={quantity === 1}
-              type={'FontAwesome'}
-              name={'minus'}
-              role={'button'}
-              color={theme.cartItem.minus}
-              style={{borderWidth: 2}}
-              size={getByScreenSize(theme.text.s10, theme.text.s9)}
-              onPress={() => {
-                onChange(-1);
-              }}
-            />
-          </View>
+          <Icon
+            disabled={quantity === 1}
+            type={'FontAwesome'}
+            name={'minus'}
+            role={'button'}
+            color={theme.cartItem.minus}
+            style={{backgroundColor: theme.cartItem.minusBackground}}
+            size={getByScreenSize(theme.text.s10, theme.text.s9)}
+            onPress={() => {
+              onChange(-1);
+            }}
+          />
           <GenericText
             style={[
               styles.quantity,
@@ -105,28 +91,21 @@ const CartListItem = ({
             ]}>
             {quantity}
           </GenericText>
-          <View
-            style={[
-              styles.circle,
-              {borderColor: theme.cartItem.quantityBorder},
-            ]}>
-            <Icon
-              type={'FontAwesome'}
-              name={'plus'}
-              role={'button'}
-              color={theme.cartItem.plus}
-              style={{borderWidth: 2}}
-              size={getByScreenSize(theme.text.s10, theme.text.s9)}
-              onPress={() => {
-                setQuantity(quantity + 1);
-                onChange(+1);
-              }}
-            />
-          </View>
+          <Icon
+            type={'FontAwesome'}
+            name={'plus'}
+            role={'button'}
+            color={theme.cartItem.plus}
+            style={{backgroundColor: theme.cartItem.plusBackground}}
+            size={getByScreenSize(theme.text.s10, theme.text.s9)}
+            onPress={() => {
+              setQuantity(quantity + 1);
+              onChange(+1);
+            }}
+          />
         </View>
       </View>
     </View>
-    // </Shadow>
   );
 };
 export default CartListItem;

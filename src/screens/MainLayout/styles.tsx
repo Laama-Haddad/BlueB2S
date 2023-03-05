@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: 'absolute',
-    top: getByScreenSize(hdp(5), hdp(4)),
-    right: wdp(9),
+    top: getByScreenSize(hdp(2), hdp(2)),
+    right: wdp(getByScreenSize(6,5)),
   },
   image: {
-    width: wdp(20),
-    height: wdp(20),
-    borderRadius: wdp(10),
+    width: wdp(getByScreenSize(20,16)),
+    height: wdp(getByScreenSize(20,16)),
+    borderRadius: wdp(getByScreenSize(10,8)),
     borderWidth: 3,
   },
 });

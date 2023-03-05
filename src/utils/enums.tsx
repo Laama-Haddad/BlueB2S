@@ -16,10 +16,8 @@ export const months = {
 };
 export const fontTypes = {
   bold: Platform.OS === 'android' ? 'Roboto Bold' : 'Roboto-Bold',
-  semi_bold:
-    Platform.OS === 'android' ? 'Roboto Medium' : 'Roboto-Medium',
-  regular:
-    Platform.OS === 'android' ? 'Roboto Light' : 'Roboto-Light',
+  semi_bold: Platform.OS === 'android' ? 'Roboto Medium' : 'Roboto-Medium',
+  regular: Platform.OS === 'android' ? 'Roboto Light' : 'Roboto-Light',
 };
 export const modalTypes = {
   info: 'info',
@@ -27,11 +25,11 @@ export const modalTypes = {
 };
 
 export const orderTypes = {
-  cancel: 'canceled',
-  delivered: 'delivered',
-  shipped: 'shipped',
+  cancel: 'Canceled',
+  delivered: 'Delivered',
+  shipped: 'Shipped',
 };
 export const orderPaymentTypes = {
-  paid: 'paid',
-  onDelivery: 'on Delivery',
+  paid: 'Paid',
+  onDelivery: 'On Delivery',
 };

@@ -79,15 +79,11 @@ export interface CustomTheme extends Theme {
     price: string;
     offerPrice: string;
     rating: string;
-    shadowStart: string;
-    shadowEnd: string;
     ripple: string;
   };
   category: {
     background: string;
     name: string;
-    shadowStart: string;
-    shadowEnd: string;
     ripple: string;
   };
   rating: {
@@ -96,10 +92,6 @@ export interface CustomTheme extends Theme {
   favorite: {
     favoriteHeart: string;
     unFavoriteHeart: string;
-    favoriteBackground: string;
-    unFavoriteBackground: string;
-    shadowStart: string;
-    shadowEnd: string;
     emptyTitle: string;
     emptyMessage: string;
     heart: string;
@@ -109,8 +101,6 @@ export interface CustomTheme extends Theme {
     unAddedCart: string;
     addedBackground: string;
     unAddedBackground: string;
-    shadowStart: string;
-    shadowEnd: string;
   };
   animationPaginationDots: {
     selectedDot: string;
@@ -127,19 +117,15 @@ export interface CustomTheme extends Theme {
     close: string;
     minus: string;
     plus: string;
-    quantityBorder: string;
     quantity: string;
     minusBackground: string;
-    shadowStart: string;
-    shadowEnd: string;
+    plusBackground: string;
   };
   favoriteItem: {
     containerBackground: string;
     containerBorder: string;
     title: string;
     price: string;
-    shadowStart: string;
-    shadowEnd: string;
   };
   orderListItem: {
     containerBackground: string;
@@ -200,8 +186,6 @@ export interface CustomTheme extends Theme {
     description: string;
     shareIcon: string;
     shareIconBackground: string;
-    shadowStart: string;
-    shadowEnd: string;
     offerPrice: string;
     price: string;
     addButtonBackground: string;

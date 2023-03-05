@@ -9,11 +9,9 @@ import GenericText from '../../../components/GenericText';
 import Ripple from 'react-native-material-ripple';
 import {getByScreenSize} from '../../../utils/responsive';
 import Icon from '../../../components/Icon';
-import {Shadow} from 'react-native-shadow-2';
 import AnimatedPaginationDots from '../../../components/AnimatedPaginationDots';
 import Rating from '../../../components/Rating';
 import Favorite from '../../../components/Favorite';
-import CartIcon from '../../../components/CartIcon';
 import Button from '../../../components/Button';
 import {CartItem} from '../../../resources/interfaces/items/cartItem';
 import {ProductItem} from '../../../resources/interfaces/items/productItem';
@@ -27,10 +25,12 @@ const ProductDetails = ({
   route,
   cart,
   favorite,
+  auth,
 }: ProductDetailsProps) => {
   const theme = useTheme();
   const {cartList} = cart;
   const {favoriteList} = favorite;
+  const {logged} = auth;
   const {
     description,
     images,
@@ -98,28 +98,22 @@ const ProductDetails = ({
               {'   '}
               {size}
             </GenericText>
-            <Shadow
-              distance={2}
-              startColor={theme.productDetails.shadowStart}
-              endColor={theme.productDetails.shadowEnd}
-              offset={[0, 3]}>
-              <Ripple
-                rippleContainerBorderRadius={getByScreenSize(6, 10)}
-                style={[
-                  styles.shareRipple,
-                  {
-                    backgroundColor: theme.productDetails.shareIconBackground,
-                  },
-                ]}
-                onPress={() => handleShare()}>
-                <Icon
-                  type={'Entypo'}
-                  name={'share'}
-                  size={getByScreenSize(theme.text.s6, theme.text.s5)}
-                  color={theme.productDetails.shareIcon}
-                />
-              </Ripple>
-            </Shadow>
+            <Ripple
+              rippleContainerBorderRadius={getByScreenSize(6, 10)}
+              style={[
+                styles.shareRipple,
+                {
+                  backgroundColor: theme.productDetails.shareIconBackground,
+                },
+              ]}
+              onPress={() => handleShare()}>
+              <Icon
+                type={'Entypo'}
+                name={'share'}
+                size={getByScreenSize(theme.text.s6, theme.text.s5)}
+                color={theme.productDetails.shareIcon}
+              />
+            </Ripple>
           </View>
           <GenericText
             style={[
@@ -133,22 +127,22 @@ const ProductDetails = ({
           </GenericText>
         </View>
         <View style={styles.centerContainer}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <AnimatedPaginationDots data={images} navigation={navigation} />
+          {logged && (
             <Favorite
               isFavorite={fav}
               onToggleFavorite={() => changeFavoriteList()}
+              style={{
+                position: 'absolute',
+                right: getByScreenSize(10, 17),
+                top: getByScreenSize(40, 55),
+              }}
             />
-            <CartIcon
-              isAddedToCart={exist}
-              onCartItemsChange={() => updateCart(route?.params?.details)}
-            />
-          </View>
-          <AnimatedPaginationDots data={images} navigation={navigation} />
+          )}
+          {/*<CartIcon*/}
+          {/*  isAddedToCart={exist}*/}
+          {/*  onCartItemsChange={() => updateCart(route?.params?.details)}*/}
+          {/*/>*/}
           <View style={styles.ratingContainer}>
             <View>
               <GenericText
@@ -202,6 +196,7 @@ const ProductDetails = ({
 const mapStateToProps = (state: RootState) => ({
   cart: state.cart,
   favorite: state.favorite,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps)(ProductDetails);
