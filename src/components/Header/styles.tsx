@@ -6,10 +6,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: hdp(getByScreenSize(7,8)),
+    height: hdp(getByScreenSize(7, 8)),
     width: '100%',
-    borderBottomRightRadius: getByScreenSize(25,35),
-    borderBottomLeftRadius: getByScreenSize(25,40),
     paddingHorizontal: '3%',
   },
   leftContainer: {

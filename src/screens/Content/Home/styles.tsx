@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     width: '100%',
-    paddingHorizontal: '3%',
   },
 });
 export default styles;

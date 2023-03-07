@@ -3,7 +3,7 @@ import {Platform, StatusBar, View} from 'react-native';
 import {HeaderProps} from '../../resources/interfaces/components/header';
 import styles from './styles';
 // @ts-ignore
-import HeaderLogoSVG from '../../resources/assets/svg/headerLogo.svg';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Icon from '../Icon';
 import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, wdp} from '../../utils/responsive';
@@ -24,7 +24,6 @@ function Header({
   iconStyle,
   onBackIconPress,
   // onMenuIconPress,
-  showLogo = true,
   headerStyle,
 }: HeaderProps) {
   const theme = useTheme();
@@ -114,21 +113,14 @@ function Header({
               styles.title,
               {
                 fontSize: theme.text.s7,
-                color: !!titleColor ? titleColor : theme.header.title,
+                color: titleColor ? titleColor : theme.header.title,
               },
               titleStyle,
             ]}>
             {title}
           </GenericText>
         </View>
-        <View style={styles.rightContainer}>
-          {showLogo && (
-            <HeaderLogoSVG
-              width={getByScreenSize(50, 75)}
-              height={getByScreenSize(50, 75)}
-            />
-          )}
-        </View>
+        <View style={styles.rightContainer} />
       </View>
     </View>
   );

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: '2%',
     paddingHorizontal: '3%',
-    marginTop: '5%',
+    marginTop: '2%',
     width: '100%',
     justifyContent: 'center',
   },
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: '2%',
+    paddingTop: '2%',
   },
   separator: {
     borderWidth: getByScreenSize(1, 2),
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   submit: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 0,
   },
   text: {
     fontWeight: '700',

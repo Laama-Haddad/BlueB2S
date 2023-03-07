@@ -134,8 +134,8 @@ const ProductDetails = ({
               onToggleFavorite={() => changeFavoriteList()}
               style={{
                 position: 'absolute',
-                right: getByScreenSize(10, 17),
-                top: getByScreenSize(40, 55),
+                right: getByScreenSize(8, 13),
+                top: getByScreenSize(38, 55),
               }}
             />
           )}

@@ -20,7 +20,7 @@ const CartListItem = ({
   containerStyle,
 }: CartItemProps) => {
   const [quantity, setQuantity] = useState(selectedQuantity);
-  const onChange = val => {
+  const onChange = (val: number) => {
     let newQuantity = quantity + val;
     setQuantity(newQuantity);
     if (onQuantityChange) {
@@ -63,13 +63,13 @@ const CartListItem = ({
       </View>
       <View style={styles.rightContainer}>
         <Icon
-          name={'close'}
-          type={'FontAwesome'}
+          name={'trash-outline'}
+          type={'Ionicons'}
           role={'button'}
-          size={getByScreenSize(theme.text.s10, theme.text.s9)}
-          color={theme.cartItem.close}
-          style={{borderWidth: 2}}
+          size={getByScreenSize(theme.text.s6, theme.text.s5)}
+          color={theme.cartItem.trash}
           onPress={onDeletePress}
+          style={{}}
         />
         <View style={styles.quantityContainer}>
           <Icon

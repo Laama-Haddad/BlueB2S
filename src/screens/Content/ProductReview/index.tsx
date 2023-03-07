@@ -28,7 +28,7 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
     );
   };
   const renderFooter = () => {
-    return <View style={{height: hdp(15)}} />;
+    return <View style={{height: hdp(17)}} />;
   };
   return (
     <MainLayout
@@ -58,19 +58,12 @@ const ProductReview = ({navigation, route}: ProductPreviewProps) => {
             ]}>
             {tr('productReview.title')} {rating} {tr('productReview.title1')}
           </GenericText>
-          <GenericText
-            style={[
-              styles.description,
-              {color: theme.productReview.darkText, fontSize: theme.text.s10},
-            ]}>
-            ({tr('productReview.subTitle')} 999 {tr('productReview.subTitle1')})
-          </GenericText>
           <Rating
             rating={rating}
             emptyStarColor={theme.productReview.emptyStar}
             starSize={theme.text.s3}
             starStyle={{marginLeft: '2%'}}
-            containerStyle={{paddingLeft: '6%'}}
+            containerStyle={{marginTop: '2%'}}
             onRatingStart={() =>
               navigation?.navigate('writeReview', {
                 details: route?.params.details,

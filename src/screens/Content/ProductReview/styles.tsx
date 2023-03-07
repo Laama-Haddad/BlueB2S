@@ -23,8 +23,5 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: '700',
   },
-  description: {
-    marginVertical: '2%',
-  },
 });
 export default styles;

@@ -7,7 +7,7 @@ import GenericText from '../../../../components/GenericText';
 import {PlaceOrderProps} from '../../../../resources/interfaces/screens/placeOrder';
 import {useTheme} from '@react-navigation/native';
 import Button from '../../../../components/Button';
-import {hdp, wdp} from '../../../../utils/responsive';
+import {hdp} from '../../../../utils/responsive';
 import RadioGroup from '../../../../components/RadioGroup';
 import {PaymentMethodItem} from '../../../../resources/interfaces/items/paymentMethodItem';
 import CirclePaymentMethod from '../../../../components/CirclePaymentMethod';
@@ -40,7 +40,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
         <View style={styles.policyTextContainer}>
           <GenericText
             style={[
-              {color: theme.placeOrder.lightText, fontSize: theme.text.s9},
+              {color: theme.placeOrder.lightText, fontSize: theme.text.s10},
             ]}>
             {tr('placeOrder.agree')}
           </GenericText>
@@ -71,6 +71,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
   };
   return (
     <MainLayout
+      enableScroll
       backHeader
       onBackIconPress={() => navigation?.goBack()}
       title={tr('placeOrder.headerTitle')}>
@@ -85,6 +86,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
               style={{
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.lightText,
+                fontWeight: '600',
               }}>
               {tr('placeOrder.shippingTo')}:
             </GenericText>
@@ -107,6 +109,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
               style={{
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.lightText,
+                fontWeight: '600',
               }}>
               {tr('placeOrder.orderCost')}:
             </GenericText>
@@ -123,6 +126,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
               style={{
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.lightText,
+                fontWeight: '600',
               }}>
               {tr('placeOrder.shippingCost')}:
             </GenericText>
@@ -139,6 +143,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
               style={{
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.lightText,
+                fontWeight: '600',
               }}>
               {tr('placeOrder.estimatedVat')}:
             </GenericText>
@@ -177,6 +182,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
               style={{
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.lightText,
+                fontWeight: '600',
               }}>
               {tr('placeOrder.shippingAddress')}:{' '}
             </GenericText>
@@ -185,7 +191,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 styles.text,
                 {fontSize: theme.text.s9, color: theme.placeOrder.darkText},
               ]}>
-              James Button 6544, Lake Shore..
+              James 6544, Lake Shore..
             </GenericText>
           </View>
         </View>
@@ -195,7 +201,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
             {
               borderColor: theme.placeOrder.containerBorder,
               height: hdp(6),
-              marginBottom: '5%',
+              marginBottom: '2%',
             },
           ]}>
           <GenericText
@@ -221,7 +227,6 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 : setPaymentMethod(''),
             )
           }
-          radius={wdp(8)}
         />
         {renderPolicyContainer()}
         <Button

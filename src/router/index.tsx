@@ -33,7 +33,7 @@ const tabsScreens: TabItem[] = [
     name: 'home',
     component: Home,
     icon: (color, size) => (
-      <Icon type={'AntDesign'} name={'home'} color={color} size={size} />
+      <Icon type={'FontAwesome5'} name={'home'} color={color} size={size} />
     ),
   },
   {
@@ -41,7 +41,7 @@ const tabsScreens: TabItem[] = [
     name: 'orders',
     component: Orders,
     icon: (color, size) => (
-      <Icon type={'AntDesign'} name={'tago'} color={color} size={size} />
+      <Icon type={'AntDesign'} name={'tag'} color={color} size={size} />
     ),
   },
   {
@@ -49,7 +49,7 @@ const tabsScreens: TabItem[] = [
     name: 'favorite',
     component: Favorite,
     icon: (color, size) => (
-      <Icon type={'AntDesign'} name={'hearto'} color={color} size={size} />
+      <Icon type={'AntDesign'} name={'heart'} color={color} size={size} />
     ),
   },
   {
@@ -57,7 +57,12 @@ const tabsScreens: TabItem[] = [
     name: 'cart',
     component: Cart,
     icon: (color, size) => (
-      <Icon type={'SVG'} name={'cart'} color={color} size={size} />
+      <Icon
+        type={'MaterialIcons'}
+        name={'shopping-cart'}
+        color={color}
+        size={size}
+      />
     ),
   },
   {
@@ -65,7 +70,7 @@ const tabsScreens: TabItem[] = [
     name: 'profile',
     component: Profile,
     icon: (color, size) => (
-      <Icon type={'Octicons'} name={'person'} color={color} size={size} />
+      <Icon type={'Octicons'} name={'person-fill'} color={color} size={size} />
     ),
   },
 ];
@@ -89,7 +94,7 @@ const HomeTabs = () => {
             tabBarLabelStyle: {fontSize: getByScreenSize(13, 25)},
             tabBarIcon: ({focused}) =>
               screen.icon(
-                focused ? '#C500FF' : '#222222',
+                focused ? '#C500FF' : '#00000055',
                 getByScreenSize(20, 25),
               ),
             tabBarStyle: {

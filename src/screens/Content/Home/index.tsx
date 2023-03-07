@@ -12,17 +12,38 @@ import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, hdp} from '../../../utils/responsive';
 import Product from '../../../components/Product';
 import Category from '../../../components/Category';
-import {categories} from '../../../resources/staticData/categories';
 import {dataList} from '../../../resources/staticData/list';
+import {RootState} from '../../../redux/store';
+import {connect} from 'react-redux';
+import {ProductItem} from '../../../resources/interfaces/items/productItem';
+import {CartItem} from '../../../resources/interfaces/items/cartItem';
+import {updateCartList} from '../../../utils/cartFuncs';
 
-const Home = ({navigation}: HomeProps) => {
+const Home = ({navigation, cart}: HomeProps) => {
   const [keyWord, setKeyword] = useState('');
   const theme = useTheme();
+  const {cartList} = cart;
   const [list, setList] = useState(dataList);
+  const updateCart = (inCart: boolean, item: ProductItem) => {
+    const tempItem: CartItem = {
+      ...item,
+      itemCartId: cartList.length,
+      quantity: 1,
+    };
+    updateCartList(cartList, tempItem, inCart).then();
+  };
   const renderProductItem = ({item}) => {
     return (
       <Product
         details={item}
+        isAddedToCart={
+          cartList.findIndex(cartItem => cartItem.id === item.id) > -1
+        }
+        onPressCartIcon={() => {
+          let existInCart =
+            cartList.findIndex(cartItem => cartItem.id === item.id) > -1;
+          updateCart(existInCart, item);
+        }}
         containerStyle={{marginRight: getByScreenSize(20, 30)}}
         onPress={() => navigation?.navigate('productDetails', {details: item})}
       />
@@ -66,7 +87,6 @@ const Home = ({navigation}: HomeProps) => {
           keyExtractor={item => item.id.toString()}
           style={{
             backgroundColor: 'transparent',
-            marginLeft: '2%',
           }}
         />
         <View style={styles.titleContainer}>
@@ -93,7 +113,6 @@ const Home = ({navigation}: HomeProps) => {
           keyExtractor={item => item.id.toString()}
           style={{
             backgroundColor: 'transparent',
-            paddingLeft: '2%',
           }}
         />
         <View style={styles.titleContainer}>
@@ -113,11 +132,13 @@ const Home = ({navigation}: HomeProps) => {
           </GenericText>
         </View>
         <View style={styles.categoriesContainer}>
-          {categories.map((item, key) => (
+          {list.map((item, key) => (
             <Category
               details={item}
               key={key}
-              containerStyle={{marginBottom: '3%'}}
+              containerStyle={{
+                marginBottom: '3%',
+              }}
             />
           ))}
         </View>
@@ -145,7 +166,6 @@ const Home = ({navigation}: HomeProps) => {
           keyExtractor={item => item.id.toString()}
           style={{
             backgroundColor: 'transparent',
-            paddingLeft: '2%',
           }}
         />
         <View
@@ -155,4 +175,9 @@ const Home = ({navigation}: HomeProps) => {
     </MainLayout>
   );
 };
-export default Home;
+
+const mapStateToProps = (state: RootState) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Home);

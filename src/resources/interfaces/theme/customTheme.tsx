@@ -58,7 +58,6 @@ export interface CustomTheme extends Theme {
     value: string;
   };
   tabs: {
-    activeItem: string;
     inActiveItem: string;
     background: string;
   };
@@ -75,14 +74,12 @@ export interface CustomTheme extends Theme {
   product: {
     background: string;
     name: string;
-    size: string;
     price: string;
     offerPrice: string;
     rating: string;
-    ripple: string;
   };
   category: {
-    background: string;
+    border: string;
     name: string;
     ripple: string;
   };
@@ -99,8 +96,7 @@ export interface CustomTheme extends Theme {
   cartIcon: {
     addedCart: string;
     unAddedCart: string;
-    addedBackground: string;
-    unAddedBackground: string;
+    background: string;
   };
   animationPaginationDots: {
     selectedDot: string;
@@ -114,7 +110,7 @@ export interface CustomTheme extends Theme {
     containerBorder: string;
     title: string;
     price: string;
-    close: string;
+    trash: string;
     minus: string;
     plus: string;
     quantity: string;

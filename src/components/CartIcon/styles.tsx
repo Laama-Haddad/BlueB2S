@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: getByScreenSize(32, 50),
     height: getByScreenSize(32, 50),
-    borderRadius: getByScreenSize(6, 10),
+    borderRadius: getByScreenSize(16, 25),
   },
 });
 export default styles;

@@ -24,17 +24,15 @@ const CartIcon = ({
       style={[
         styles.container,
         {
-          backgroundColor: isAddedToCart
-            ? theme.cartIcon.addedBackground
-            : theme.cartIcon.unAddedBackground,
+          backgroundColor: theme.cartIcon.background,
         },
         style,
       ]}
       onPress={onAddedToCart}>
       <Icon
-        type={'SVG'}
-        name={'cart'}
-        size={size ? size : getByScreenSize(theme.text.s8, theme.text.s4)}
+        type={'MaterialIcons'}
+        name={'shopping-cart'}
+        size={size ? size : getByScreenSize(theme.text.s8, theme.text.s7)}
         color={
           isAddedToCart ? theme.cartIcon.addedCart : theme.cartIcon.unAddedCart
         }

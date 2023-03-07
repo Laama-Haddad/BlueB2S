@@ -1,20 +1,29 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import {ProductProps} from '../../resources/interfaces/components/product';
 import styles from './styles';
-import Ripple from 'react-native-material-ripple';
 import {useTheme} from '@react-navigation/native';
 import GenericText from '../GenericText';
 import {tr} from '../../resources/translations';
-import Rating from '../Rating';
+import CartIcon from '../CartIcon';
 
-const Product = ({details, onPress, containerStyle}: ProductProps) => {
+const Product = ({
+  details,
+  onPress,
+  isAddedToCart = false,
+  onPressCartIcon,
+  cartStyle,
+  containerStyle,
+}: ProductProps) => {
   const theme = useTheme();
+  const onChangeAddedToCart = () => {
+    if (onPressCartIcon) {
+      onPressCartIcon({inCart: !isAddedToCart, id: details.id});
+    }
+  };
   return (
-    <Ripple
+    <TouchableOpacity
       disabled={!onPress}
-      rippleContainerBorderRadius={4}
-      rippleColor={theme.product.ripple}
       style={[
         styles.container,
         {backgroundColor: theme.product.background},
@@ -37,13 +46,6 @@ const Product = ({details, onPress, containerStyle}: ProductProps) => {
             ]}>
             {details.name}
           </GenericText>
-          <GenericText
-            style={[
-              styles.productSizeText,
-              {fontSize: theme.text.s10, color: theme.product.size},
-            ]}>
-            {details.size}
-          </GenericText>
         </View>
         <View style={styles.bottomRightContainer}>
           <GenericText
@@ -60,10 +62,14 @@ const Product = ({details, onPress, containerStyle}: ProductProps) => {
             ]}>
             {details.price} {tr('app.currency')}
           </GenericText>
-          <Rating rating={details.rating} />
+          <CartIcon
+            isAddedToCart={isAddedToCart}
+            onCartItemsChange={() => onChangeAddedToCart()}
+            style={[styles.cart, cartStyle]}
+          />
         </View>
       </View>
-    </Ripple>
+    </TouchableOpacity>
   );
 };
 

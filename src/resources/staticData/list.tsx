@@ -3,8 +3,9 @@ import {CategoryItem} from '../interfaces/items/categoryItem';
 export const dataList: CategoryItem[] = [
   {
     id: 0,
-    categoryName: 'Paplour',
-    categoryImageUri: 'https://i.postimg.cc/XJMKP6WZ/category1.png',
+    categoryName: 'Make Up',
+    categoryImageUri:
+      'https://i.postimg.cc/vHsXXc1h/719-Sy7-XRr-NS-AC-UL320.jpg',
     productsList: [
       {
         id: 2,
@@ -105,7 +106,7 @@ export const dataList: CategoryItem[] = [
   {
     id: 1,
     categoryName: 'saloon',
-    categoryImageUri: 'https://i.postimg.cc/dVJwFhsv/category2.png',
+    categoryImageUri: 'https://i.postimg.cc/FsYcyvpp/71-ZQe-Uwi-UIL-UL500.jpg',
     productsList: [
       {
         id: 1,
@@ -254,7 +255,8 @@ export const dataList: CategoryItem[] = [
   {
     id: 2,
     categoryName: 'Aesthetic',
-    categoryImageUri: 'https://i.postimg.cc/yN5s9BRb/category3.png',
+    categoryImageUri:
+      'https://i.postimg.cc/RVJ91pHK/facial-treatment-spa-montreal.jpg',
     productsList: [
       {
         id: 1,
@@ -370,7 +372,8 @@ export const dataList: CategoryItem[] = [
   {
     id: 3,
     categoryName: 'others',
-    categoryImageUri: 'https://i.postimg.cc/66cb1cj9/category4.png',
+    categoryImageUri:
+      'https://i.postimg.cc/MK9PTzTY/5ccf720e9639c455c6783015-sprayhand2.jpg',
     productsList: [
       {
         id: 1,

@@ -18,10 +18,9 @@ const styles = StyleSheet.create({
   rightContainer: {
     width: '60%',
     height: '100%',
-    marginLeft: '2%',
+    marginLeft: '7%',
     justifyContent: 'space-between',
     paddingVertical: '2%',
-    alignItems: 'center',
   },
   image: {
     width: '100%',
@@ -31,25 +30,26 @@ const styles = StyleSheet.create({
     height: '30%',
   },
   bottomRightContainer: {
-    height: '45%',
-    justifyContent: 'center',
+    height: '50%',
   },
   productNameText: {
     fontWeight: '700',
     textTransform: 'uppercase',
   },
-  productSizeText: {
-    fontWeight: '600',
-  },
   productPriceText: {
     fontWeight: '600',
     textDecorationLine: 'line-through',
     marginVertical: '2%',
-    marginLeft: '10%',
   },
   productOfferPriceText: {
     fontWeight: '600',
-    marginLeft: '10%',
+  },
+  cart: {
+    width: getByScreenSize(28, 50),
+    height: getByScreenSize(28, 50),
+    position: 'absolute',
+    right: getByScreenSize(1,3),
+    bottom: -getByScreenSize(7,10),
   },
 });
 export default styles;

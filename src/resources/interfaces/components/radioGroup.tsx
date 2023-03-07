@@ -7,6 +7,5 @@ export interface RadioGroupProps {
   renderItem: (arg0: RadioItemProps, arg1: number) => ReactElement | null;
   onValueChange?: (arg0: number) => void;
   selected?: number;
-  radius?: number;
   style?: StyleProp<any> | StyleProp<any>[];
 }

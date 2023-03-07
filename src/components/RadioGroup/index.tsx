@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import Ripple from 'react-native-material-ripple';
 import {RadioGroupProps} from '../../resources/interfaces/components/radioGroup';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 /*
 * Usage <RadioGroup list={Array of objects} renderItem={(item, selected) => <CircleColor item={item}
@@ -14,7 +13,6 @@ const RadioGroup = ({
   renderItem,
   onValueChange,
   selected,
-  radius,
   style,
 }: RadioGroupProps) => {
   const [selectedValue, setSelectedValue] = useState(selected);
@@ -27,12 +25,9 @@ const RadioGroup = ({
   return (
     <View style={[styles.container, style]}>
       {list.map(item => (
-        <Ripple
-          rippleContainerBorderRadius={radius}
-          key={item.id}
-          onPress={() => onItemPress(item.id)}>
+        <TouchableOpacity key={item.id} onPress={() => onItemPress(item.id)}>
           {renderItem(item, selectedValue)}
-        </Ripple>
+        </TouchableOpacity>
       ))}
     </View>
   );
