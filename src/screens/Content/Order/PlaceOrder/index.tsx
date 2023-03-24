@@ -101,7 +101,10 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
           <View
             style={[
               styles.separator,
-              {borderColor: theme.placeOrder.separator},
+              {
+                borderColor: theme.placeOrder.separator,
+                backgroundColor: theme.placeOrder.separator,
+              },
             ]}
           />
           <View style={styles.rowContainer}>

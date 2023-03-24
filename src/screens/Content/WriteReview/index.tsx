@@ -48,11 +48,7 @@ const WriteReview = ({navigation, route}: WriteReviewProps) => {
             width: wdp(getByScreenSize(45, 35)),
             borderRadius: getByScreenSize(4, 8),
           }}
-          cartStyle={{
-            position: 'absolute',
-            right: -getByScreenSize(5, 12),
-            bottom: -getByScreenSize(13, 25),
-          }}
+          isShowCart={false}
         />
         <View
           style={[

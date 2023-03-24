@@ -8,4 +8,5 @@ export interface ProductProps {
   cartStyle?: StyleProp<any> | StyleProp<any>[];
   isAddedToCart?: boolean;
   onPressCartIcon?: ({inCart: boolean, id: number}) => void;
+  isShowCart?: boolean;
 }

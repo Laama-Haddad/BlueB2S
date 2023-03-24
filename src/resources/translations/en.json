@@ -11,9 +11,9 @@
   },
   "tabs": {
     "home": "Home",
-    "orders": "My Orders",
+    "orders": "Orders",
     "favorite": "Favorite",
-    "cart": "My cart",
+    "cart": "Cart",
     "profile": "Profile"
   },
   "orderItem": {
@@ -68,7 +68,7 @@
     "headerTitle": "Product Review",
     "title": "Overall Rating",
     "title1": "Out 5",
-    "loadMore":"LoadMore",
+    "loadMore":"LoadMore"
   },
   "writeReview": {
     "headerTitle": "Write Review",
@@ -115,6 +115,8 @@
   },
   "cart": {
     "headerTitle": "My Cart",
+    "shippingCost": "Shipping Cost",
+    "subTotal": "SubTotal",
     "total": "Total",
     "shopping": "Continue Shopping",
     "checkOut": "Check Out",

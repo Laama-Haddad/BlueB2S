@@ -14,6 +14,7 @@ const Product = ({
   onPressCartIcon,
   cartStyle,
   containerStyle,
+  isShowCart = true,
 }: ProductProps) => {
   const theme = useTheme();
   const onChangeAddedToCart = () => {
@@ -32,7 +33,11 @@ const Product = ({
       onPress={onPress}>
       <View style={styles.leftContainer}>
         <Image
-          source={{uri: details.imageUri}}
+          source={{
+            uri: details.imageUri
+              ? details?.imageUri
+              : 'https://i.postimg.cc/ZK0P5f4M/image-preview-icon-picture-placeholder-vector-31284806.jpg',
+          }}
           resizeMode={'stretch'}
           style={[styles.image]}
         />
@@ -62,11 +67,13 @@ const Product = ({
             ]}>
             {details.price} {tr('app.currency')}
           </GenericText>
-          <CartIcon
-            isAddedToCart={isAddedToCart}
-            onCartItemsChange={() => onChangeAddedToCart()}
-            style={[styles.cart, cartStyle]}
-          />
+          {isShowCart && (
+            <CartIcon
+              isAddedToCart={isAddedToCart}
+              onCartItemsChange={() => onChangeAddedToCart()}
+              style={[styles.cart, cartStyle]}
+            />
+          )}
         </View>
       </View>
     </TouchableOpacity>

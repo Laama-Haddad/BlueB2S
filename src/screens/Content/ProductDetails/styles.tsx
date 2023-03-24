@@ -4,7 +4,7 @@ import {getByScreenSize, hdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: hdp(84),
+    height: hdp(getByScreenSize(89, 88)),
   },
   topContainer: {},
   titleContainer: {
@@ -30,12 +30,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: '2%',
-    paddingLeft: '5%',
   },
   bottomContainer: {
     width: '100%',
     position: 'absolute',
-    bottom: getByScreenSize(10, 30),
+    bottom: '2%',
     alignItems: 'center',
   },
   buttonStyle: {

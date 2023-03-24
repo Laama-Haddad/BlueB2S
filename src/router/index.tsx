@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {TabItem} from '../resources/interfaces/items/tabItem';
 import Icon from '../components/Icon';
 import Home from '../screens/Content/Home';
-import {getByScreenSize} from '../utils/responsive';
+import {getByScreenSize, hdp} from '../utils/responsive';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import {ActivityIndicator, Platform, View} from 'react-native';
@@ -24,6 +24,8 @@ import SignUp from '../screens/Auth/SignUp';
 import UpdateProfile from '../screens/Content/UpdateProfile';
 import Splash from '../screens/Content/Splash';
 import ImageViewer from '../screens/Content/ImageViewer';
+import {useTheme} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -62,6 +64,7 @@ const tabsScreens: TabItem[] = [
         name={'shopping-cart'}
         color={color}
         size={size}
+        style={{marginRight: getByScreenSize(0, 0)}}
       />
     ),
   },
@@ -74,8 +77,10 @@ const tabsScreens: TabItem[] = [
     ),
   },
 ];
-
 const HomeTabs = () => {
+  const theme = useTheme();
+  const cart = useSelector(state => state.cart);
+  const {cartList} = cart;
   return (
     <Tabs.Navigator
       screenOptions={{
@@ -90,15 +95,51 @@ const HomeTabs = () => {
           options={{
             headerShown: false,
             ...transitions.RightToLeft,
-            tabBarLabel: tr('tabs.' + `${screen.name}`),
-            tabBarLabelStyle: {fontSize: getByScreenSize(13, 25)},
+            tabBarLabel: ({focused}) => (
+              <GenericText
+                style={{
+                  color: focused ? '#AB47BC' : '#00000055',
+                  fontSize: getByScreenSize(13, 25),
+                  fontWeight: '600',
+                  marginLeft: getByScreenSize(0, 20),
+                }}>
+                {tr('tabs.' + `${screen.name}`)}
+              </GenericText>
+            ),
             tabBarIcon: ({focused}) =>
               screen.icon(
-                focused ? '#C500FF' : '#00000055',
+                focused ? '#AB47BC' : '#00000055',
                 getByScreenSize(20, 25),
               ),
+            tabBarBadge:
+              screen.name === 'cart' && !!cartList && cartList.length
+                ? cartList.length
+                : '',
+            tabBarBadgeStyle: {
+              borderRadius: getByScreenSize(8, 13),
+              width: getByScreenSize(16, 26),
+              height: getByScreenSize(16, 26),
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor:
+                screen.name === 'cart' && !!cartList && cartList.length
+                  ? '#EA80FC'
+                  : 'transparent',
+              color:
+                screen.name === 'cart' && !!cartList && cartList.length
+                  ? '#FFFFFF'
+                  : 'transparent',
+              fontSize: theme.text.s11,
+              position: 'absolute',
+              right: getByScreenSize(30, 50),
+              top: getByScreenSize(0, 20),
+            },
+            tabBarItemStyle: {
+              justifyContent: 'flex-start',
+              marginHorizontal: '3%',
+            },
             tabBarStyle: {
-              height: getByScreenSize(55, 80),
+              height: hdp(getByScreenSize(7, 10)),
               paddingBottom: '2%',
               paddingTop: '1%',
             },

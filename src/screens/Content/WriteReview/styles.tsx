@@ -4,7 +4,7 @@ import {getByScreenSize, hdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: hdp(getByScreenSize(85.7, 82)),
+    height: hdp(getByScreenSize(89, 88)),
     alignItems: 'center',
   },
   ratingContainer: {
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: hdp(getByScreenSize(12, 13)),
     width: '100%',
-    marginTop: '6%',
-    marginBottom: '5%',
+    marginTop: '4%',
+    marginBottom: '3%',
   },
   title: {
     fontWeight: '700',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderWidth: getByScreenSize(1, 2),
     borderRadius: 5,
-    marginTop: '2%',
+    marginTop: '1%',
     marginBottom: '1%',
     textAlignVertical: 'top',
     paddingHorizontal: '3%',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   submit: {
     position: 'absolute',
-    bottom: 20,
+    bottom: '2%',
   },
 });
 export default styles;

@@ -164,7 +164,6 @@ const ProductDetails = ({
             <Rating
               rating={ratingValue}
               starSize={theme.text.s6}
-              starStyle={{marginLeft: '2%'}}
               onChange={setRatingValue}
               onRatingStart={() =>
                 navigation?.navigate('productReview', {

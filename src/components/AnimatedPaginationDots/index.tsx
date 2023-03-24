@@ -62,7 +62,11 @@ const AnimatedPaginationDots = ({
               navigation?.navigate('imageViewer', {image: data[id]})
             }>
             <Image
-              source={{uri: data[id].uri}}
+              source={{
+                uri: data[id].uri
+                  ? data[id].uri
+                  : 'https://i.postimg.cc/1zgCL9YJ/image-coming-soon.png',
+              }}
               resizeMode={'contain'}
               style={[styles.image]}
             />

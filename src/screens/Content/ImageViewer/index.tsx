@@ -38,7 +38,7 @@ const ImageViewer = ({route, navigation}: ImageViewerProps) => {
         cropHeight={hdp(110)}
         imageWidth={wdp(100)}
         imageHeight={wdp(80)}>
-        <Image source={{uri: image.uri}} style={styles.image} />
+        <Image source={{uri: !!image.uri ?  image?.uri : 'https://i.postimg.cc/1zgCL9YJ/image-coming-soon.png'}} style={styles.image} />
       </ImageZoom>
     </View>
   );

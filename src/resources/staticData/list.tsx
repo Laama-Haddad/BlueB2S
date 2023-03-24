@@ -8,7 +8,7 @@ export const dataList: CategoryItem[] = [
       'https://i.postimg.cc/vHsXXc1h/719-Sy7-XRr-NS-AC-UL320.jpg',
     productsList: [
       {
-        id: 2,
+        id: 0,
         name: 'Pink Ahabha',
         price: 100,
         offerPrice: 80,
@@ -46,7 +46,7 @@ export const dataList: CategoryItem[] = [
           'Nacific Pink AHA BHA Kit (Cleansing Foam, Toner, Serum, Cream) Travel Size Skin Care Set, Gluten Free & Paraben Free! Choose From Skincare Set, Toner or Makeup Wipes! (Skincare Set)',
       },
       {
-        id: 3,
+        id: 1,
         name: 'Nacific',
         price: 50,
         offerPrice: 30,
@@ -74,7 +74,7 @@ export const dataList: CategoryItem[] = [
           'Nacific Fresh Cica Plus Clear Kit (Cleansing Foam, Toner, Serum, Cream) Travel Size Skin Care Set',
       },
       {
-        id: 4,
+        id: 2,
         name: 'Fresh Hard',
         price: 300,
         offerPrice: 280,
@@ -109,7 +109,7 @@ export const dataList: CategoryItem[] = [
     categoryImageUri: 'https://i.postimg.cc/FsYcyvpp/71-ZQe-Uwi-UIL-UL500.jpg',
     productsList: [
       {
-        id: 1,
+        id: 11,
         name: 'Joseon',
         price: 800,
         offerPrice: 500,
@@ -142,7 +142,7 @@ export const dataList: CategoryItem[] = [
           'Beauty of Joseon Ginseng Cleansing Oil 210ml, 7.1 Fl Oz (Pack of 1), which is a 100% natural substance that optimally sychronizes with human skin tissues.',
       },
       {
-        id: 2,
+        id: 12,
         name: 'COSRX',
         price: 900,
         offerPrice: 500,
@@ -185,7 +185,7 @@ export const dataList: CategoryItem[] = [
           'COSRX Advanced Snail Radiance Dual Essence 80ml, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
       },
       {
-        id: 3,
+        id: 13,
         name: 'Serum',
         price: 700,
         offerPrice: 600,
@@ -228,7 +228,7 @@ export const dataList: CategoryItem[] = [
           'Peptide Complex Serum/Collagen Booster for the Face with Hyaluronic Acid and Chamomile Extract - Anti Aging Peptide Serum, Reduces Wrinkles, Heals and Repairs Skin - Tightening Effect - 1 fl oz',
       },
       {
-        id: 4,
+        id: 14,
         name: 'ATTITUDE',
         price: 800,
         offerPrice: 600,
@@ -259,7 +259,7 @@ export const dataList: CategoryItem[] = [
       'https://i.postimg.cc/RVJ91pHK/facial-treatment-spa-montreal.jpg',
     productsList: [
       {
-        id: 1,
+        id: 21,
         name: 'IASO Youth',
         price: 700,
         offerPrice: 500,
@@ -302,7 +302,7 @@ export const dataList: CategoryItem[] = [
           'IASO Youth Balm BB, Multi- Functional Stick Balm with BB & Sunscreen(SPF50+/PA++++), Easy & Convenient Correct and Protect, Made in Korea',
       },
       {
-        id: 2,
+        id: 22,
         name: 'Nacific',
         price: 400,
         offerPrice: 350,
@@ -330,7 +330,7 @@ export const dataList: CategoryItem[] = [
           'Nacific Fresh Cica Plus Clear Kit (Cleansing Foam, Toner, Serum, Cream) Travel Size Skin Care Set',
       },
       {
-        id: 3,
+        id: 23,
         name: 'Pink Ahabha',
         price: 800,
         offerPrice: 400,
@@ -376,7 +376,7 @@ export const dataList: CategoryItem[] = [
       'https://i.postimg.cc/MK9PTzTY/5ccf720e9639c455c6783015-sprayhand2.jpg',
     productsList: [
       {
-        id: 1,
+        id: 31,
         name: 'REVOLAX',
         price: 400,
         offerPrice: 350,
@@ -409,7 +409,7 @@ export const dataList: CategoryItem[] = [
           'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
       },
       {
-        id: 2,
+        id: 32,
         name: 'REVOLAX',
         price: 399,
         offerPrice: 299,
@@ -475,7 +475,7 @@ export const dataList: CategoryItem[] = [
           'High Purity hyaluronic acid. REOLAX uses high purity hyaluronic acid of non-animal origin, which is a 100% natural substance that optimally sychronizes with human skin tissues.',
       },
       {
-        id: 4,
+        id: 33,
         name: 'REVOLAX',
         price: 399,
         offerPrice: 299,

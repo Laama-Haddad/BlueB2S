@@ -19,14 +19,19 @@ const Cart = ({navigation, cart}: CartProps) => {
   const theme = useTheme();
   const [discount, setDiscount] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
+  const [shippingCost, setShippingCost] = useState(10);
   const [totalAmount, setTotalAmount] = useState(0);
   const {cartList} = cart;
   const calculateTotalAmount = () => {
-    let total = 0;
-    cartList?.map(item => (total = total + item.offerPrice * item.quantity));
+    let tempSubTotal = 0;
+    cartList?.map(
+      item => (tempSubTotal = tempSubTotal + item.offerPrice * item.quantity),
+    );
     // let d = (total * discountPercentage) / 100;
     // discountPercentage != 0 && setDiscount(d);
-    setTotalAmount(total);
+    setSubTotal(tempSubTotal);
+    setTotalAmount(subTotal + shippingCost);
   };
   // const onApply = () => {
   //     coupon === '2022' ? setDiscountPercentage(10) : coupon === '2021' ? setDiscountPercentage(5) : showGlobalModal({
@@ -35,7 +40,7 @@ const Cart = ({navigation, cart}: CartProps) => {
   // }
   useEffect(() => {
     calculateTotalAmount();
-  }, [cartList, discountPercentage]);
+  }, [calculateTotalAmount, cartList, discountPercentage, shippingCost]);
   const renderEmptyCart = () => {
     return (
       <View style={styles.emptyContainer}>
@@ -108,7 +113,22 @@ const Cart = ({navigation, cart}: CartProps) => {
           <GenericText
             style={[
               styles.totalPrice,
-              {fontSize: theme.text.s7, color: theme.cart.totalPrice},
+              {fontSize: theme.text.s8, color: theme.cart.totalPrice},
+            ]}>
+            {tr('cart.subTotal')}: {subTotal.toFixed(2)} {tr('app.currency')}
+          </GenericText>
+          <GenericText
+            style={[
+              styles.totalPrice,
+              {fontSize: theme.text.s8, color: theme.cart.totalPrice},
+            ]}>
+            {tr('cart.shippingCost')}: {shippingCost.toFixed(2)}{' '}
+            {tr('app.currency')}
+          </GenericText>
+          <GenericText
+            style={[
+              styles.totalPrice,
+              {fontSize: theme.text.s8, color: theme.cart.totalPrice},
             ]}>
             {tr('cart.total')}: {totalAmount.toFixed(2)} {tr('app.currency')}
           </GenericText>
@@ -147,6 +167,10 @@ const Cart = ({navigation, cart}: CartProps) => {
             keyExtractor={item => item.id.toString()}
             // ListFooterComponent={() => renderFooter()}
             ItemSeparatorComponent={() => <View style={{height: hdp(1)}} />}
+            style={{
+              height: hdp(getByScreenSize(60, 69)),
+              width: '100%',
+            }}
           />
         ) : (
           renderEmptyCart()

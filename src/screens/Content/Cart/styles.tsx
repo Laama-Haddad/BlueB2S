@@ -4,7 +4,6 @@ import {getByScreenSize, hdp} from '../../../utils/responsive';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: getByScreenSize(hdp(79), hdp(75)),
   },
   topContainer: {
     alignItems: 'center',
@@ -14,11 +13,11 @@ const styles = StyleSheet.create({
   },
   totalPriceContainer: {
     borderWidth: getByScreenSize(1, 2),
-    height: hdp(7),
     borderRadius: 5,
     justifyContent: 'center',
     paddingHorizontal: '5%',
     marginVertical: '5%',
+    paddingVertical: '3%',
   },
   totalPrice: {
     fontWeight: '700',
@@ -33,9 +32,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   footerContainer: {
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
+    height: hdp(20),
+    justifyContent: 'flex-end',
   },
   text: {
     marginTop: '15%',
