@@ -19,7 +19,7 @@ import {CartItem} from '../../../resources/interfaces/items/cartItem';
 import {updateCartList} from '../../../utils/cartFuncs';
 import SignInForm from '../../Auth/SignIn/SignInForm';
 import Icon from '../../../components/Icon';
-
+import {dataList} from '../../../resources/staticData/list';
 const Favorite = ({navigation, cart, favorite, auth}: FavoriteProps) => {
   const theme = useTheme();
   const {cartList} = cart;
@@ -139,7 +139,7 @@ const Favorite = ({navigation, cart, favorite, auth}: FavoriteProps) => {
       ) : (
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={products}
+          data={dataList[0].productsList}// dataList[1]......all Data
           renderItem={renderItem}
           keyExtractor={item => item.id.toString()}
           ListFooterComponent={() => renderFooter()}
