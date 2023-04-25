@@ -4,6 +4,7 @@ import Ripple from 'react-native-material-ripple';
 import {ButtonProps} from '../../resources/interfaces/components/button';
 import GenericText from '../GenericText';
 import {useTheme} from '@react-navigation/native';
+
 const Button = ({
   title,
   titleColor,
@@ -20,7 +21,7 @@ const Button = ({
       rippleContainerBorderRadius={6}
       style={[
         styles.ripple,
-        {backgroundColor: disabled ? `${backgroundColor}66` : backgroundColor},
+        {backgroundColor: disabled ? `${backgroundColor}55` : backgroundColor},
         containerStyle,
       ]}
       onPress={onPress}

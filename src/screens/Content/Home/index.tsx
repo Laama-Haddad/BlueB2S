@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, Image, View} from 'react-native';
 import styles from './styles';
 import {HomeProps} from '../../../resources/interfaces/screens/home';
 import MainLayout from '../../MainLayout';
 import SearchBar from '../../../components/SearchBar';
 import GenericText from '../../../components/GenericText';
 import {tr} from '../../../resources/translations';
-// @ts-ignore
-import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {useTheme} from '@react-navigation/native';
 import {getByScreenSize, hdp} from '../../../utils/responsive';
 import Product from '../../../components/Product';
@@ -64,9 +62,12 @@ const Home = ({navigation, cart}: HomeProps) => {
           maxLength={40}
         />
         <View style={styles.titleContainer}>
-          <LogoSVG
-            width={getByScreenSize(30, 50)}
-            height={getByScreenSize(30, 50)}
+          <Image
+            source={require('../../../resources/assets/images/logo.png')}
+            style={{
+              width: getByScreenSize(30, 50),
+              height: getByScreenSize(30, 50),
+            }}
           />
           <GenericText
             style={[
@@ -90,9 +91,12 @@ const Home = ({navigation, cart}: HomeProps) => {
           }}
         />
         <View style={styles.titleContainer}>
-          <LogoSVG
-            width={getByScreenSize(30, 50)}
-            height={getByScreenSize(30, 50)}
+          <Image
+            source={require('../../../resources/assets/images/logo.png')}
+            style={{
+              width: getByScreenSize(30, 50),
+              height: getByScreenSize(30, 50),
+            }}
           />
           <GenericText
             style={[
@@ -116,9 +120,12 @@ const Home = ({navigation, cart}: HomeProps) => {
           }}
         />
         <View style={styles.titleContainer}>
-          <LogoSVG
-            width={getByScreenSize(30, 50)}
-            height={getByScreenSize(30, 50)}
+          <Image
+            source={require('../../../resources/assets/images/logo.png')}
+            style={{
+              width: getByScreenSize(30, 50),
+              height: getByScreenSize(30, 50),
+            }}
           />
           <GenericText
             style={[
@@ -143,9 +150,12 @@ const Home = ({navigation, cart}: HomeProps) => {
           ))}
         </View>
         <View style={[styles.titleContainer, {marginTop: '-1%'}]}>
-          <LogoSVG
-            width={getByScreenSize(30, 50)}
-            height={getByScreenSize(30, 50)}
+          <Image
+            source={require('../../../resources/assets/images/logo.png')}
+            style={{
+              width: getByScreenSize(30, 50),
+              height: getByScreenSize(30, 50),
+            }}
           />
           <GenericText
             style={[

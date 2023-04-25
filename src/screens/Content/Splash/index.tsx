@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import MainLayout from '../../MainLayout';
-import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {SplashProps} from '../../../resources/interfaces/screens/splash';
 import {useTheme} from '@react-navigation/native';
-import {View} from 'react-native';
+import {Image, View} from 'react-native';
 import {getByScreenSize} from '../../../utils/responsive';
 import GenericText from '../../../components/GenericText';
 import {tr} from '../../../resources/translations';
@@ -19,9 +18,12 @@ const Splash = ({navigation}: SplashProps) => {
   return (
     <MainLayout>
       <View style={styles.container}>
-        <LogoSVG
-          width={getByScreenSize(140, 220)}
-          height={getByScreenSize(140, 220)}
+        <Image
+          source={require('../../../resources/assets/images/logo.png')}
+          style={{
+            width: getByScreenSize(140, 220),
+            height: getByScreenSize(140, 220),
+          }}
         />
         <GenericText
           style={[

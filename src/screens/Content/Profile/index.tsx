@@ -134,13 +134,23 @@ const Profile = ({navigation, auth, user}: ProfileProps) => {
         {logged ? (
           <>
             <View style={styles.titleContainer}>
-              <GenericText
-                style={[
-                  styles.title,
-                  {fontSize: theme.text.s9, color: theme.profile.title},
-                ]}>
-                {tr('profile.title')} {personalInfo?.firstName}
-              </GenericText>
+              <View style={{flexDirection: 'row'}}>
+                <GenericText
+                  style={[
+                    styles.title,
+                    {fontSize: theme.text.s7, color: theme.profile.title},
+                  ]}>
+                  {tr('profile.title')}
+                </GenericText>
+                <GenericText
+                  style={[
+                    styles.title,
+                    {fontSize: theme.text.s7, color: theme.profile.name},
+                  ]}>
+                  {' '}
+                  {personalInfo?.firstName},
+                </GenericText>
+              </View>
               <Icon
                 name={'edit'}
                 type={'MaterialIcons'}

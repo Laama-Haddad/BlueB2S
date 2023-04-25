@@ -45,6 +45,7 @@ export interface CustomTheme extends Theme {
     title: string;
   };
   textInput: {
+    background: string;
     activeUnderlineColor: string;
     underlineColor: string;
     eyeIcon: string;
@@ -226,6 +227,7 @@ export interface CustomTheme extends Theme {
   };
   profile: {
     title: string;
+    name: string;
     icon: string;
     backgroundSignIn: string;
   };

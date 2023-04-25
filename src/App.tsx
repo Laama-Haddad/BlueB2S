@@ -14,7 +14,7 @@ import {store} from './redux/store';
 import {Provider} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {navigationRef} from './navigation';
-import {Platform, UIManager} from 'react-native';
+import {Platform, StatusBar, UIManager} from 'react-native';
 import {keys} from './api/keys';
 import {getLocalData} from './utils/storage';
 import {saveCartList} from './screens/Content/Cart/action';
@@ -23,6 +23,8 @@ import {setAuthStatus} from './screens/Auth/SignIn/action';
 import {saveFavoriteList} from './screens/Content/Favorite/action';
 import {setUserStatus} from './screens/Auth/SignUp/action';
 
+const STYLES = ['default', 'dark-content', 'light-content'] as const;
+const TRANSITIONS = ['fade', 'slide', 'none'] as const;
 const App = () => {
   const copyDataFromLocalToReducer = async () => {
     let cartList = await getLocalData(keys.CART);
@@ -58,6 +60,13 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer ref={navigationRef} theme={lightTheme}>
+        <StatusBar
+          animated={true}
+          backgroundColor={'#d4a2be'}
+          barStyle={STYLES[2]}
+          showHideTransition={TRANSITIONS[0]}
+          hidden={false}
+        />
         <AppNavigator />
         <GlobalModal />
       </NavigationContainer>

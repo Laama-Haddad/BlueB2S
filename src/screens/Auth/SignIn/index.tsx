@@ -1,10 +1,9 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import MainLayout from '../../MainLayout';
 import GenericText from '../../../components/GenericText';
 import {tr} from '../../../resources/translations';
 import styles from './styles';
-import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {getByScreenSize} from '../../../utils/responsive';
 import {useTheme} from '@react-navigation/native';
 import {SignInProps} from '../../../resources/interfaces/screens/signIn';
@@ -29,9 +28,12 @@ const SignIn = ({navigation}: SignInProps) => {
           }}
           onPress={() => navigation?.goBack()}
         />
-        <LogoSVG
-          width={getByScreenSize(70, 90)}
-          height={getByScreenSize(70, 90)}
+        <Image
+          source={require('../../../resources/assets/images/logo.png')}
+          style={{
+            width: getByScreenSize(70, 90),
+            height: getByScreenSize(70, 90),
+          }}
         />
       </View>
       <SignInForm navigation={navigation} title={tr('signIn.title')} />

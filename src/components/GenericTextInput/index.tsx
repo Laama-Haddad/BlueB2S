@@ -32,7 +32,11 @@ const GenericTextInput = forwardRef(
           underlineColor={theme.textInput.underlineColor}
           secureTextEntry={withEye && !passwordVisible}
           label={label}
-          style={[styles.textInput, textInputStyle]}
+          style={[
+            styles.textInput,
+            {backgroundColor: theme.textInput.background},
+            textInputStyle,
+          ]}
           {...props}
         />
         {required && (

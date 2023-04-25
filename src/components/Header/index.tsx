@@ -112,7 +112,7 @@ function Header({
             style={[
               styles.title,
               {
-                fontSize: theme.text.s7,
+                fontSize: theme.text.s6,
                 color: titleColor ? titleColor : theme.header.title,
               },
               titleStyle,

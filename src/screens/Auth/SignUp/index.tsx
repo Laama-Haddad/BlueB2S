@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
+  Image,
   Platform,
   TouchableOpacity,
   View,
@@ -11,8 +12,6 @@ import {tr} from '../../../resources/translations';
 import GenericTextInput from '../../../components/GenericTextInput';
 import styles from './styles';
 import Button from '../../../components/Button';
-// @ts-ignore
-import LogoSVG from '../../../resources/assets/svg/logo.svg';
 import {getByScreenSize} from '../../../utils/responsive';
 import {useTheme} from '@react-navigation/native';
 import {SignUpProps} from '../../../resources/interfaces/screens/signUp';
@@ -101,15 +100,18 @@ const SignUp = ({navigation}: SignUpProps) => {
           size={theme.text.s2}
           style={{
             position: 'absolute',
-            left: -getByScreenSize(12, 18),
+            left: -getByScreenSize(10, 18),
             top: getByScreenSize(5, 10),
             zIndex: 1,
           }}
           onPress={() => navigation?.goBack()}
         />
-        <LogoSVG
-          width={getByScreenSize(70, 90)}
-          height={getByScreenSize(70, 90)}
+        <Image
+          source={require('../../../resources/assets/images/logo.png')}
+          style={{
+            width: getByScreenSize(70, 90),
+            height: getByScreenSize(70, 90),
+          }}
         />
         <GenericText
           style={[
@@ -235,7 +237,11 @@ const SignUp = ({navigation}: SignUpProps) => {
         </GenericText>
         <TouchableOpacity onPress={() => navigation?.navigate('signIn')}>
           <GenericText
-            style={{fontSize: theme.text.s9, color: theme.signUp.title}}>
+            style={{
+              fontSize: theme.text.s9,
+              fontWeight: 'bold',
+              color: theme.signUp.submitBackground,
+            }}>
             {tr('signUp.signIn')}
           </GenericText>
         </TouchableOpacity>

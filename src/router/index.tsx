@@ -26,6 +26,7 @@ import Splash from '../screens/Content/Splash';
 import ImageViewer from '../screens/Content/ImageViewer';
 import {useTheme} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
+import {colors} from '../resources/theme/colors';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -83,10 +84,12 @@ const HomeTabs = () => {
   const {cartList} = cart;
   return (
     <Tabs.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: '#C500FF',
-        tabBarInactiveTintColor: '#222222',
-      }}>
+      screenOptions={
+        {
+          // tabBarActiveTintColor: '#C500FF',
+          // tabBarInactiveTintColor: '#222222',
+        }
+      }>
       {tabsScreens.map((screen, idx) => (
         <Tabs.Screen
           key={`tabScreen${idx}`}
@@ -98,7 +101,7 @@ const HomeTabs = () => {
             tabBarLabel: ({focused}) => (
               <GenericText
                 style={{
-                  color: focused ? '#AB47BC' : '#00000055',
+                  color: focused ? colors.secondary : colors.fourthly,
                   fontSize: getByScreenSize(13, 25),
                   fontWeight: '600',
                   marginLeft: getByScreenSize(0, 20),
@@ -108,7 +111,7 @@ const HomeTabs = () => {
             ),
             tabBarIcon: ({focused}) =>
               screen.icon(
-                focused ? '#AB47BC' : '#00000055',
+                focused ? colors.secondary : colors.fourthly,
                 getByScreenSize(20, 25),
               ),
             tabBarBadge:
@@ -123,7 +126,7 @@ const HomeTabs = () => {
               justifyContent: 'center',
               backgroundColor:
                 screen.name === 'cart' && !!cartList && cartList.length
-                  ? '#EA80FC'
+                  ? colors.primary
                   : 'transparent',
               color:
                 screen.name === 'cart' && !!cartList && cartList.length
@@ -237,7 +240,7 @@ const AppNavigator = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <ActivityIndicator color={'#C500FF'} size={'large'} />
+        <ActivityIndicator color={colors.primary} size={'large'} />
         <GenericText>Loading...</GenericText>
       </View>
     );

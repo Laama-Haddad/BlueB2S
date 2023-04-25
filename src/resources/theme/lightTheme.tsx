@@ -30,7 +30,7 @@ const lightTheme: CustomTheme = {
     placeholder: '#90A4AE',
     border: '#B0BEC5',
     borderFocus: '#BA68C8',
-    lightGreen: '#81C784',
+    lightGreen: '#60c2a4',
     grey: '#9E9E9E',
     black: '#000000',
     s1: RFValue(44, SCREEN_HEIGHT_REFERENCE),
@@ -58,9 +58,10 @@ const lightTheme: CustomTheme = {
     title: '#FFFFFF',
   },
   textInput: {
+    background: `${colors.fourthly}33`,
     activeUnderlineColor: colors.secondary,
     underlineColor: colors.primary,
-    eyeIcon: '#BDBDBD',
+    eyeIcon: colors.fourthly,
     required: '#B71C1C',
   },
   searchBar: {
@@ -140,7 +141,7 @@ const lightTheme: CustomTheme = {
     containerBackground: '#FFFFFF',
     containerBorder: '#E0E0E0',
     cancelIconBackground: '#B71C1C',
-    checkIconBackground: '#69F0AE',
+    checkIconBackground: '#60c2a4',
     shippedIconBackground: colors.secondary,
     icon: '#FFFFFF',
     date: '#616161',
@@ -239,8 +240,9 @@ const lightTheme: CustomTheme = {
   },
   profile: {
     title: '#212121',
+    name: colors.secondary,
     icon: '#212121',
-    backgroundSignIn: '#212121',
+    backgroundSignIn: colors.secondary,
   },
   updateProfile: {
     title: '#212121',
