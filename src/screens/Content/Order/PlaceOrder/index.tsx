@@ -121,7 +121,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.darkText,
               }}>
-              29.00 {tr('app.currency')}
+              1780.00 {tr('app.currency')}
             </GenericText>
           </View>
           <View style={styles.rowContainer}>
@@ -138,7 +138,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.darkText,
               }}>
-              29.00 {tr('app.currency')}
+              10.00 {tr('app.currency')}
             </GenericText>
           </View>
           <View style={styles.rowContainer}>
@@ -155,7 +155,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 fontSize: theme.text.s9,
                 color: theme.placeOrder.darkText,
               }}>
-              19.00 {tr('app.currency')}
+              00.00 {tr('app.currency')}
             </GenericText>
           </View>
           <View style={styles.rowContainer}>
@@ -171,7 +171,7 @@ const PlaceOrder = ({navigation}: PlaceOrderProps) => {
                 styles.text,
                 {fontSize: theme.text.s9, color: theme.placeOrder.darkText},
               ]}>
-              349.00 {tr('app.currency')}
+              1790.00 {tr('app.currency')}
             </GenericText>
           </View>
         </View>
