@@ -12,7 +12,7 @@ const Splash = ({navigation}: SplashProps) => {
   useEffect(() => {
     setTimeout(() => {
       navigation?.navigate('homeTabs');
-    }, 10);
+    }, 1000);
   });
   const theme = useTheme();
   return (
